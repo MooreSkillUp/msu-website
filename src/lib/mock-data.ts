@@ -6,43 +6,13 @@ export type Interest =
   | "Engineering"
   | "Cloud and DevOps"
   | "Programming Languages";
-
-export type WebTrack =
-  | "Frontend Development"
-  | "Fullstack Foundations"
-  | "React and Modern UI";
-
-export type BackendTrack =
-  | "Backend with Python"
-  | "Backend with JavaScript";
-
-export type DesignTrack =
-  | "UI/UX Design"
-  | "Graphics Design"
-  | "Video Editing"
-  | "Figma Mastery";
-
-export type DataTrack =
-  | "Data Analysis"
-  | "Artificial Intelligence"
-  | "AI Automation";
-
-export type EngineeringTrack =
-  | "3D Modeling"
-  | "SolidWorks"
-  | "Engineering Design Systems";
-
-export type CloudTrack =
-  | "Cloud Foundations"
-  | "DevOps Engineering"
-  | "Cloud Automation";
-
-export type LanguageTrack =
-  | "JavaScript"
-  | "Python"
-  | "TypeScript"
-  | "SQL";
-
+export type WebTrack = "Frontend Development" | "Fullstack Foundations" | "React and Modern UI";
+export type BackendTrack = "Backend with Python" | "Backend with JavaScript";
+export type DesignTrack = "UI/UX Design" | "Graphics Design" | "Video Editing" | "Figma Mastery";
+export type DataTrack = "Data Analysis" | "Artificial Intelligence" | "AI Automation";
+export type EngineeringTrack = "3D Modeling" | "SolidWorks" | "Engineering Design Systems";
+export type CloudTrack = "Cloud Foundations" | "DevOps Engineering" | "Cloud Automation";
+export type LanguageTrack = "JavaScript" | "Python" | "TypeScript" | "SQL";
 export type TrackName =
   | WebTrack
   | BackendTrack
@@ -51,7 +21,6 @@ export type TrackName =
   | EngineeringTrack
   | CloudTrack
   | LanguageTrack;
-
 export type UserPlan = "free" | "pro" | "premium";
 export type UserRole = "student" | "admin" | "teacher";
 export type LessonStatus = "completed" | "unlocked" | "locked";
@@ -64,14 +33,12 @@ export type Weekday =
   | "Thursday"
   | "Friday"
   | "Saturday";
-
 export interface Assessment {
   id: string;
   title: string;
   description: string;
   type: "assessment" | "project";
 }
-
 export interface Lesson {
   id: string;
   title: string;
@@ -80,7 +47,6 @@ export interface Lesson {
   videoId: string;
   description: string;
 }
-
 export interface SectionLesson {
   id: string;
   title: string;
@@ -91,7 +57,6 @@ export interface SectionLesson {
   duration: string;
   status: LessonStatus;
 }
-
 export interface SectionTask {
   id: string;
   title: string;
@@ -101,7 +66,6 @@ export interface SectionTask {
   helpVideoLink?: string;
   submissionVideoUrl?: string;
 }
-
 export interface CourseSection {
   id: string;
   title: string;
@@ -110,7 +74,6 @@ export interface CourseSection {
   lessons: SectionLesson[];
   tasks: SectionTask[];
 }
-
 export interface Module {
   id: string;
   title: string;
@@ -118,7 +81,6 @@ export interface Module {
   lessons: Lesson[];
   assessment: Assessment;
 }
-
 export interface Course {
   id: string;
   title: string;
@@ -147,7 +109,6 @@ export interface Course {
   featured?: boolean;
   tags: string[];
 }
-
 export interface Announcement {
   id: string;
   title: string;
@@ -155,7 +116,6 @@ export interface Announcement {
   date: string;
   tag: "update" | "event" | "release";
 }
-
 export interface PricingPlan {
   id: UserPlan;
   title: string;
@@ -170,7 +130,6 @@ export interface PricingPlan {
   supportSummary?: string;
   certificateSummary?: string;
 }
-
 export interface QuizShopItem {
   id: string;
   title: string;
@@ -179,7 +138,6 @@ export interface QuizShopItem {
   reward: string;
   description: string;
 }
-
 export interface NotificationItem {
   id: string;
   title: string;
@@ -191,14 +149,12 @@ export interface NotificationItem {
   read: boolean;
   time: string;
 }
-
 export interface LearningBranch {
   title: TrackName;
   summary: string;
   tools: string[];
   weeklyFocus: string[];
 }
-
 export interface AcademyProgram {
   id: string;
   title: Interest;
@@ -207,7 +163,6 @@ export interface AcademyProgram {
   iconLabel: string;
   branches: LearningBranch[];
 }
-
 export interface TeacherUploadBlueprint {
   id: string;
   title: string;
@@ -222,17 +177,11 @@ export interface TeacherUploadBlueprint {
     id: string;
     title: string;
     weekLabel: string;
-    lessons: Array<{
-      id: string;
-      title: string;
-      format: "video" | "text";
-      resource: string;
-    }>;
+    lessons: Array<{ id: string; title: string; format: "video" | "text"; resource: string }>;
     assessment: string;
     project: string;
   }>;
 }
-
 export interface TeacherProfileOption {
   id: string;
   username?: string;
@@ -244,7 +193,6 @@ export interface TeacherProfileOption {
   bio?: string;
   isActive?: boolean;
 }
-
 export interface AdminBroadcast {
   id: string;
   title: string;
@@ -253,7 +201,6 @@ export interface AdminBroadcast {
   target: "all-students" | "tutors";
   sentAt: string;
 }
-
 export interface CoursePaymentSnapshot {
   courseId: string;
   courseTitle: string;
@@ -262,7 +209,6 @@ export interface CoursePaymentSnapshot {
   purchases: number;
   revenue: number;
 }
-
 export interface PaymentRecord {
   id: string;
   courseId: string;
@@ -271,7 +217,6 @@ export interface PaymentRecord {
   status: "paid";
   purchasedAt: string;
 }
-
 export const interests: Interest[] = [
   "Web Development",
   "Backend Development",
@@ -281,26 +226,15 @@ export const interests: Interest[] = [
   "Cloud and DevOps",
   "Programming Languages",
 ];
-
 export const trackOptionsByInterest: Record<Interest, TrackName[]> = {
-  "Web Development": [
-    "Frontend Development",
-    "Fullstack Foundations",
-    "React and Modern UI",
-  ],
+  "Web Development": ["Frontend Development", "Fullstack Foundations", "React and Modern UI"],
   "Backend Development": ["Backend with Python", "Backend with JavaScript"],
-  "Graphics and Design": [
-    "UI/UX Design",
-    "Graphics Design",
-    "Video Editing",
-    "Figma Mastery",
-  ],
+  "Graphics and Design": ["UI/UX Design", "Graphics Design", "Video Editing", "Figma Mastery"],
   "AI and Data": ["Data Analysis", "Artificial Intelligence", "AI Automation"],
   Engineering: ["3D Modeling", "SolidWorks", "Engineering Design Systems"],
   "Cloud and DevOps": ["Cloud Foundations", "DevOps Engineering", "Cloud Automation"],
   "Programming Languages": ["JavaScript", "Python", "TypeScript", "SQL"],
 };
-
 function buildLessons(
   prefix: string,
   titles: string[],
@@ -311,18 +245,12 @@ function buildLessons(
     id: `${prefix}-l${index + 1}`,
     title,
     duration: `${12 + ((index * 6) % 22)} min`,
-    status:
-      index < completedThru
-        ? "completed"
-        : index < unlockedThru
-          ? "unlocked"
-          : "locked",
+    status: index < completedThru ? "completed" : index < unlockedThru ? "unlocked" : "locked",
     videoId: "dQw4w9WgXcQ",
     description:
       "A guided lesson with examples, breakdowns, and a practical task to reinforce the concept.",
   }));
 }
-
 function buildModules(
   prefix: string,
   weeks: Array<{
@@ -351,14 +279,13 @@ function buildModules(
     },
   }));
 }
-
 export const academyPrograms: AcademyProgram[] = [
   {
     id: "web-development",
     title: "Web Development",
     description:
       "A complete path for learners who want to build websites, user interfaces, and real-world web apps.",
-    cover: "from-primary via-primary-glow to-accent",
+    cover: " ",
     iconLabel: "WD",
     branches: [
       {
@@ -407,7 +334,7 @@ export const academyPrograms: AcademyProgram[] = [
     title: "Backend Development",
     description:
       "Learn server-side engineering with clear branches for Python and JavaScript backend careers.",
-    cover: "from-sky-500 via-primary to-slate-900",
+    cover: "500 900",
     iconLabel: "BE",
     branches: [
       {
@@ -443,12 +370,13 @@ export const academyPrograms: AcademyProgram[] = [
     title: "Graphics and Design",
     description:
       "A creative category covering interface design, brand graphics, editing workflows, and visual production.",
-    cover: "from-orange-400 via-accent to-rose-500",
+    cover: "400 500",
     iconLabel: "GD",
     branches: [
       {
         title: "UI/UX Design",
-        summary: "Research, interface design, wireframes, prototypes, and user-centered product thinking.",
+        summary:
+          "Research, interface design, wireframes, prototypes, and user-centered product thinking.",
         tools: ["Figma", "UX Research", "Wireframing", "Prototyping"],
         weeklyFocus: [
           "Week 1: UX basics and user flows",
@@ -461,7 +389,8 @@ export const academyPrograms: AcademyProgram[] = [
       },
       {
         title: "Graphics Design",
-        summary: "Design visual assets, social graphics, and brand systems with modern creative tools.",
+        summary:
+          "Design visual assets, social graphics, and brand systems with modern creative tools.",
         tools: ["Photoshop", "Illustrator", "Brand Design", "Composition"],
         weeklyFocus: [
           "Week 1: Visual principles",
@@ -474,7 +403,8 @@ export const academyPrograms: AcademyProgram[] = [
       },
       {
         title: "Video Editing",
-        summary: "Learn editing flow, motion pacing, storytelling, and content polish for digital products.",
+        summary:
+          "Learn editing flow, motion pacing, storytelling, and content polish for digital products.",
         tools: ["Premiere Pro", "CapCut", "After Effects", "Storyboarding"],
         weeklyFocus: [
           "Week 1: Editing foundations",
@@ -487,7 +417,8 @@ export const academyPrograms: AcademyProgram[] = [
       },
       {
         title: "Figma Mastery",
-        summary: "Specialize in Figma for components, tokens, collaboration, and design operations.",
+        summary:
+          "Specialize in Figma for components, tokens, collaboration, and design operations.",
         tools: ["Figma", "Auto Layout", "Design Tokens", "Components"],
         weeklyFocus: [
           "Week 1: Figma workspace mastery",
@@ -505,7 +436,7 @@ export const academyPrograms: AcademyProgram[] = [
     title: "AI and Data",
     description:
       "Data, machine learning, AI workflows, and automation paths for analytical and AI-driven careers.",
-    cover: "from-emerald-400 via-primary-glow to-primary",
+    cover: "400 ",
     iconLabel: "AI",
     branches: [
       {
@@ -536,7 +467,8 @@ export const academyPrograms: AcademyProgram[] = [
       },
       {
         title: "AI Automation",
-        summary: "Use AI tools and no-code/low-code flows to automate repetitive work and product tasks.",
+        summary:
+          "Use AI tools and no-code/low-code flows to automate repetitive work and product tasks.",
         tools: ["Python", "APIs", "Automation", "Agents"],
         weeklyFocus: [
           "Week 1: Automation thinking",
@@ -554,7 +486,7 @@ export const academyPrograms: AcademyProgram[] = [
     title: "Engineering",
     description:
       "Technical design paths for learners interested in 3D systems, product modeling, and engineering workflows.",
-    cover: "from-slate-700 via-primary to-cyan-400",
+    cover: "700 400",
     iconLabel: "EN",
     branches: [
       {
@@ -585,7 +517,8 @@ export const academyPrograms: AcademyProgram[] = [
       },
       {
         title: "Engineering Design Systems",
-        summary: "Create repeatable design workflows for technical product teams and engineering orgs.",
+        summary:
+          "Create repeatable design workflows for technical product teams and engineering orgs.",
         tools: ["Systems Thinking", "CAD Workflow", "Documentation", "Review Loops"],
         weeklyFocus: [
           "Week 1: Design systems for engineering",
@@ -603,12 +536,13 @@ export const academyPrograms: AcademyProgram[] = [
     title: "Cloud and DevOps",
     description:
       "Deployment, infrastructure, cloud systems, CI/CD, and operational thinking for modern engineering teams.",
-    cover: "from-indigo-500 via-primary to-orange-400",
+    cover: "500 400",
     iconLabel: "CD",
     branches: [
       {
         title: "Cloud Foundations",
-        summary: "Understand cloud platforms, hosting models, networking basics, and deployment paths.",
+        summary:
+          "Understand cloud platforms, hosting models, networking basics, and deployment paths.",
         tools: ["AWS", "Azure", "Cloud Concepts", "Networking"],
         weeklyFocus: [
           "Week 1: Cloud basics",
@@ -652,7 +586,7 @@ export const academyPrograms: AcademyProgram[] = [
     title: "Programming Languages",
     description:
       "Deep language-first tracks for learners who want strong fundamentals before choosing a specialization.",
-    cover: "from-violet-500 via-primary-glow to-cyan-500",
+    cover: "500 500",
     iconLabel: "PL",
     branches: [
       {
@@ -683,7 +617,8 @@ export const academyPrograms: AcademyProgram[] = [
       },
       {
         title: "TypeScript",
-        summary: "Learn safer JavaScript with types, contracts, and scalable frontend/backend code.",
+        summary:
+          "Learn safer JavaScript with types, contracts, and scalable frontend/backend code.",
         tools: ["TypeScript", "Types", "Generics", "Tooling"],
         weeklyFocus: [
           "Week 1: TypeScript basics",
@@ -696,7 +631,8 @@ export const academyPrograms: AcademyProgram[] = [
       },
       {
         title: "SQL",
-        summary: "Query relational data confidently and understand the language behind business systems.",
+        summary:
+          "Query relational data confidently and understand the language behind business systems.",
         tools: ["SQL", "Joins", "Aggregations", "Query Design"],
         weeklyFocus: [
           "Week 1: SQL basics",
@@ -710,7 +646,6 @@ export const academyPrograms: AcademyProgram[] = [
     ],
   },
 ];
-
 export const mockUser = {
   id: "u_1",
   username: "alex.moore",
@@ -726,7 +661,6 @@ export const mockUser = {
   selectedTrack: "Backend with Python" as TrackName,
   purchasedCourseIds: ["backend-python-api-builder"],
 };
-
 export const courses: Course[] = [
   {
     id: "frontend-react-studio",
@@ -736,7 +670,7 @@ export const courses: Course[] = [
     instructor: "Ada Morgan",
     totalLessons: 24,
     completedLessons: 9,
-    cover: "from-primary via-primary-glow to-accent",
+    cover: " ",
     interest: "Web Development",
     track: "Frontend Development",
     access: "free",
@@ -785,12 +719,7 @@ export const courses: Course[] = [
       },
       {
         title: "UI polish and motion",
-        lessons: [
-          "Design tokens",
-          "Motion basics",
-          "Accessibility polish",
-          "Responsive QA",
-        ],
+        lessons: ["Design tokens", "Motion basics", "Accessibility polish", "Responsive QA"],
         assessment: "Improve a UI to production-ready quality.",
         completedLessons: 0,
         unlockedLessons: 1,
@@ -817,7 +746,7 @@ export const courses: Course[] = [
     instructor: "Lena Park",
     totalLessons: 25,
     completedLessons: 7,
-    cover: "from-sky-500 via-primary to-slate-900",
+    cover: "500 900",
     interest: "Backend Development",
     track: "Backend with Python",
     access: "paid",
@@ -865,24 +794,14 @@ export const courses: Course[] = [
       },
       {
         title: "Auth, permissions, and database flow",
-        lessons: [
-          "JWT auth",
-          "Permissions",
-          "Database migrations",
-          "Service layer design",
-        ],
+        lessons: ["JWT auth", "Permissions", "Database migrations", "Service layer design"],
         assessment: "Secure an API with role-based rules.",
         completedLessons: 0,
         unlockedLessons: 1,
       },
       {
         title: "Backend capstone",
-        lessons: [
-          "Capstone planning",
-          "API implementation",
-          "Testing and docs",
-          "Deployment flow",
-        ],
+        lessons: ["Capstone planning", "API implementation", "Testing and docs", "Deployment flow"],
         assessment: "Ship a full backend capstone with docs.",
         completedLessons: 0,
         unlockedLessons: 0,
@@ -897,7 +816,7 @@ export const courses: Course[] = [
     instructor: "Jordan Cole",
     totalLessons: 22,
     completedLessons: 0,
-    cover: "from-amber-400 via-orange-500 to-slate-900",
+    cover: "400 500 900",
     interest: "Backend Development",
     track: "Backend with JavaScript",
     access: "paid",
@@ -944,12 +863,7 @@ export const courses: Course[] = [
       },
       {
         title: "Production backend patterns",
-        lessons: [
-          "Testing",
-          "Logging",
-          "Deployment",
-          "Monitoring basics",
-        ],
+        lessons: ["Testing", "Logging", "Deployment", "Monitoring basics"],
         assessment: "Prepare a service for production.",
         completedLessons: 0,
         unlockedLessons: 0,
@@ -976,7 +890,7 @@ export const courses: Course[] = [
     instructor: "Mina Duarte",
     totalLessons: 24,
     completedLessons: 4,
-    cover: "from-orange-400 via-accent to-rose-500",
+    cover: "400 500",
     interest: "Graphics and Design",
     track: "UI/UX Design",
     access: "paid",
@@ -1012,12 +926,7 @@ export const courses: Course[] = [
       },
       {
         title: "Systems and prototyping",
-        lessons: [
-          "Tokens and systems",
-          "Interaction states",
-          "Prototyping",
-          "Design handoff",
-        ],
+        lessons: ["Tokens and systems", "Interaction states", "Prototyping", "Design handoff"],
         assessment: "Prototype a learner dashboard flow.",
         completedLessons: 0,
         unlockedLessons: 2,
@@ -1036,12 +945,7 @@ export const courses: Course[] = [
       },
       {
         title: "Portfolio case study",
-        lessons: [
-          "Case study structure",
-          "Presentation polish",
-          "Feedback pass",
-          "Final delivery",
-        ],
+        lessons: ["Case study structure", "Presentation polish", "Feedback pass", "Final delivery"],
         assessment: "Ship a full design case study.",
         completedLessons: 0,
         unlockedLessons: 0,
@@ -1056,7 +960,7 @@ export const courses: Course[] = [
     instructor: "Marcus Vega",
     totalLessons: 23,
     completedLessons: 2,
-    cover: "from-emerald-400 via-primary-glow to-primary",
+    cover: "400 ",
     interest: "AI and Data",
     track: "AI Automation",
     access: "free",
@@ -1068,12 +972,7 @@ export const courses: Course[] = [
     modules: buildModules("ai-data", [
       {
         title: "Data and Python foundations",
-        lessons: [
-          "Python basics",
-          "NumPy and arrays",
-          "Pandas intro",
-          "Clean data thinking",
-        ],
+        lessons: ["Python basics", "NumPy and arrays", "Pandas intro", "Clean data thinking"],
         assessment: "Analyze a starter dataset.",
         completedLessons: 2,
         unlockedLessons: 4,
@@ -1104,24 +1003,14 @@ export const courses: Course[] = [
       },
       {
         title: "Automation systems",
-        lessons: [
-          "Workflow mapping",
-          "API automation",
-          "Agent loops",
-          "Business use cases",
-        ],
+        lessons: ["Workflow mapping", "API automation", "Agent loops", "Business use cases"],
         assessment: "Build an automation concept demo.",
         completedLessons: 0,
         unlockedLessons: 0,
       },
       {
         title: "AI and data capstone",
-        lessons: [
-          "Project plan",
-          "Implementation",
-          "Insights and review",
-          "Presentation",
-        ],
+        lessons: ["Project plan", "Implementation", "Insights and review", "Presentation"],
         assessment: "Ship an AI/data capstone project.",
         completedLessons: 0,
         unlockedLessons: 0,
@@ -1136,7 +1025,7 @@ export const courses: Course[] = [
     instructor: "Tomi Bello",
     totalLessons: 21,
     completedLessons: 1,
-    cover: "from-slate-700 via-primary to-cyan-400",
+    cover: "700 400",
     interest: "Engineering",
     track: "3D Modeling",
     access: "paid",
@@ -1147,24 +1036,14 @@ export const courses: Course[] = [
     modules: buildModules("eng-3d", [
       {
         title: "Modeling fundamentals",
-        lessons: [
-          "3D form thinking",
-          "Parts and sketches",
-          "Tool familiarity",
-          "Precision habits",
-        ],
+        lessons: ["3D form thinking", "Parts and sketches", "Tool familiarity", "Precision habits"],
         assessment: "Model a simple engineering part.",
         completedLessons: 1,
         unlockedLessons: 3,
       },
       {
         title: "Assemblies and technical workflows",
-        lessons: [
-          "Assemblies",
-          "Constraints",
-          "Iteration",
-          "Review loops",
-        ],
+        lessons: ["Assemblies", "Constraints", "Iteration", "Review loops"],
         assessment: "Build a small multi-part assembly.",
         completedLessons: 0,
         unlockedLessons: 1,
@@ -1195,12 +1074,7 @@ export const courses: Course[] = [
       },
       {
         title: "Engineering capstone",
-        lessons: [
-          "Planning",
-          "Build",
-          "Review",
-          "Presentation",
-        ],
+        lessons: ["Planning", "Build", "Review", "Presentation"],
         assessment: "Ship a full engineering model showcase.",
         completedLessons: 0,
         unlockedLessons: 0,
@@ -1215,7 +1089,7 @@ export const courses: Course[] = [
     instructor: "Nina Brooks",
     totalLessons: 22,
     completedLessons: 0,
-    cover: "from-indigo-500 via-primary to-orange-400",
+    cover: "500 400",
     interest: "Cloud and DevOps",
     track: "DevOps Engineering",
     access: "paid",
@@ -1226,36 +1100,21 @@ export const courses: Course[] = [
     modules: buildModules("cloud-devops", [
       {
         title: "Cloud foundations",
-        lessons: [
-          "Cloud concepts",
-          "Compute and storage",
-          "Networking basics",
-          "Hosting choices",
-        ],
+        lessons: ["Cloud concepts", "Compute and storage", "Networking basics", "Hosting choices"],
         assessment: "Map a deployment architecture.",
         completedLessons: 0,
         unlockedLessons: 2,
       },
       {
         title: "DevOps workflow",
-        lessons: [
-          "Linux basics",
-          "Containers with Docker",
-          "CI principles",
-          "Automation thinking",
-        ],
+        lessons: ["Linux basics", "Containers with Docker", "CI principles", "Automation thinking"],
         assessment: "Containerize a small app.",
         completedLessons: 0,
         unlockedLessons: 0,
       },
       {
         title: "Deployment systems",
-        lessons: [
-          "CD pipelines",
-          "Environment management",
-          "Monitoring",
-          "Rollback plans",
-        ],
+        lessons: ["CD pipelines", "Environment management", "Monitoring", "Rollback plans"],
         assessment: "Design a deployment workflow.",
         completedLessons: 0,
         unlockedLessons: 0,
@@ -1274,12 +1133,7 @@ export const courses: Course[] = [
       },
       {
         title: "DevOps capstone",
-        lessons: [
-          "Plan",
-          "Implement",
-          "Observe",
-          "Deliver",
-        ],
+        lessons: ["Plan", "Implement", "Observe", "Deliver"],
         assessment: "Ship a cloud and DevOps capstone.",
         completedLessons: 0,
         unlockedLessons: 0,
@@ -1287,7 +1141,6 @@ export const courses: Course[] = [
     ]),
   },
 ];
-
 export const announcements: Announcement[] = [
   {
     id: "a1",
@@ -1311,7 +1164,6 @@ export const announcements: Announcement[] = [
     tag: "update",
   },
 ];
-
 export const pricingPlans: PricingPlan[] = [
   {
     id: "free",
@@ -1324,7 +1176,8 @@ export const pricingPlans: PricingPlan[] = [
     audience: "Best for new learners comparing paths",
     accessSummary: "Access roadmap previews, beginner sections, and a limited part of each course.",
     supportSummary: "Basic dashboard, notifications, and standard support.",
-    certificateSummary: "Certificate previews are visible, but full course certificates unlock only after buying and completing a course.",
+    certificateSummary:
+      "Certificate previews are visible, but full course certificates unlock only after buying and completing a course.",
     features: [
       "Public catalog and course roadmap preview",
       "Free beginner section access",
@@ -1343,9 +1196,11 @@ export const pricingPlans: PricingPlan[] = [
     cta: "Unlock a course",
     highlight: true,
     audience: "Best for learners ready to pay for a course and finish it properly",
-    accessSummary: "Unlock all sections, lessons, tasks, roadmap resources, and completion status for the course you pay for.",
+    accessSummary:
+      "Unlock all sections, lessons, tasks, roadmap resources, and completion status for the course you pay for.",
     supportSummary: "Full study flow, richer notifications, and project submission guidance.",
-    certificateSummary: "Generate certificates after completing all lessons and required tasks in that purchased course.",
+    certificateSummary:
+      "Generate certificates after completing all lessons and required tasks in that purchased course.",
     features: [
       "Unlock all sections in the selected course",
       "All lessons, tasks, roadmap resources, and submissions",
@@ -1363,9 +1218,11 @@ export const pricingPlans: PricingPlan[] = [
       "Designed for learners or cohorts that want mentor-style reviews, premium support, and stronger accountability on top of paid course access.",
     cta: "Talk to us",
     audience: "Best for professionals building portfolio-ready outcomes",
-    accessSummary: "Everything in paid course access plus deeper feedback loops, premium cohorts, and guided support.",
+    accessSummary:
+      "Everything in paid course access plus deeper feedback loops, premium cohorts, and guided support.",
     supportSummary: "Mentor-style office hours, portfolio reviews, and premium learner support.",
-    certificateSummary: "Premium certificate experience with capstone review support and advanced completion recognition.",
+    certificateSummary:
+      "Premium certificate experience with capstone review support and advanced completion recognition.",
     features: [
       "Everything in Pro",
       "Mentor-style office-hour support",
@@ -1375,7 +1232,6 @@ export const pricingPlans: PricingPlan[] = [
     ],
   },
 ];
-
 export const quizShopItems: QuizShopItem[] = [
   {
     id: "qs-1",
@@ -1402,7 +1258,6 @@ export const quizShopItems: QuizShopItem[] = [
     description: "A capstone-level reward pack unlocked through consistent quiz performance.",
   },
 ];
-
 export const faqItems = [
   {
     question: "How does course access work on the free plan?",
@@ -1425,7 +1280,6 @@ export const faqItems = [
       "Courses are organized week by week. Each week includes lessons plus an assessment, and the final week ends with a capstone-style project before certification.",
   },
 ];
-
 export const notifications: NotificationItem[] = [
   {
     id: "n1",
@@ -1452,7 +1306,6 @@ export const notifications: NotificationItem[] = [
     time: "Yesterday",
   },
 ];
-
 export const teacherUploads: TeacherUploadBlueprint[] = [
   {
     id: "tu-1",
@@ -1475,8 +1328,18 @@ export const teacherUploads: TeacherUploadBlueprint[] = [
         title: "Python backend foundations",
         weekLabel: "Week 1",
         lessons: [
-          { id: "tu-1-m1-l1", title: "Python service setup", format: "video", resource: "https://youtube.com/watch?v=python-setup" },
-          { id: "tu-1-m1-l2", title: "Request-response primer", format: "text", resource: "Guided reading notes for backend request flow." },
+          {
+            id: "tu-1-m1-l1",
+            title: "Python service setup",
+            format: "video",
+            resource: "https://youtube.com/watch?v=python-setup",
+          },
+          {
+            id: "tu-1-m1-l2",
+            title: "Request-response primer",
+            format: "text",
+            resource: "Guided reading notes for backend request flow.",
+          },
         ],
         assessment: "Short quiz on backend concepts",
         project: "Submit a Python utility service.",
@@ -1486,8 +1349,18 @@ export const teacherUploads: TeacherUploadBlueprint[] = [
         title: "Django REST workflow",
         weekLabel: "Week 2",
         lessons: [
-          { id: "tu-1-m2-l1", title: "Django models and serializers", format: "video", resource: "https://youtube.com/watch?v=django-models" },
-          { id: "tu-1-m2-l2", title: "Permissions and auth notes", format: "text", resource: "Reference sheet for JWT and permissions." },
+          {
+            id: "tu-1-m2-l1",
+            title: "Django models and serializers",
+            format: "video",
+            resource: "https://youtube.com/watch?v=django-models",
+          },
+          {
+            id: "tu-1-m2-l2",
+            title: "Permissions and auth notes",
+            format: "text",
+            resource: "Reference sheet for JWT and permissions.",
+          },
         ],
         assessment: "API endpoint assessment",
         project: "Build and submit a learner profile API.",
@@ -1515,8 +1388,18 @@ export const teacherUploads: TeacherUploadBlueprint[] = [
         title: "React foundations",
         weekLabel: "Week 1",
         lessons: [
-          { id: "tu-2-m1-l1", title: "Component anatomy", format: "video", resource: "https://youtube.com/watch?v=react-components" },
-          { id: "tu-2-m1-l2", title: "Props and state cheatsheet", format: "text", resource: "Reference content for props, state, and events." },
+          {
+            id: "tu-2-m1-l1",
+            title: "Component anatomy",
+            format: "video",
+            resource: "https://youtube.com/watch?v=react-components",
+          },
+          {
+            id: "tu-2-m1-l2",
+            title: "Props and state cheatsheet",
+            format: "text",
+            resource: "Reference content for props, state, and events.",
+          },
         ],
         assessment: "React fundamentals quiz",
         project: "Build a profile card interface.",
@@ -1526,8 +1409,18 @@ export const teacherUploads: TeacherUploadBlueprint[] = [
         title: "Modern UI delivery",
         weekLabel: "Week 2",
         lessons: [
-          { id: "tu-2-m2-l1", title: "Layout systems and responsiveness", format: "video", resource: "https://youtube.com/watch?v=responsive-ui" },
-          { id: "tu-2-m2-l2", title: "UI review checklist", format: "text", resource: "Design QA and frontend review checklist." },
+          {
+            id: "tu-2-m2-l1",
+            title: "Layout systems and responsiveness",
+            format: "video",
+            resource: "https://youtube.com/watch?v=responsive-ui",
+          },
+          {
+            id: "tu-2-m2-l2",
+            title: "UI review checklist",
+            format: "text",
+            resource: "Design QA and frontend review checklist.",
+          },
         ],
         assessment: "Responsive dashboard check",
         project: "Ship a responsive dashboard section.",
@@ -1535,7 +1428,6 @@ export const teacherUploads: TeacherUploadBlueprint[] = [
     ],
   },
 ];
-
 export const teacherProfileOptions: TeacherProfileOption[] = [
   {
     id: "tp-1",
@@ -1571,15 +1463,48 @@ export const teacherProfileOptions: TeacherProfileOption[] = [
     isActive: false,
   },
 ];
-
 export const adminUsers = [
-  { id: "u-11", name: "Zainab Okon", role: "Student", program: "Web Development", track: "Frontend Development", purchasedCourses: 2 },
-  { id: "u-12", name: "Chinedu Grey", role: "Student", program: "Backend Development", track: "Backend with Python", purchasedCourses: 3 },
-  { id: "u-13", name: "Mina Duarte", role: "Teacher", program: "Graphics and Design", track: "UI/UX Design", purchasedCourses: 0 },
-  { id: "u-14", name: "Ada Morgan", role: "Admin", program: "Backend Development", track: "Backend with Python", purchasedCourses: 0 },
-  { id: "u-15", name: "Tomi Bello", role: "Teacher", program: "Engineering", track: "SolidWorks", purchasedCourses: 0 },
+  {
+    id: "u-11",
+    name: "Zainab Okon",
+    role: "Student",
+    program: "Web Development",
+    track: "Frontend Development",
+    purchasedCourses: 2,
+  },
+  {
+    id: "u-12",
+    name: "Chinedu Grey",
+    role: "Student",
+    program: "Backend Development",
+    track: "Backend with Python",
+    purchasedCourses: 3,
+  },
+  {
+    id: "u-13",
+    name: "Mina Duarte",
+    role: "Teacher",
+    program: "Graphics and Design",
+    track: "UI/UX Design",
+    purchasedCourses: 0,
+  },
+  {
+    id: "u-14",
+    name: "Ada Morgan",
+    role: "Admin",
+    program: "Backend Development",
+    track: "Backend with Python",
+    purchasedCourses: 0,
+  },
+  {
+    id: "u-15",
+    name: "Tomi Bello",
+    role: "Teacher",
+    program: "Engineering",
+    track: "SolidWorks",
+    purchasedCourses: 0,
+  },
 ];
-
 export const adminBroadcasts: AdminBroadcast[] = [
   {
     id: "b1",
@@ -1600,7 +1525,6 @@ export const adminBroadcasts: AdminBroadcast[] = [
     sentAt: "Yesterday",
   },
 ];
-
 const courseCatalogConfig: Record<
   string,
   {
@@ -1620,10 +1544,17 @@ const courseCatalogConfig: Record<
     teacherId: "tp-1",
     teacherName: "Mina Duarte",
     price: 180,
-    roadmapText: "Start with interface thinking, move into responsive UI systems, then ship portfolio-ready frontend work.",
+    roadmapText:
+      "Start with interface thinking, move into responsive UI systems, then ship portfolio-ready frontend work.",
     roadmapLink: "https://roadmap.sh/frontend",
-    overview: "A frontend learning path that blends foundations, modern React patterns, and UI review discipline.",
-    schemeOfWork: ["Frontend foundations", "Responsive layout systems", "React patterns", "Portfolio delivery"],
+    overview:
+      "A frontend learning path that blends foundations, modern React patterns, and UI review discipline.",
+    schemeOfWork: [
+      "Frontend foundations",
+      "Responsive layout systems",
+      "React patterns",
+      "Portfolio delivery",
+    ],
     status: "published",
   },
   "backend-python-api-builder": {
@@ -1631,10 +1562,17 @@ const courseCatalogConfig: Record<
     teacherId: "tp-2",
     teacherName: "Ada Morgan",
     price: 220,
-    roadmapText: "Move from backend thinking into Django APIs, permissions, and production-style project delivery.",
+    roadmapText:
+      "Move from backend thinking into Django APIs, permissions, and production-style project delivery.",
     roadmapLink: "https://roadmap.sh/backend",
-    overview: "A structured backend course focused on Python, Django, API design, auth, and capstone delivery.",
-    schemeOfWork: ["Backend foundations", "API architecture", "Django workflows", "Deployment and capstone"],
+    overview:
+      "A structured backend course focused on Python, Django, API design, auth, and capstone delivery.",
+    schemeOfWork: [
+      "Backend foundations",
+      "API architecture",
+      "Django workflows",
+      "Deployment and capstone",
+    ],
     status: "published",
   },
   "backend-javascript-engine": {
@@ -1642,9 +1580,11 @@ const courseCatalogConfig: Record<
     teacherId: "tp-2",
     teacherName: "Ada Morgan",
     price: 210,
-    roadmapText: "Learn Node.js backend thinking, route design, database flow, and final project delivery.",
+    roadmapText:
+      "Learn Node.js backend thinking, route design, database flow, and final project delivery.",
     roadmapLink: "https://roadmap.sh/nodejs",
-    overview: "A backend course for learners who want JavaScript server-side fundamentals and delivery habits.",
+    overview:
+      "A backend course for learners who want JavaScript server-side fundamentals and delivery habits.",
     schemeOfWork: ["Node foundations", "Express routing", "Database flow", "Capstone build"],
     status: "published",
   },
@@ -1653,9 +1593,11 @@ const courseCatalogConfig: Record<
     teacherId: "tp-1",
     teacherName: "Mina Duarte",
     price: 165,
-    roadmapText: "Understand research, wireframes, interface systems, and case-study communication.",
+    roadmapText:
+      "Understand research, wireframes, interface systems, and case-study communication.",
     roadmapLink: "https://roadmap.sh/ux-design",
-    overview: "A learner-friendly design course focused on product thinking and polished case-study output.",
+    overview:
+      "A learner-friendly design course focused on product thinking and polished case-study output.",
     schemeOfWork: ["UX basics", "Wireframes", "UI systems", "Case-study delivery"],
     status: "published",
   },
@@ -1664,9 +1606,11 @@ const courseCatalogConfig: Record<
     teacherId: "admin-owned",
     teacherName: "Admin ownership",
     price: 260,
-    roadmapText: "Learn design thinking, engineering documentation, and review-ready technical modeling.",
+    roadmapText:
+      "Learn design thinking, engineering documentation, and review-ready technical modeling.",
     roadmapLink: "https://roadmap.sh/computer-science",
-    overview: "An engineering-focused course preserved under admin ownership after teacher access removal.",
+    overview:
+      "An engineering-focused course preserved under admin ownership after teacher access removal.",
     schemeOfWork: ["Part design", "Assemblies", "Documentation", "Engineering showcase"],
     status: "published",
   },
@@ -1675,14 +1619,20 @@ const courseCatalogConfig: Record<
     teacherId: "admin-owned",
     teacherName: "Admin ownership",
     price: 240,
-    roadmapText: "Cover cloud foundations, deployment flow, automation, monitoring, and reliable release habits.",
+    roadmapText:
+      "Cover cloud foundations, deployment flow, automation, monitoring, and reliable release habits.",
     roadmapLink: "https://roadmap.sh/devops",
-    overview: "A cloud and DevOps course structured for deployment thinking, automation, and team-ready workflows.",
-    schemeOfWork: ["Cloud foundations", "Container workflow", "Deployment systems", "Ops automation"],
+    overview:
+      "A cloud and DevOps course structured for deployment thinking, automation, and team-ready workflows.",
+    schemeOfWork: [
+      "Cloud foundations",
+      "Container workflow",
+      "Deployment systems",
+      "Ops automation",
+    ],
     status: "published",
   },
 };
-
 const paymentPurchaseCounts: Record<string, number> = {
   "frontend-react-studio": 18,
   "backend-python-api-builder": 26,
@@ -1691,7 +1641,6 @@ const paymentPurchaseCounts: Record<string, number> = {
   "solidworks-engineering-studio": 7,
   "cloud-devops-launchpad": 9,
 };
-
 export const paymentRecords: PaymentRecord[] = Object.entries(paymentPurchaseCounts).flatMap(
   ([courseId, purchases], courseIndex) =>
     Array.from({ length: purchases }, (_, index) => {
@@ -1706,11 +1655,9 @@ export const paymentRecords: PaymentRecord[] = Object.entries(paymentPurchaseCou
       } satisfies PaymentRecord;
     }),
 );
-
 export const coursePaymentSnapshots: CoursePaymentSnapshot[] = courses.map((course) => {
   const price = courseCatalogConfig[course.id]?.price ?? 0;
   const purchases = paymentPurchaseCounts[course.id] ?? 0;
-
   return {
     courseId: course.id,
     courseTitle: course.title,
@@ -1720,8 +1667,9 @@ export const coursePaymentSnapshots: CoursePaymentSnapshot[] = courses.map((cour
     revenue: price * purchases,
   };
 });
-
-export function findLesson(lessonId: string): { lesson: Lesson; course: Course; module: Module } | null {
+export function findLesson(
+  lessonId: string,
+): { lesson: Lesson; course: Course; module: Module } | null {
   for (const course of courses) {
     for (const module of course.modules) {
       const lesson = module.lessons.find((item) => item.id === lessonId);
@@ -1732,15 +1680,14 @@ export function findLesson(lessonId: string): { lesson: Lesson; course: Course; 
   }
   return null;
 }
-
-export function getPurchasedCourseIdsForUser(user?: { purchasedCourseIds?: string[]; role?: UserRole } | null) {
+export function getPurchasedCourseIdsForUser(
+  user?: { purchasedCourseIds?: string[]; role?: UserRole } | null,
+) {
   if (user?.role === "admin" || user?.role === "teacher") {
     return courses.map((course) => course.id);
   }
-
   return user?.purchasedCourseIds ?? mockUser.purchasedCourseIds ?? [];
 }
-
 export function isCoursePurchased(
   courseOrId: Course | string,
   user?: { purchasedCourseIds?: string[]; role?: UserRole } | null,
@@ -1748,7 +1695,6 @@ export function isCoursePurchased(
   const courseId = typeof courseOrId === "string" ? courseOrId : courseOrId.id;
   return getPurchasedCourseIdsForUser(user).includes(courseId);
 }
-
 export function getCourseMeta(course: Course) {
   const meta = courseCatalogConfig[course.id];
   return {
@@ -1762,21 +1708,17 @@ export function getCourseMeta(course: Course) {
     roadmapLink: meta?.roadmapLink,
     overview: meta?.overview ?? course.description,
     schemeOfWork:
-      meta?.schemeOfWork ??
-      course.modules.map((module) => `Week ${module.week}: ${module.title}`),
+      meta?.schemeOfWork ?? course.modules.map((module) => `Week ${module.week}: ${module.title}`),
     status: meta?.status ?? "published",
   };
 }
-
 export function getCoursePrice(course: Course) {
   return getCourseMeta(course).price;
 }
-
 export function getPlatformOverview() {
   const students = adminUsers.filter((user) => user.role === "Student").length;
   const tutors = teacherProfileOptions.filter((teacher) => teacher.isActive !== false).length;
   const admins = adminUsers.filter((user) => user.role === "Admin").length;
-
   return {
     totalStudents: students,
     totalTutors: tutors,
@@ -1784,15 +1726,15 @@ export function getPlatformOverview() {
     totalCourses: courses.length,
   };
 }
-
 export function getTeacherRows() {
   return teacherProfileOptions.map((teacher) => {
     const ownedCourses = courses.filter((course) => getCourseMeta(course).teacherId === teacher.id);
-
     return {
       id: teacher.id,
       name: teacher.name,
-      email: teacher.email ?? `${teacher.username ?? teacher.name.toLowerCase().replace(/\s+/g, ".")}@mooreskillup.com`,
+      email:
+        teacher.email ??
+        `${teacher.username ?? teacher.name.toLowerCase().replace(/\s+/g, ".")}@mooreskillup.com`,
       role: "Teacher",
       program: teacher.program,
       track: teacher.track,
@@ -1802,7 +1744,6 @@ export function getTeacherRows() {
     };
   });
 }
-
 export function getAdminCourseRows() {
   return courses.map((course) => ({
     id: course.id,
@@ -1812,25 +1753,19 @@ export function getAdminCourseRows() {
     status: getCourseMeta(course).status,
   }));
 }
-
 export function getRevenueSummary() {
   const totalRevenue = coursePaymentSnapshots.reduce((sum, item) => sum + item.revenue, 0);
-
-  return {
-    totalRevenue,
-    totalPurchases: paymentRecords.length,
-    byCourse: coursePaymentSnapshots,
-  };
+  return { totalRevenue, totalPurchases: paymentRecords.length, byCourse: coursePaymentSnapshots };
 }
-
 export function getNotificationsForRole(role: UserRole = "student") {
   const dashboardNotifications = notifications.filter((item) => {
     if (!item.target) return role === "student";
     return role === "teacher" ? item.target === "tutors" : item.target === "all-students";
   });
-
   const adminMessages = adminBroadcasts
-    .filter((item) => (role === "teacher" ? item.target === "tutors" : item.target === "all-students"))
+    .filter((item) =>
+      role === "teacher" ? item.target === "tutors" : item.target === "all-students",
+    )
     .map((item) => ({
       id: `broadcast-${item.id}`,
       title: item.title,
@@ -1842,10 +1777,8 @@ export function getNotificationsForRole(role: UserRole = "student") {
       read: false,
       time: item.sentAt,
     }));
-
   return [...adminMessages, ...dashboardNotifications];
 }
-
 export function todaysLesson(
   userOrPlan:
     | UserPlan
@@ -1858,11 +1791,11 @@ export function todaysLesson(
   const viewer =
     typeof userOrPlan === "string"
       ? {
-          purchasedCourseIds: userOrPlan === "free" ? [] : orderedCourses.map((course) => course.id),
+          purchasedCourseIds:
+            userOrPlan === "free" ? [] : orderedCourses.map((course) => course.id),
           role: "student" as UserRole,
         }
       : userOrPlan;
-
   for (const course of orderedCourses) {
     const sections = getCourseSections(course, viewer);
     for (const section of sections) {
@@ -1870,56 +1803,44 @@ export function todaysLesson(
       const nextLesson = section.lessons.find((lesson) => lesson.status !== "locked");
       if (nextLesson) {
         const module = course.modules.find((item) => item.id === section.id) ?? course.modules[0];
-        const rawLesson = module.lessons.find((item) => item.id === nextLesson.id) ?? module.lessons[0];
+        const rawLesson =
+          module.lessons.find((item) => item.id === nextLesson.id) ?? module.lessons[0];
         return { course, lesson: rawLesson, module };
       }
     }
   }
-
   const course = orderedCourses[0] ?? courses[0];
   return { course, lesson: course.modules[0].lessons[0], module: course.modules[0] };
 }
-
 export function getCoursesByInterest(selectedInterests: Interest[]) {
   if (!selectedInterests.length) {
     return courses;
   }
-
   const matches = courses.filter((course) => selectedInterests.includes(course.interest));
   const rest = courses.filter((course) => !selectedInterests.includes(course.interest));
   return [...matches, ...rest];
 }
-
 export function getTodayName(date = new Date()): Weekday {
   return date.toLocaleDateString("en-US", { weekday: "long" }) as Weekday;
 }
-
 export function canAccessCourse(course: Course, plan: UserPlan, day = getTodayName()) {
   if (plan !== "free") {
     return { allowed: true, reason: null as string | null };
   }
-
   if (course.access === "paid") {
     return { allowed: false, reason: "Upgrade to Pro to unlock this course." };
   }
-
   if (course.availableOn && course.availableOn !== day) {
     return {
       allowed: false,
       reason: `Free learners can access this course on ${course.availableOn}.`,
     };
   }
-
   return { allowed: true, reason: null as string | null };
 }
-
 export function getLearnerDashboardCourses(
   selectedInterests: Interest[],
-  userOrPlan:
-    | UserPlan
-    | { purchasedCourseIds?: string[]; role?: UserRole }
-    | null
-    | undefined,
+  userOrPlan: UserPlan | { purchasedCourseIds?: string[]; role?: UserRole } | null | undefined,
 ) {
   const ordered = getCoursesByInterest(selectedInterests);
   const viewer =
@@ -1937,19 +1858,13 @@ export function getLearnerDashboardCourses(
   const locked = ordered.filter((course) =>
     getCourseSections(course, viewer).some((section) => section.isLocked),
   );
-
-  return {
-    current: current.length ? current : ordered.slice(0, 2),
-    recommended,
-    unlocked,
-    locked,
-  };
+  return { current: current.length ? current : ordered.slice(0, 2), recommended, unlocked, locked };
 }
-
 export function getPlanComparisonNotes(plan: PricingPlan) {
-  return [plan.accessSummary, plan.supportSummary, plan.certificateSummary].filter(Boolean) as string[];
+  return [plan.accessSummary, plan.supportSummary, plan.certificateSummary].filter(
+    Boolean,
+  ) as string[];
 }
-
 export function getCourseRoadmap(course: Course) {
   const meta = getCourseMeta(course);
   return [
@@ -1960,7 +1875,6 @@ export function getCourseRoadmap(course: Course) {
     ),
   ];
 }
-
 export function getCoursePrerequisites(course: Course) {
   return [
     `Commit to the ${course.track} pathway and weekly study schedule.`,
@@ -1968,22 +1882,15 @@ export function getCoursePrerequisites(course: Course) {
     "Submit the weekly assessment or project before moving into the capstone phase.",
   ];
 }
-
 export function isSectionFree(course: Course, sectionIndex: number) {
   if (course.access === "free") {
     return sectionIndex < Math.min(2, course.modules.length);
   }
-
   return sectionIndex === 0;
 }
-
 export function getCourseSections(
   course: Course,
-  userOrPlan:
-    | UserPlan
-    | { purchasedCourseIds?: string[]; role?: UserRole }
-    | null
-    | undefined,
+  userOrPlan: UserPlan | { purchasedCourseIds?: string[]; role?: UserRole } | null | undefined,
 ): CourseSection[] {
   const viewer =
     typeof userOrPlan === "string"
@@ -1993,11 +1900,9 @@ export function getCourseSections(
         }
       : userOrPlan;
   const purchased = isCoursePurchased(course, viewer);
-
   return course.modules.map((module, index) => {
     const free = isSectionFree(course, index);
     const locked = !purchased && !free;
-
     return {
       id: module.id,
       title: module.title,
@@ -2027,41 +1932,29 @@ export function getCourseSections(
     };
   });
 }
-
 export function canAccessLessonInCourse(
   course: Course,
   lessonId: string,
-  userOrPlan:
-    | UserPlan
-    | { purchasedCourseIds?: string[]; role?: UserRole }
-    | null
-    | undefined,
+  userOrPlan: UserPlan | { purchasedCourseIds?: string[]; role?: UserRole } | null | undefined,
 ) {
   return getCourseSections(course, userOrPlan).some(
     (section) => !section.isLocked && section.lessons.some((lesson) => lesson.id === lessonId),
   );
 }
-
 export function getLessonNavigation(
   course: Course,
   lessonId: string,
-  userOrPlan:
-    | UserPlan
-    | { purchasedCourseIds?: string[]; role?: UserRole }
-    | null
-    | undefined,
+  userOrPlan: UserPlan | { purchasedCourseIds?: string[]; role?: UserRole } | null | undefined,
 ) {
   const lessons = getCourseSections(course, userOrPlan)
     .filter((section) => !section.isLocked)
     .flatMap((section) => section.lessons);
   const index = lessons.findIndex((lesson) => lesson.id === lessonId);
-
   return {
     previous: index > 0 ? lessons[index - 1] : null,
     next: index >= 0 && index < lessons.length - 1 ? lessons[index + 1] : null,
   };
 }
-
 export function isCourseCompleted(course: Course) {
   return course.completedLessons >= course.totalLessons;
 }

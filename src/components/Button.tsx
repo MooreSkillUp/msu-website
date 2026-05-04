@@ -1,30 +1,26 @@
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
-
 type Variant = "primary" | "accent" | "outline" | "ghost" | "subtle";
 type Size = "sm" | "md" | "lg";
-
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
 }
-
 const variants: Record<Variant, string> = {
   primary:
-    "bg-primary text-primary-foreground hover:bg-primary-glow shadow-sm shadow-primary/20",
+    "bg-primary text-primary-foreground hover:bg-[#de7300] hover:text-white hover:border-[#de7300]",
   accent:
-    "bg-accent text-accent-foreground hover:brightness-110 shadow-sm shadow-accent/30",
-  outline: "border border-border bg-transparent hover:bg-muted text-foreground",
-  ghost: "bg-transparent hover:bg-muted text-foreground",
-  subtle: "bg-muted text-foreground hover:bg-secondary",
+    "bg-accent text-accent-foreground hover:bg-[#de7300] hover:text-white hover:border-[#de7300]",
+  outline:
+    "border border-border bg-transparent hover:bg-[#de7300] hover:text-white hover:border-[#de7300]",
+  ghost: "bg-transparent hover:bg-[#de7300] hover:text-white",
+  subtle: "bg-muted text-foreground hover:bg-[#de7300] hover:text-white",
 };
-
 const sizes: Record<Size, string> = {
   sm: "h-8 px-3 text-sm",
   md: "h-10 px-4 text-sm",
   lg: "h-12 px-6 text-base",
 };
-
 export const Button = forwardRef<HTMLButtonElement, Props>(
   ({ className, variant = "primary", size = "md", ...props }, ref) => (
     <button
