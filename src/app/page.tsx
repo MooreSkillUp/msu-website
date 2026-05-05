@@ -1,9 +1,370 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Star, ArrowRight, PlayCircle, Plus } from "lucide-react";
+import { Star, ArrowRight, Plus } from "lucide-react";
 import { Button } from "@/components/Button";
 import { academyPrograms, courses, faqItems } from "@/lib/mock-data";
+
+const companyLogos = [
+  "blueenergy",
+  "chekpeople",
+  "cleanhose",
+  "copower",
+  "happypower",
+  "newcloud",
+  "beehouse",
+  "bludiamond",
+];
+
+const heroHighlights = [
+  { label: "Courses", value: "320+" },
+  { label: "Students", value: "100k+" },
+  { label: "Instructors", value: "40+" },
+];
+
+const heroImages = [
+  "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
+];
+
+const testimonials = [
+  {
+    id: 1,
+    quote:
+      "BrightMind has truly transformed my career. The courses are clear, focused, and easy to follow. I finished faster than expected.",
+    author: "Kathryn Murphy",
+    role: "UX Designer",
+    avatar: "KM",
+  },
+  {
+    id: 2,
+    quote:
+      "The content is rich and practical. I learned new skills that I could apply immediately in real work projects.",
+    author: "Bessie Cooper",
+    role: "Product Designer",
+    avatar: "BC",
+  },
+  {
+    id: 3,
+    quote:
+      "I joined BrightMind for the flexible schedule and the expert instructors. The experience exceeded my expectations.",
+    author: "Eleanor Pena",
+    role: "Frontend Developer",
+    avatar: "EP",
+  },
+];
+
 export default function HomePage() {
-  // Testimonial mock data const testimonials = [ { id: 1, quote: "MooreSkillUp has truly transformed my career. The structured courses and hands-on projects helped me land my dream job in tech. Highly recommend to anyone looking to upskill!", author: "Kathryn Murphy", role: "Web Developer", avatar: "KM", }, { id: 2, quote: "The courses are so well structured and easy to follow. I loved the interactive elements and the community support. It feels like a real classroom experience, but better.", author: "Devon Lane", role: "UI/UX Designer", avatar: "DL", }, { id: 3, quote: "I've tried several online learning platforms, but MooreSkillUp stands out. The instructors are top-notch, and the content is always up- with industry standards. The value is unmatched.", author: "Eleanor Pena", role: "Data Analyst", avatar: "EP", } ]; return ( <main className="bg-background pb-20"> {/* 1. Hero Section */} <section className="relative overflow-hidden pt-20 pb-16"> <div className="absolute top-10 left-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl" /> <div className="absolute top-40 right-20 w-32 h-32 bg-accent/10 rounded-full blur-2xl" /> <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative z-10"> <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex justify-center mb-6" > <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold"> <Star className="w-4 h-4" /> Top E-Learning Platform </span> </motion.div> <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-5xl md:text-7xl font-bold tracking-tight text-foreground max-w-4xl mx-auto leading-[1.1]" > Learn and Grow with <br /> Online Courses </motion.h1> <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed" > Discover thousands of online courses from top experts. Build your skills, advance your career, and achieve your goals. </motion.p> <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="mt-10 flex flex-wrap justify-center gap-4" > <Link href="/auth/register"> <Button size="lg" className="rounded-full px-8 h-14 text-base">Start Learning</Button> </Link> <Link href="/courses"> <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-base gap-2"> <PlayCircle className="w-5 h-5" /> Explore </Button> </Link> </motion.div> {/* Hero Decor/Images */} <div className="mt-16 flex flex-col md:flex-row justify-center gap-6 max-w-5xl mx-auto"> <div className="w-full md:w-1/3 aspect-[4/3] bg-muted/50 rounded-[2rem] overflow-hidden border border-border flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"> </div> <div className="w-full md:w-1/3 aspect-[4/3] bg-accent/10 rounded-[2rem] border border-accent/20 flex flex-col items-center justify-center p-6 text-center"> <div className="flex -space-x-3 mb-5"> <div className="w-12 h-12 rounded-full border-2 border-background bg-primary flex items-center justify-center text-white text-xs font-bold">JD</div> <div className="w-12 h-12 rounded-full border-2 border-background bg-accent flex items-center justify-center text-white text-xs font-bold">AM</div> <div className="w-12 h-12 rounded-full border-2 border-background bg-blue-400 flex items-center justify-center text-white text-xs font-bold">SJ</div> </div> <h3 className="font-bold text-lg text-foreground">500+ Top Instructors</h3> <p className="text-sm text-muted-foreground mt-2 px-4">Learn from the best industry experts worldwide.</p> </div> <div className="w-full md:w-1/3 aspect-[4/3] bg-muted/50 rounded-[2rem] overflow-hidden border border-border flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"> </div> </div> </div> </section> {/* 3. Categories */} <section className="py-24 bg-background"> <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"> <div className="flex flex-col md:flex-row md:items-end justify-between mb-12"> <div> <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">Explore Course Categories</h2> </div> <div className="mt-6 md:mt-0 flex gap-3"> <Button variant="outline" size="sm" className="rounded-full w-12 h-12 p-0 flex items-center justify-center hover:bg-[#de7300] hover:border-[#de7300] hover:text-white transition-colors"> <ArrowRight className="w-5 h-5 rotate-180" /> </Button> <Button variant="outline" size="sm" className="rounded-full w-12 h-12 p-0 flex items-center justify-center hover:bg-[#de7300] hover:border-[#de7300] hover:text-white transition-colors"> <ArrowRight className="w-5 h-5" /> </Button> </div> </div> <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> {academyPrograms.slice(0, 4).map((prog, i) => { const bgColors = ["bg-blue-50/50 dark:bg-blue-900/10", "bg-green-50/50 dark:bg-green-900/10", "bg-yellow-50/50 dark:bg-yellow-900/10", "bg-purple-50/50 dark:bg-purple-900/10"]; const iconColors = ["text-blue-500", "text-green-500", "text-yellow-500", "text-purple-500"]; return ( <Link href="/courses" key={prog.id}> <div className={`${bgColors[i % 4]} rounded-[2rem] p-8 transition-all hover:-translate-y-2 cursor-pointer border border-border/50 h-full`}> <div className="w-14 h-14 bg-white dark:bg-card rounded-2xl flex items-center justify-center mb-8 text-2xl font-bold"> <span className={iconColors[i % 4]}>{prog.iconLabel}</span> </div> <h3 className="font-bold text-xl mb-3">{prog.title}</h3> <p className="text-sm text-muted-foreground font-medium">{prog.branches.length * 5}+ Courses</p> </div> </Link> ); })} </div> </div> </section> {/* 6. Testimonials */} <section className="py-24 bg-muted/30"> <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center"> <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-16 leading-tight"> What <span className="text-primary">Learners Saying</span> <br /> About MooreSkillUp </h2> <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left"> {testimonials.map((t) => ( <div key={t.id} className="bg-card rounded-[2rem] p-8 border border-border flex flex-col h-full relative transition-"> <div className="text-primary/20 absolute top-8 right-8"> <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" /> </svg> </div> <p className="text-foreground leading-relaxed flex-grow z-10 text-lg mb-8">"{t.quote}"</p> <div className="flex items-center gap-4 pt-6 border-t border-border/60 z-10"> <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg"> {t.avatar} </div> <div> <div className="font-bold text-foreground">{t.author}</div> <div className="text-sm text-primary font-medium">{t.role}</div> </div> </div> </div> ))} </div> </div> </section> {/* 7. FAQ */} <section className="py-24 bg-background"> <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8"> <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12 text-center">Frequently Asked <br /> Questions</h2> <div className="space-y-4"> {faqItems.slice(0, 5).map((faq, i) => ( <div key={i} className="rounded-2xl bg-muted/50 p-6 flex justify-between items-center cursor-pointer hover:bg-muted transition-colors border border-border/50"> <h3 className="font-semibold text-lg pr-8">{faq.question}</h3> <div className="flex-shrink-0 w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center"> <Plus className="w-4 h-4 text-muted-foreground" /> </div> </div> ))} </div> </div> </section> {/* 8. CTA */} <section className="py-16 bg-background px-4"> <div className="mx-auto max-w-6xl rounded-[3rem] bg-primary p-12 md:p-20 text-center relative overflow-hidden"> {/* Decorative elements */} <div className="absolute top-10 left-20 w-32 h-32 bg-white/10 rounded-full blur-2xl" /> <div className="absolute bottom-10 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl" /> <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-10 relative z-10 leading-tight"> Take the First Step - <br /> Start Learning Today! </h2> <Link href="/auth/register" className="relative z-10 inline-block"> <Button size="lg" className="rounded-full bg-white text-primary hover:bg-[#de7300] hover:text-white px-12 h-16 text-lg font-bold hover:-translate-y-1 transition-all"> Join For Free </Button> </Link> </div> </section> </main> );
+  return (
+    <main className="bg-background text-foreground">
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.14),transparent_30%),#ffffff] py-20">
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/80 to-transparent" />
+        <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/5 px-5 py-2 text-sm font-semibold text-primary"
+              >
+                <Star className="h-4 w-4" />
+                Top online learning platform for career growth
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.05 }}
+                className="space-y-6"
+              >
+                <h1 className="max-w-3xl text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+                  Learn and Grow with <span className="text-[#6d28d9]">Top Online Courses</span>
+                </h1>
+                <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
+                  Discover top online courses designed to help you build skills, advance your career, and learn at your own pace.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="flex flex-wrap items-center gap-4"
+              >
+                <Link href="/courses">
+                  <Button size="lg" className="rounded-full px-8 h-14 text-base">
+                    Explore Courses
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-base">
+                    Contact Us
+                  </Button>
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="grid grid-cols-1 gap-4 sm:grid-cols-3"
+              >
+                {heroHighlights.map((item) => (
+                  <div key={item.label} className="rounded-3xl border border-border bg-white/90 p-6 shadow-sm">
+                    <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">{item.label}</p>
+                    <p className="mt-4 text-3xl font-bold text-foreground">{item.value}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid gap-6"
+            >
+              <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white shadow-lg">
+                <img
+                  src={heroImages[0]}
+                  alt="Student working on laptop"
+                  className="h-[520px] w-full object-cover"
+                />
+                <div className="absolute bottom-6 left-6 rounded-3xl bg-white/95 p-6 shadow-xl backdrop-blur-md">
+                  <p className="text-sm uppercase tracking-[0.2em] text-primary">Average course completion</p>
+                  <p className="mt-2 text-3xl font-semibold text-foreground">93%</p>
+                </div>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div className="rounded-[2rem] border border-border bg-white p-6 shadow-sm">
+                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">We have</p>
+                  <p className="mt-4 text-3xl font-bold text-foreground">40+ Professional Teachers</p>
+                </div>
+                <div className="rounded-[2rem] border border-border bg-white p-6 shadow-sm">
+                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Accelerate</p>
+                  <p className="mt-4 text-3xl font-bold text-foreground">Build real skills fast</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-4 rounded-full border border-border bg-white/80 px-5 py-4 text-center shadow-sm lg:grid-cols-4"
+          >
+            {companyLogos.map((logo) => (
+              <span key={logo} className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                {logo}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Explore Course Categories</p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Explore Course Categories</h2>
+            </div>
+            <Link href="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#de7300]">
+              View All Categories <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {academyPrograms.slice(0, 4).map((program, index) => {
+              const bgColors = ["bg-sky-50", "bg-emerald-50", "bg-amber-50", "bg-violet-50"];
+              const textColors = ["text-sky-700", "text-emerald-700", "text-amber-700", "text-violet-700"];
+              return (
+                <Link
+                  href="/courses"
+                  key={program.id}
+                  className="group overflow-hidden rounded-[2rem] border border-border bg-white p-8 transition hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <div className={`inline-flex h-14 w-14 items-center justify-center rounded-3xl ${bgColors[index % bgColors.length]} ${textColors[index % textColors.length]} text-xl font-semibold`}>
+                    {program.iconLabel}
+                  </div>
+                  <h3 className="mt-8 text-2xl font-semibold text-foreground">{program.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{program.description}</p>
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    Explore tracks <ArrowRight className="h-4 w-4" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Most Popular Courses</p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Popular Courses</h2>
+            </div>
+            <Link href="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#de7300]">
+              View All Courses <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {courses.slice(0, 6).map((course, index) => {
+              const coverImages = [
+                "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
+              ];
+              const coursePrice = course.access === "free" ? "Free" : "$29.99";
+              return (
+                <Link
+                  href="/courses"
+                  key={course.id}
+                  className="group overflow-hidden rounded-[2rem] border border-border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <div
+                    className="aspect-[4/3] bg-cover bg-center"
+                    style={{ backgroundImage: `url(${coverImages[index % coverImages.length]})` }}
+                  />
+                  <div className="p-6">
+                    <div className="mb-4 flex items-center justify-between text-sm text-muted-foreground">
+                      <span className="rounded-full bg-muted px-3 py-1">{course.level}</span>
+                      <span className="font-semibold text-foreground">{course.rating.toFixed(1)} ★</span>
+                    </div>
+                    <h3 className="text-2xl font-semibold text-foreground">{course.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{course.description}</p>
+                    <div className="mt-6 flex items-center justify-between text-sm text-muted-foreground">
+                      <span>{course.learners}+ learners</span>
+                      <span className="font-semibold text-foreground">{coursePrice}</span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-slate-50 shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1517430816045-df4b7de46b8c?auto=format&fit=crop&w=1000&q=80"
+              alt="Student reading"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute bottom-6 left-6 rounded-[2rem] bg-white/90 p-6 shadow-2xl backdrop-blur-md">
+              <p className="text-sm uppercase tracking-[0.2em] text-primary">Average completion rate</p>
+              <p className="mt-2 text-3xl font-semibold text-foreground">93%</p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center gap-8">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Unlocking Knowledge</p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Unlocking Knowledge with BrightMind</h2>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                BrightMind offers cutting-edge learning experiences designed to help learners reach their goals with expert instructors, structured courses, and practical projects.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-[2rem] border border-border bg-muted p-6">
+                <h3 className="text-3xl font-bold text-foreground">500+</h3>
+                <p className="mt-3 text-sm text-muted-foreground">Hours of expert courses across growing learning paths.</p>
+              </div>
+              <div className="rounded-[2rem] border border-border bg-muted p-6">
+                <h3 className="text-3xl font-bold text-foreground">100,000+</h3>
+                <p className="mt-3 text-sm text-muted-foreground">Students learned skills and advanced their careers with BrightMind.</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="rounded-full px-10 h-14">Explore Courses</Button>
+              <Button variant="outline" size="lg" className="rounded-full px-10 h-14">Contact Us</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">What learners are saying</p>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">What Learners Saying About BrightMind</h2>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="rounded-[2rem] border border-border bg-white p-8 shadow-sm">
+                <p className="text-lg leading-8 text-muted-foreground">"{testimonial.quote}"</p>
+                <div className="mt-8 flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">{testimonial.avatar}</div>
+                  <div>
+                    <p className="font-semibold text-foreground">{testimonial.author}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.65fr_0.35fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Frequently Asked Questions</p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Frequently Asked Questions</h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+                Answers to the most common questions about the BrightMind learning experience.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {faqItems.slice(0, 5).map((faq, index) => (
+                <div key={index} className="flex items-center justify-between gap-4 rounded-[2rem] border border-border bg-muted p-6">
+                  <div>
+                    <p className="font-semibold text-foreground">{faq.question}</p>
+                  </div>
+                  <Plus className="h-5 w-5 text-primary" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gradient-to-br from-[#7c3aed] via-[#8b5cf6] to-[#c084fc] text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-[3rem] bg-white/10 p-12 shadow-2xl shadow-violet-500/20 lg:p-16">
+            <div className="grid gap-10 lg:grid-cols-[0.6fr_0.4fr] lg:items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Ready to get started?</p>
+                <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Take the first step — start learning today!</h2>
+                <p className="mt-6 max-w-2xl text-base leading-7 text-white/80">
+                  Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link
+                  href="/auth/register"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 text-center font-semibold text-[#4f46e5] shadow-lg shadow-white/20 transition hover:bg-slate-100 sm:w-auto"
+                >
+                  Join Now
+                </Link>
+                <Link
+                  href="/courses"
+                  className="inline-flex w-full items-center justify-center rounded-full border border-white/40 bg-white/10 px-8 py-4 text-center font-semibold text-white transition hover:bg-white/20 sm:w-auto"
+                >
+                  Explore Courses
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
