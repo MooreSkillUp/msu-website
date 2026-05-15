@@ -13,10 +13,10 @@ export default function ContactPage() {
         {" "}
         <div className="mb-12 text-center">
           {" "}
-          <div className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+          {/* <div className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
             {" "}
             Get in touch{" "}
-          </div>{" "}
+          </div>{" "} */}
           <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
             {" "}
             Contact our team{" "}

@@ -14,10 +14,10 @@ export default function PricingPage() {
         {" "}
         <div className="mb-12 text-center">
           {" "}
-          <div className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
+          {/* <div className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
             {" "}
             Pricing{" "}
-          </div>{" "}
+          </div>{" "} */}
           <h1 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
             {" "}
             Start free, then unlock full power{" "}

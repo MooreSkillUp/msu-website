@@ -16,10 +16,10 @@ export default function QuizShopPage() {
           {" "}
           <div>
             {" "}
-            <div className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
+            {/* <div className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
               {" "}
               Rewards{" "}
-            </div>{" "}
+            </div>{" "} */}
             <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
               {" "}
               Quiz Shop{" "}

@@ -116,7 +116,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Explore Course Categories</p>
+              {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Explore Course Categories</p> */}
               <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Explore Course Categories</h2>
             </div>
             <Link href="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#de7300]">
@@ -153,7 +153,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Most Popular Courses</p>
+              {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Most Popular Courses</p> */}
               <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Popular Courses</h2>
             </div>
             <Link href="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#de7300]">
@@ -204,7 +204,7 @@ export default function HomePage() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">What learners are saying</p>
+            {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">What learners are saying</p> */}
             <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">What Learners Saying About BrightMind</h2>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -228,7 +228,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.65fr_0.35fr] lg:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Frequently Asked Questions</p>
+              {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Frequently Asked Questions</p> */}
               <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Frequently Asked Questions</h2>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
                 Answers to the most common questions about the BrightMind learning experience.
@@ -253,7 +253,7 @@ export default function HomePage() {
           <div className="rounded-[3rem] bg-gradient-to-br from-[#024293] to-[#FC6202] text-white p-12 shadow-2xl lg:p-16">
             <div className="grid gap-10 lg:grid-cols-[0.6fr_0.4fr] lg:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Ready to get started?</p>
+                {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Ready to get started?</p> */}
                 <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Take the first step, start learning today!</h2>
                 <p className="mt-6 max-w-2xl text-base leading-7 text-white/80">
                   Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed.

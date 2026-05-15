@@ -11,10 +11,10 @@ export default function CoursesPage() {
         {" "}
         <div className="mb-8">
           {" "}
-          <div className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+          {/* <div className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
             {" "}
             Learning Paths{" "}
-          </div>{" "}
+          </div>{" "} */}
           <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
             {" "}
             Explore our Courses{" "}
