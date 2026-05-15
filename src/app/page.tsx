@@ -57,8 +57,8 @@ const testimonials = [
 export default function HomePage() {
   return (
     <main className="bg-background text-foreground">
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.14),transparent_30%),#ffffff] py-20">
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/80 to-transparent" />
+      <section className="relative overflow-hidden py-20">
+        <div className="absolute inset-x-0 top-0 h-40" />
         <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="space-y-8">
@@ -99,7 +99,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="grid gap-6"
             >
-              <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white shadow-lg">
+              <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white dark:bg-card shadow-lg">
                 <img
                   src={heroImages[0]}
                   alt="Student working on laptop"
@@ -127,16 +127,16 @@ export default function HomePage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {academyPrograms.slice(0, 4).map((program, index) => {
               const bgColors = ["bg-sky-50", "bg-emerald-50", "bg-amber-50", "bg-violet-50"];
+              const darkBgColors = ["dark:bg-sky-900", "dark:bg-emerald-900", "dark:bg-amber-900", "dark:bg-violet-900"];
               const textColors = ["text-sky-700", "text-emerald-700", "text-amber-700", "text-violet-700"];
               return (
                 <Link
                   href="/courses"
                   key={program.id}
-                  className="group overflow-hidden rounded-[2rem] border border-border bg-white p-8 transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group overflow-hidden rounded-[2rem] border border-border bg-white dark:bg-card p-8 transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className={`inline-flex h-14 w-14 items-center justify-center rounded-3xl ${bgColors[index % bgColors.length]} ${textColors[index % textColors.length]} text-xl font-semibold`}>
-                    {program.iconLabel}
-                  </div>
+                  <div className={`inline-flex h-14 w-14 items-center justify-center rounded-3xl ${bgColors[index % bgColors.length]} ${darkBgColors[index % darkBgColors.length]} ${textColors[index % textColors.length]} text-xl font-semibold`}>
+                    {program.iconLabel}</div>
                   <h3 className="mt-8 text-2xl font-semibold text-foreground">{program.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">{program.description}</p>
                   <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
@@ -176,7 +176,7 @@ export default function HomePage() {
                 <Link
                   href="/courses"
                   key={course.id}
-                  className="group overflow-hidden rounded-[2rem] border border-border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group overflow-hidden rounded-[2rem] border border-border bg-white dark:bg-card transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div
                     className="aspect-[4/3] bg-cover bg-center"
@@ -209,7 +209,7 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="rounded-[2rem] border border-border bg-white p-8 shadow-sm">
+              <div key={testimonial.id} className="rounded-[2rem] border border-border bg-white dark:bg-card p-8">
                 <p className="text-lg leading-8 text-muted-foreground">"{testimonial.quote}"</p>
                 <div className="mt-8 flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">{testimonial.avatar}</div>
@@ -248,13 +248,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-[#7c3aed] via-[#8b5cf6] to-[#c084fc] text-white">
+      <section className="pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[3rem] bg-white/10 p-12 shadow-2xl shadow-violet-500/20 lg:p-16">
+          <div className="rounded-[3rem] bg-gradient-to-br from-[#024293] to-[#FC6202] text-white p-12 shadow-2xl lg:p-16">
             <div className="grid gap-10 lg:grid-cols-[0.6fr_0.4fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Ready to get started?</p>
-                <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Take the first step — start learning today!</h2>
+                <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Take the first step, start learning today!</h2>
                 <p className="mt-6 max-w-2xl text-base leading-7 text-white/80">
                   Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed.
                 </p>
@@ -262,7 +262,7 @@ export default function HomePage() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
                   href="/auth/register"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 text-center font-semibold text-[#4f46e5] shadow-lg shadow-white/20 transition hover:bg-slate-100 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-white dark:bg-slate-100/95 px-8 py-4 text-center font-semibold text-black shadow-lg shadow-white/20 transition hover:bg-slate-100 dark:hover:bg-slate-200/95 sm:w-auto"
                 >
                   Join Now
                 </Link>
