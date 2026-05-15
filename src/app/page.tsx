@@ -65,21 +65,10 @@ export default function HomePage() {
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/5 px-5 py-2 text-sm font-semibold text-primary"
-              >
-                <Star className="h-4 w-4" />
-                Top online learning platform for career growth
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.05 }}
                 className="space-y-6"
               >
-                <h1 className="max-w-3xl text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-                  Learn and Grow with <span className="text-[#6d28d9]">Top Online Courses</span>
-                </h1>
+                <h1 className="max-w-3xl text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">Learn and Grow with Top Online Courses</h1>
                 <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
                   Discover top online courses designed to help you build skills, advance your career, and learn at your own pace.
                 </p>
@@ -101,19 +90,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="grid grid-cols-1 gap-4 sm:grid-cols-3"
-              >
-                {heroHighlights.map((item) => (
-                  <div key={item.label} className="rounded-3xl border border-border bg-white/90 p-6 shadow-sm">
-                    <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">{item.label}</p>
-                    <p className="mt-4 text-3xl font-bold text-foreground">{item.value}</p>
-                  </div>
-                ))}
-              </motion.div>
+
             </div>
 
             <motion.div
@@ -128,36 +105,10 @@ export default function HomePage() {
                   alt="Student working on laptop"
                   className="h-[520px] w-full object-cover"
                 />
-                <div className="absolute bottom-6 left-6 rounded-3xl bg-white/95 p-6 shadow-xl backdrop-blur-md">
-                  <p className="text-sm uppercase tracking-[0.2em] text-primary">Average course completion</p>
-                  <p className="mt-2 text-3xl font-semibold text-foreground">93%</p>
-                </div>
-              </div>
-              <div className="grid gap-6 sm:grid-cols-2">
-                <div className="rounded-[2rem] border border-border bg-white p-6 shadow-sm">
-                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">We have</p>
-                  <p className="mt-4 text-3xl font-bold text-foreground">40+ Professional Teachers</p>
-                </div>
-                <div className="rounded-[2rem] border border-border bg-white p-6 shadow-sm">
-                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Accelerate</p>
-                  <p className="mt-4 text-3xl font-bold text-foreground">Build real skills fast</p>
-                </div>
+
               </div>
             </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-4 rounded-full border border-border bg-white/80 px-5 py-4 text-center shadow-sm lg:grid-cols-4"
-          >
-            {companyLogos.map((logo) => (
-              <span key={logo} className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-                {logo}
-              </span>
-            ))}
-          </motion.div>
         </div>
       </section>
 
@@ -198,7 +149,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 bg-muted/30">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
@@ -250,46 +201,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 bg-background">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-slate-50 shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1517430816045-df4b7de46b8c?auto=format&fit=crop&w=1000&q=80"
-              alt="Student reading"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute bottom-6 left-6 rounded-[2rem] bg-white/90 p-6 shadow-2xl backdrop-blur-md">
-              <p className="text-sm uppercase tracking-[0.2em] text-primary">Average completion rate</p>
-              <p className="mt-2 text-3xl font-semibold text-foreground">93%</p>
-            </div>
-          </div>
-          <div className="flex flex-col justify-center gap-8">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Unlocking Knowledge</p>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Unlocking Knowledge with BrightMind</h2>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                BrightMind offers cutting-edge learning experiences designed to help learners reach their goals with expert instructors, structured courses, and practical projects.
-              </p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[2rem] border border-border bg-muted p-6">
-                <h3 className="text-3xl font-bold text-foreground">500+</h3>
-                <p className="mt-3 text-sm text-muted-foreground">Hours of expert courses across growing learning paths.</p>
-              </div>
-              <div className="rounded-[2rem] border border-border bg-muted p-6">
-                <h3 className="text-3xl font-bold text-foreground">100,000+</h3>
-                <p className="mt-3 text-sm text-muted-foreground">Students learned skills and advanced their careers with BrightMind.</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="rounded-full px-10 h-14">Explore Courses</Button>
-              <Button variant="outline" size="lg" className="rounded-full px-10 h-14">Contact Us</Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-muted/30">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">What learners are saying</p>
