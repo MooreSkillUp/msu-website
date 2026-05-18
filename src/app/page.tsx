@@ -31,7 +31,7 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "BrightMind has truly transformed my career. The courses are clear, focused, and easy to follow. I finished faster than expected.",
+      "MooreSkillUp has truly transformed my career. The courses are clear, focused, and easy to follow. I finished faster than expected.",
     author: "Kathryn Murphy",
     role: "UX Designer",
     avatar: "KM",
@@ -47,7 +47,7 @@ const testimonials = [
   {
     id: 3,
     quote:
-      "I joined BrightMind for the flexible schedule and the expert instructors. The experience exceeded my expectations.",
+      "I joined MooreSkillUp for the flexible schedule and the expert instructors. The experience exceeded my expectations.",
     author: "Eleanor Pena",
     role: "Frontend Developer",
     avatar: "EP",
@@ -205,7 +205,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">What learners are saying</p> */}
-            <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">What Learners Saying About BrightMind</h2>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">What Learners Saying About MooreSkillUp</h2>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {testimonials.map((testimonial) => (
@@ -231,7 +231,7 @@ export default function HomePage() {
               {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Frequently Asked Questions</p> */}
               <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Frequently Asked Questions</h2>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-                Answers to the most common questions about the BrightMind learning experience.
+                Answers to the most common questions about the MooreSkillUp learning experience.
               </p>
             </div>
             <div className="space-y-4">
