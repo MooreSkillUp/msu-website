@@ -23,6 +23,14 @@ export function Footer() {
             alt="Logo"
             width={150}
             height={40}
+            className="block dark:hidden"
+          />
+          <Image
+            src="/msu-logo-potrait-white.svg"
+            alt="Logo"
+            width={150}
+            height={40}
+            className="hidden dark:block"
           />
         </Link></div>{" "}
           <p className="mt-1 max-w-md text-sm text-muted-foreground">

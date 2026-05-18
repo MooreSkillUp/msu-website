@@ -27,6 +27,14 @@ export function Navbar() {
             alt="Logo"
             width={150}
             height={40}
+            className="block dark:hidden"
+          />
+          <Image
+            src="/msu-logo-white.svg"
+            alt="Logo"
+            width={150}
+            height={40}
+            className="hidden dark:block"
           />
         </Link>
         <nav className="hidden items-center gap-1 lg:flex">
