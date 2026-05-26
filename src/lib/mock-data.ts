@@ -1,26 +1,17 @@
 export type Interest =
   | "Web Development"
-  | "Backend Development"
-  | "Graphics and Design"
-  | "AI and Data"
-  | "Engineering"
-  | "Cloud and DevOps"
-  | "Programming Languages";
-export type WebTrack = "Frontend Development" | "Fullstack Foundations" | "React and Modern UI";
-export type BackendTrack = "Backend with Python" | "Backend with JavaScript";
-export type DesignTrack = "UI/UX Design" | "Graphics Design" | "Video Editing" | "Figma Mastery";
-export type DataTrack = "Data Analysis" | "Artificial Intelligence" | "AI Automation";
-export type EngineeringTrack = "3D Modeling" | "SolidWorks" | "Engineering Design Systems";
-export type CloudTrack = "Cloud Foundations" | "DevOps Engineering" | "Cloud Automation";
-export type LanguageTrack = "JavaScript" | "Python" | "TypeScript" | "SQL";
-export type TrackName =
-  | WebTrack
-  | BackendTrack
-  | DesignTrack
-  | DataTrack
-  | EngineeringTrack
-  | CloudTrack
-  | LanguageTrack;
+  | "Programming Languages"
+  | "Artificial Intelligence & Machine Learning"
+  | "Data"
+  | "Cloud Computing"
+  | "DevOps"
+  | "Mobile Development"
+  | "Design & Graphics"
+  | "Cybersecurity"
+  | "Software Engineering"
+  | "Core Computing / Core Tech"
+  | "Engineering";
+export type TrackName = string;
 export type UserPlan = "free" | "pro" | "premium";
 export type UserRole = "student" | "admin" | "teacher";
 export type LessonStatus = "completed" | "unlocked" | "locked";
@@ -219,21 +210,31 @@ export interface PaymentRecord {
 }
 export const interests: Interest[] = [
   "Web Development",
-  "Backend Development",
-  "Graphics and Design",
-  "AI and Data",
-  "Engineering",
-  "Cloud and DevOps",
   "Programming Languages",
+  "Artificial Intelligence & Machine Learning",
+  "Data",
+  "Cloud Computing",
+  "DevOps",
+  "Mobile Development",
+  "Design & Graphics",
+  "Cybersecurity",
+  "Software Engineering",
+  "Core Computing / Core Tech",
+  "Engineering",
 ];
 export const trackOptionsByInterest: Record<Interest, TrackName[]> = {
-  "Web Development": ["Frontend Development", "Fullstack Foundations", "React and Modern UI"],
-  "Backend Development": ["Backend with Python", "Backend with JavaScript"],
-  "Graphics and Design": ["UI/UX Design", "Graphics Design", "Video Editing", "Figma Mastery"],
-  "AI and Data": ["Data Analysis", "Artificial Intelligence", "AI Automation"],
-  Engineering: ["3D Modeling", "SolidWorks", "Engineering Design Systems"],
-  "Cloud and DevOps": ["Cloud Foundations", "DevOps Engineering", "Cloud Automation"],
-  "Programming Languages": ["JavaScript", "Python", "TypeScript", "SQL"],
+  "Web Development": ["Frontend Development", "Backend Development", "Fullstack Development"],
+  "Programming Languages": ["Python", "JavaScript", "C++"],
+  "Artificial Intelligence & Machine Learning": ["Machine Learning", "Deep Learning", "Generative AI"],
+  "Data": ["Data Analysis", "Data Science", "Data Engineering", "Business Intelligence"],
+  "Cloud Computing": ["AWS Cloud", "Microsoft Azure", "Google Cloud", "Cloud Architecture"],
+  "DevOps": ["CI/CD Engineering", "Containerization", "Infrastructure as Code", "Site Reliability Engineering"],
+  "Mobile Development": ["Flutter Development", "React Native"],
+  "Design & Graphics": ["UI/UX Design", "Graphic Design", "Product Design", "Motion Design"],
+  "Cybersecurity": ["Ethical Hacking", "Network Security", "Cloud Security", "SOC Analysis"],
+  "Software Engineering": ["Software Architecture", "Testing Engineering", "Performance Engineering", "API Engineering"],
+  "Core Computing / Core Tech": ["Linux", "Networking", "Git & Collaboration", "Databases", "Computer Science", "APIs & Internet"],
+  "Engineering": ["3D Modeling", "SolidWorks", "Engineering Design Systems"],
 };
 function buildLessons(
   prefix: string,
@@ -283,368 +284,375 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "web-development",
     title: "Web Development",
-    description:
-      "A complete path for learners who want to build websites, user interfaces, and real-world web apps.",
+    description: "A complete path for learners who want to build websites, user interfaces, and real-world web apps.",
     cover: " ",
     iconLabel: "WD",
     branches: [
       {
         title: "Frontend Development",
         summary: "HTML, CSS, JavaScript, responsive layouts, and frontend project delivery.",
-        tools: ["HTML", "CSS", "JavaScript", "React"],
-        weeklyFocus: [
-          "Week 1: HTML and CSS basics",
-          "Week 2: Responsive layouts and design systems",
-          "Week 3: JavaScript interactivity",
-          "Week 4: React foundations",
-          "Week 5: Components and state",
-          "Week 6: Portfolio project",
-        ],
+        tools: ["HTML & CSS - Tailwind CSS", "Intro to JavaScript & React", "TypeScript"],
+        weeklyFocus: []
       },
       {
-        title: "Fullstack Foundations",
+        title: "Backend Development",
+        summary: "Server-side engineering, database modeling, and API integrations.",
+        tools: ["Backend with Python", "Backend with Node.js", "Flask/Django"],
+        weeklyFocus: []
+      },
+      {
+        title: "Fullstack Development",
         summary: "Connect frontend thinking with APIs, databases, auth, and deployment basics.",
-        tools: ["React", "Node.js", "REST", "Deployment"],
-        weeklyFocus: [
-          "Week 1: Request-response model",
-          "Week 2: Frontend to backend communication",
-          "Week 3: Auth and forms",
-          "Week 4: Database basics",
-          "Week 5: Fullstack integration",
-          "Week 6: Build and deploy",
-        ],
-      },
-      {
-        title: "React and Modern UI",
-        summary: "A specialized branch for modern product UIs, design systems, and animation.",
-        tools: ["React", "Next.js", "Tailwind", "Framer Motion"],
-        weeklyFocus: [
-          "Week 1: React core concepts",
-          "Week 2: Component architecture",
-          "Week 3: State and async data",
-          "Week 4: Design systems",
-          "Week 5: Motion and UX polish",
-          "Week 6: Premium UI build",
-        ],
-      },
-    ],
+        tools: ["MERN Stack", "Django + React"],
+        weeklyFocus: []
+      }
+    ]
   },
   {
-    id: "backend-development",
-    title: "Backend Development",
-    description:
-      "Learn server-side engineering with clear branches for Python and JavaScript backend careers.",
-    cover: "500 900",
-    iconLabel: "BE",
+    id: "programming-languages",
+    title: "Programming Languages",
+    description: "Deep language-first tracks for learners who want strong fundamentals before choosing a specialization.",
+    cover: " ",
+    iconLabel: "PL",
     branches: [
       {
-        title: "Backend with Python",
-        summary: "Python, Django, FastAPI, APIs, auth, and backend architecture.",
-        tools: ["Python", "Django", "FastAPI", "PostgreSQL"],
-        weeklyFocus: [
-          "Week 1: Python for backend thinking",
-          "Week 2: APIs and routing",
-          "Week 3: Models and databases",
-          "Week 4: Auth and permissions",
-          "Week 5: Django and FastAPI projects",
-          "Week 6: Backend capstone",
-        ],
+        title: "Python",
+        summary: "Master Python from syntax basics to object-oriented programming and advanced patterns.",
+        tools: ["Python Fundamentals", "Intermediate Python", "Advanced Python"],
+        weeklyFocus: []
       },
       {
-        title: "Backend with JavaScript",
-        summary: "JavaScript backend engineering with Node.js, Express, auth, and data modeling.",
-        tools: ["JavaScript", "Node.js", "Express", "MongoDB"],
-        weeklyFocus: [
-          "Week 1: JavaScript for servers",
-          "Week 2: Express and routing",
-          "Week 3: CRUD and APIs",
-          "Week 4: Auth and middleware",
-          "Week 5: Databases and scaling",
-          "Week 6: Backend capstone",
-        ],
+        title: "JavaScript",
+        summary: "Explore modern JavaScript, async programming, and advanced language features.",
+        tools: ["JavaScript Basics", "Modern JavaScript", "Advanced JavaScript"],
+        weeklyFocus: []
       },
-    ],
+      {
+        title: "C++",
+        summary: "Understand high-performance programming, data structures, and memory management.",
+        tools: ["C++ Fundamentals", "Data Structures in C++", "Advanced C++"],
+        weeklyFocus: []
+      }
+    ]
   },
   {
-    id: "graphics-and-design",
-    title: "Graphics and Design",
-    description:
-      "A creative category covering interface design, brand graphics, editing workflows, and visual production.",
-    cover: "400 500",
-    iconLabel: "GD",
-    branches: [
-      {
-        title: "UI/UX Design",
-        summary:
-          "Research, interface design, wireframes, prototypes, and user-centered product thinking.",
-        tools: ["Figma", "UX Research", "Wireframing", "Prototyping"],
-        weeklyFocus: [
-          "Week 1: UX basics and user flows",
-          "Week 2: Wireframes and layout",
-          "Week 3: UI systems and hierarchy",
-          "Week 4: Prototyping",
-          "Week 5: Testing and iteration",
-          "Week 6: Product case study",
-        ],
-      },
-      {
-        title: "Graphics Design",
-        summary:
-          "Design visual assets, social graphics, and brand systems with modern creative tools.",
-        tools: ["Photoshop", "Illustrator", "Brand Design", "Composition"],
-        weeklyFocus: [
-          "Week 1: Visual principles",
-          "Week 2: Typography and color",
-          "Week 3: Social design assets",
-          "Week 4: Brand systems",
-          "Week 5: Campaign design",
-          "Week 6: Portfolio pack",
-        ],
-      },
-      {
-        title: "Video Editing",
-        summary:
-          "Learn editing flow, motion pacing, storytelling, and content polish for digital products.",
-        tools: ["Premiere Pro", "CapCut", "After Effects", "Storyboarding"],
-        weeklyFocus: [
-          "Week 1: Editing foundations",
-          "Week 2: Cut structure and pacing",
-          "Week 3: Color and sound",
-          "Week 4: Motion text",
-          "Week 5: Brand editing workflow",
-          "Week 6: Reel project",
-        ],
-      },
-      {
-        title: "Figma Mastery",
-        summary:
-          "Specialize in Figma for components, tokens, collaboration, and design operations.",
-        tools: ["Figma", "Auto Layout", "Design Tokens", "Components"],
-        weeklyFocus: [
-          "Week 1: Figma workspace mastery",
-          "Week 2: Components and variants",
-          "Week 3: Design tokens",
-          "Week 4: Collaboration and handoff",
-          "Week 5: Systemized design",
-          "Week 6: Figma systems project",
-        ],
-      },
-    ],
-  },
-  {
-    id: "ai-and-data",
-    title: "AI and Data",
-    description:
-      "Data, machine learning, AI workflows, and automation paths for analytical and AI-driven careers.",
-    cover: "400 ",
+    id: "ai-ml",
+    title: "Artificial Intelligence & Machine Learning",
+    description: "Data, machine learning, deep neural networks, generative AI models, and automation workflows.",
+    cover: " ",
     iconLabel: "AI",
     branches: [
       {
+        title: "Machine Learning",
+        summary: "Learn ML foundations, supervised learning, and deployment of predictive models.",
+        tools: ["Machine Learning Fundamentals", "Supervised Learning", "Model Deployment"],
+        weeklyFocus: []
+      },
+      {
+        title: "Deep Learning",
+        summary: "Build and train neural networks, CNNs, and modern transformers.",
+        tools: ["Neural Networks", "CNNs", "Transformers"],
+        weeklyFocus: []
+      },
+      {
+        title: "Generative AI",
+        summary: "Harness LLMs, build AI agents, and master prompt engineering.",
+        tools: ["Prompt Engineering", "AI Agents", "Building with LLMs"],
+        weeklyFocus: []
+      }
+    ]
+  },
+  {
+    id: "data",
+    title: "Data",
+    description: "Unlock insights, design scalable data pipelines, and visualize business datasets.",
+    cover: " ",
+    iconLabel: "DA",
+    branches: [
+      {
         title: "Data Analysis",
-        summary: "Learn analysis, reporting, SQL, spreadsheets, and storytelling with data.",
-        tools: ["Excel", "SQL", "Python", "Power BI"],
-        weeklyFocus: [
-          "Week 1: Data fundamentals",
-          "Week 2: SQL and querying",
-          "Week 3: Cleaning and exploration",
-          "Week 4: Dashboards",
-          "Week 5: Storytelling and insights",
-          "Week 6: Analysis project",
-        ],
+        summary: "Analyze data using spreadsheets, SQL queries, and interactive dashboards.",
+        tools: ["Excel for Data", "SQL for Analytics", "Power BI"],
+        weeklyFocus: []
       },
       {
-        title: "Artificial Intelligence",
-        summary: "Core AI concepts, Python tooling, model thinking, and responsible AI workflows.",
-        tools: ["Python", "NumPy", "Pandas", "Modeling"],
-        weeklyFocus: [
-          "Week 1: AI foundations",
-          "Week 2: Python math tooling",
-          "Week 3: Data preparation",
-          "Week 4: Model basics",
-          "Week 5: Applied AI workflows",
-          "Week 6: AI mini project",
-        ],
+        title: "Data Science",
+        summary: "Apply statistics, predictive modeling, and Python libraries to extract insights.",
+        tools: ["Statistics", "Data Science with Python", "Predictive Analytics"],
+        weeklyFocus: []
       },
       {
-        title: "AI Automation",
-        summary:
-          "Use AI tools and no-code/low-code flows to automate repetitive work and product tasks.",
-        tools: ["Python", "APIs", "Automation", "Agents"],
-        weeklyFocus: [
-          "Week 1: Automation thinking",
-          "Week 2: AI toolchains",
-          "Week 3: API integrations",
-          "Week 4: Workflow orchestration",
-          "Week 5: Business automation",
-          "Week 6: Automation project",
-        ],
+        title: "Data Engineering",
+        summary: "Design and build data pipelines, ETL workflows, and Spark applications.",
+        tools: ["Data Pipelines", "Apache Spark", "ETL Engineering"],
+        weeklyFocus: []
       },
-    ],
+      {
+        title: "Business Intelligence",
+        summary: "Visualize data and build premium reporting dashboards.",
+        tools: ["Tableau", "Power BI Advanced", "Data Visualization"],
+        weeklyFocus: []
+      }
+    ]
+  },
+  {
+    id: "cloud-computing",
+    title: "Cloud Computing",
+    description: "Master cloud services, platform design, serverless patterns, and multi-cloud environments.",
+    cover: " ",
+    iconLabel: "CC",
+    branches: [
+      {
+        title: "AWS Cloud",
+        summary: "Learn AWS core services, solution architecture, and cloud security.",
+        tools: ["AWS Fundamentals", "AWS Solutions Architecture", "AWS Security"],
+        weeklyFocus: []
+      },
+      {
+        title: "Microsoft Azure",
+        summary: "Master Azure cloud administration, infrastructure, and DevOps pipelines.",
+        tools: ["Azure Fundamentals", "Azure Administration", "Azure DevOps"],
+        weeklyFocus: []
+      },
+      {
+        title: "Google Cloud",
+        summary: "Understand GCP fundamentals, Kubernetes deployments, and cloud networking.",
+        tools: ["GCP Fundamentals", "Kubernetes on GCP", "Cloud Infrastructure"],
+        weeklyFocus: []
+      },
+      {
+        title: "Cloud Architecture",
+        summary: "Design scalable, serverless, and multi-cloud patterns.",
+        tools: ["Cloud Design Patterns", "Serverless Computing", "Multi-Cloud Systems"],
+        weeklyFocus: []
+      }
+    ]
+  },
+  {
+    id: "devops",
+    title: "DevOps",
+    description: "Automate build infrastructure, run container clusters, and manage site reliability.",
+    cover: " ",
+    iconLabel: "DO",
+    branches: [
+      {
+        title: "CI/CD Engineering",
+        summary: "Build and automate delivery pipelines with GitHub Actions and Jenkins.",
+        tools: ["GitHub Actions", "Jenkins", "CI/CD Pipelines"],
+        weeklyFocus: []
+      },
+      {
+        title: "Containerization",
+        summary: "Manage applications with Docker containers and Kubernetes clusters.",
+        tools: ["Docker Fundamentals", "Kubernetes", "Container Orchestration"],
+        weeklyFocus: []
+      },
+      {
+        title: "Infrastructure as Code",
+        summary: "Provision and automate infrastructure using Terraform and Ansible.",
+        tools: ["Terraform", "Ansible", "Infrastructure Automation"],
+        weeklyFocus: []
+      },
+      {
+        title: "Site Reliability Engineering",
+        summary: "Monitor performance, set up dashboards, and handle incident management.",
+        tools: ["Monitoring & Logging", "Prometheus & Grafana", "Incident Management"],
+        weeklyFocus: []
+      }
+    ]
+  },
+  {
+    id: "mobile-development",
+    title: "Mobile Development",
+    description: "Build native and cross-platform mobile apps for iOS and Android devices.",
+    cover: " ",
+    iconLabel: "MD",
+    branches: [
+      {
+        title: "Flutter Development",
+        summary: "Build beautiful cross-platform mobile apps with Dart and Flutter.",
+        tools: ["Dart Fundamentals", "Flutter Basics", "Cross-Platform Apps"],
+        weeklyFocus: []
+      },
+      {
+        title: "React Native",
+        summary: "Create native mobile experiences using React and Javascript.",
+        tools: ["React Native Fundamentals", "Mobile APIs", "Mobile App Deployment"],
+        weeklyFocus: []
+      }
+    ]
+  },
+  {
+    id: "design-graphics",
+    title: "Design & Graphics",
+    description: "Create interface mockups, graphics assets, product prototypes, and animations.",
+    cover: " ",
+    iconLabel: "DG",
+    branches: [
+      {
+        title: "UI/UX Design",
+        summary: "Research user needs, design intuitive interfaces, and build design systems.",
+        tools: ["UI Design Fundamentals", "UX Research", "Design Systems"],
+        weeklyFocus: []
+      },
+      {
+        title: "Graphic Design",
+        summary: "Master Photoshop and Illustrator for branding and visual asset creation.",
+        tools: ["Photoshop", "Illustrator", "Branding Design"],
+        weeklyFocus: []
+      },
+      {
+        title: "Product Design",
+        summary: "Prototype, wireframe, and design products in Figma.",
+        tools: ["Figma", "Wireframing", "Prototyping"],
+        weeklyFocus: []
+      },
+      {
+        title: "Motion Design",
+        summary: "Bring designs to life with After Effects and animation principles.",
+        tools: ["After Effects", "Motion Graphics", "Animation Basics"],
+        weeklyFocus: []
+      }
+    ]
+  },
+  {
+    id: "cybersecurity",
+    title: "Cybersecurity",
+    description: "Defend systems, test for vulnerabilities, configure secure networks, and analyze threats.",
+    cover: " ",
+    iconLabel: "CS",
+    branches: [
+      {
+        title: "Ethical Hacking",
+        summary: "Learn penetration testing, Kali Linux tools, and vulnerability exploitation.",
+        tools: ["Penetration Testing", "Kali Linux", "Exploitation Basics"],
+        weeklyFocus: []
+      },
+      {
+        title: "Network Security",
+        summary: "Defend networks with firewalls, secure protocols, and VPN configurations.",
+        tools: ["Network Defense", "Firewalls", "VPN Security"],
+        weeklyFocus: []
+      },
+      {
+        title: "Cloud Security",
+        summary: "Implement identity access management (IAM) and secure cloud architectures.",
+        tools: ["AWS Security", "IAM Management", "Secure Architectures"],
+        weeklyFocus: []
+      },
+      {
+        title: "SOC Analysis",
+        summary: "Monitor threats, use SIEM tools, and handle security incidents.",
+        tools: ["Threat Detection", "SIEM Tools", "Incident Response"],
+        weeklyFocus: []
+      }
+    ]
+  },
+  {
+    id: "software-engineering",
+    title: "Software Engineering",
+    description: "Design systems architecture, automate test coverage, and engineer high-performance APIs.",
+    cover: " ",
+    iconLabel: "SE",
+    branches: [
+      {
+        title: "Software Architecture",
+        summary: "Design high-scale, distributed, and fault-tolerant software systems.",
+        tools: ["System Design", "Scalable Systems", "Distributed Systems"],
+        weeklyFocus: []
+      },
+      {
+        title: "Testing Engineering",
+        summary: "Automate testing with unit, integration, and end-to-end suites.",
+        tools: ["Unit Testing", "Integration Testing", "Test Automation"],
+        weeklyFocus: []
+      },
+      {
+        title: "Performance Engineering",
+        summary: "Profile applications, optimize bottlenecks, and monitor performance.",
+        tools: ["Optimization", "Profiling", "Performance Monitoring"],
+        weeklyFocus: []
+      },
+      {
+        title: "API Engineering",
+        summary: "Build secure, typed, and well-designed REST and GraphQL APIs.",
+        tools: ["REST APIs", "GraphQL", "API Security"],
+        weeklyFocus: []
+      }
+    ]
+  },
+  {
+    id: "core-tech",
+    title: "Core Computing / Core Tech",
+    description: "Build base knowledge in operating systems, networks, Git collaboration, and SQL databases.",
+    cover: " ",
+    iconLabel: "CT",
+    branches: [
+      {
+        title: "Linux",
+        summary: "Learn terminal navigation, administration, and Bash scripting.",
+        tools: ["Linux Fundamentals", "Linux Administration", "Bash Scripting"],
+        weeklyFocus: []
+      },
+      {
+        title: "Networking",
+        summary: "Master TCP/IP networking, routing, and network troubleshooting.",
+        tools: ["Networking Basics", "TCP/IP", "Network Troubleshooting"],
+        weeklyFocus: []
+      },
+      {
+        title: "Git & Collaboration",
+        summary: "Manage source code with Git and team workflows in GitHub.",
+        tools: ["Git Fundamentals", "GitHub Workflows", "Team Collaboration"],
+        weeklyFocus: []
+      },
+      {
+        title: "Databases",
+        summary: "Design relational databases, write queries, and manage PostgreSQL databases.",
+        tools: ["SQL Fundamentals", "PostgreSQL", "Database Design"],
+        weeklyFocus: []
+      },
+      {
+        title: "Computer Science",
+        summary: "Study algorithms, data structures, and operating system principles.",
+        tools: ["Algorithms", "Data Structures", "Operating Systems"],
+        weeklyFocus: []
+      },
+      {
+        title: "APIs & Internet",
+        summary: "Understand HTTP protocols, RESTful APIs, and real-time WebSockets.",
+        tools: ["HTTP Fundamentals", "REST APIs", "WebSockets"],
+        weeklyFocus: []
+      }
+    ]
   },
   {
     id: "engineering",
     title: "Engineering",
-    description:
-      "Technical design paths for learners interested in 3D systems, product modeling, and engineering workflows.",
-    cover: "700 400",
-    iconLabel: "EN",
+    description: "Technical design paths for learners interested in 3D systems, product modeling, and engineering workflows.",
+    cover: " ",
+    iconLabel: "EG",
     branches: [
       {
         title: "3D Modeling",
-        summary: "Learn the foundations of digital modeling, forms, assemblies, and presentation.",
+        summary: "Learn the foundations of digital modeling, forms, assemblies, and presentation in Blender.",
         tools: ["Blender", "CAD Basics", "Rendering", "Model Workflow"],
-        weeklyFocus: [
-          "Week 1: Modeling fundamentals",
-          "Week 2: Surface and form",
-          "Week 3: Assemblies",
-          "Week 4: Render setup",
-          "Week 5: Product presentation",
-          "Week 6: Model showcase project",
-        ],
+        weeklyFocus: []
       },
       {
         title: "SolidWorks",
         summary: "Go deeper into mechanical modeling and engineering documentation workflows.",
         tools: ["SolidWorks", "Assemblies", "Drawings", "Simulation"],
-        weeklyFocus: [
-          "Week 1: Parts and sketches",
-          "Week 2: Assemblies",
-          "Week 3: Drawings",
-          "Week 4: Constraints and detail",
-          "Week 5: Engineering workflow",
-          "Week 6: Mechanical capstone",
-        ],
+        weeklyFocus: []
       },
       {
         title: "Engineering Design Systems",
-        summary:
-          "Create repeatable design workflows for technical product teams and engineering orgs.",
+        summary: "Create repeatable design workflows for technical product teams and engineering orgs.",
         tools: ["Systems Thinking", "CAD Workflow", "Documentation", "Review Loops"],
-        weeklyFocus: [
-          "Week 1: Design systems for engineering",
-          "Week 2: Technical workflows",
-          "Week 3: Review pipelines",
-          "Week 4: Design documentation",
-          "Week 5: Team coordination",
-          "Week 6: Systems project",
-        ],
-      },
-    ],
-  },
-  {
-    id: "cloud-and-devops",
-    title: "Cloud and DevOps",
-    description:
-      "Deployment, infrastructure, cloud systems, CI/CD, and operational thinking for modern engineering teams.",
-    cover: "500 400",
-    iconLabel: "CD",
-    branches: [
-      {
-        title: "Cloud Foundations",
-        summary:
-          "Understand cloud platforms, hosting models, networking basics, and deployment paths.",
-        tools: ["AWS", "Azure", "Cloud Concepts", "Networking"],
-        weeklyFocus: [
-          "Week 1: Cloud basics",
-          "Week 2: Compute and storage",
-          "Week 3: Networking",
-          "Week 4: Hosting applications",
-          "Week 5: Secure cloud setup",
-          "Week 6: Cloud deployment project",
-        ],
-      },
-      {
-        title: "DevOps Engineering",
-        summary: "CI/CD, automation, containers, monitoring, and release confidence.",
-        tools: ["Docker", "GitHub Actions", "Linux", "Monitoring"],
-        weeklyFocus: [
-          "Week 1: DevOps workflow",
-          "Week 2: Containers",
-          "Week 3: CI pipelines",
-          "Week 4: CD and release flow",
-          "Week 5: Monitoring and rollback",
-          "Week 6: DevOps capstone",
-        ],
-      },
-      {
-        title: "Cloud Automation",
-        summary: "Automate cloud workflows with scripts, IaC concepts, and team-ready operations.",
-        tools: ["Terraform", "Bash", "Python", "Automation"],
-        weeklyFocus: [
-          "Week 1: Scripting foundations",
-          "Week 2: Infrastructure as code",
-          "Week 3: Provisioning",
-          "Week 4: Repeatable releases",
-          "Week 5: Team automation",
-          "Week 6: Infrastructure project",
-        ],
-      },
-    ],
-  },
-  {
-    id: "programming-languages",
-    title: "Programming Languages",
-    description:
-      "Deep language-first tracks for learners who want strong fundamentals before choosing a specialization.",
-    cover: "500 500",
-    iconLabel: "PL",
-    branches: [
-      {
-        title: "JavaScript",
-        summary: "Language fundamentals, DOM thinking, async flow, and practical app logic.",
-        tools: ["JavaScript", "DOM", "Async", "ESNext"],
-        weeklyFocus: [
-          "Week 1: Syntax and variables",
-          "Week 2: Functions and scope",
-          "Week 3: Arrays and objects",
-          "Week 4: DOM and browser logic",
-          "Week 5: Async JavaScript",
-          "Week 6: JavaScript project",
-        ],
-      },
-      {
-        title: "Python",
-        summary: "Core Python for scripting, automation, backend, and data workflows.",
-        tools: ["Python", "Functions", "OOP", "Packages"],
-        weeklyFocus: [
-          "Week 1: Python basics",
-          "Week 2: Functions and data structures",
-          "Week 3: Files and modules",
-          "Week 4: OOP",
-          "Week 5: Automation patterns",
-          "Week 6: Python project",
-        ],
-      },
-      {
-        title: "TypeScript",
-        summary:
-          "Learn safer JavaScript with types, contracts, and scalable frontend/backend code.",
-        tools: ["TypeScript", "Types", "Generics", "Tooling"],
-        weeklyFocus: [
-          "Week 1: TypeScript basics",
-          "Week 2: Interfaces and models",
-          "Week 3: Generics",
-          "Week 4: App architecture",
-          "Week 5: Type-safe APIs",
-          "Week 6: TypeScript project",
-        ],
-      },
-      {
-        title: "SQL",
-        summary:
-          "Query relational data confidently and understand the language behind business systems.",
-        tools: ["SQL", "Joins", "Aggregations", "Query Design"],
-        weeklyFocus: [
-          "Week 1: SQL basics",
-          "Week 2: Filtering and sorting",
-          "Week 3: Joins",
-          "Week 4: Aggregations",
-          "Week 5: Reporting patterns",
-          "Week 6: Data query project",
-        ],
-      },
-    ],
-  },
+        weeklyFocus: []
+      }
+    ]
+  }
 ];
 export const mockUser = {
   id: "u_1",
@@ -655,10 +663,10 @@ export const mockUser = {
   joinedAt: "2025-01-12",
   plan: "free" as UserPlan,
   role: "student" as UserRole,
-  interests: ["Backend Development"] as Interest[],
+  interests: ["Web Development"] as Interest[],
   wishlist: ["backend-python-api-builder"],
-  selectedInterest: "Backend Development" as Interest,
-  selectedTrack: "Backend with Python" as TrackName,
+  selectedInterest: "Web Development" as Interest,
+  selectedTrack: "Frontend Development" as TrackName,
   purchasedCourseIds: ["backend-python-api-builder"],
 };
 export const courses: Course[] = [
@@ -747,8 +755,8 @@ export const courses: Course[] = [
     totalLessons: 25,
     completedLessons: 7,
     cover: "500 900",
-    interest: "Backend Development",
-    track: "Backend with Python",
+    interest: "Web Development",
+    track: "Backend Development",
     access: "paid",
     rating: 4.85,
     learners: 980,
@@ -817,8 +825,8 @@ export const courses: Course[] = [
     totalLessons: 22,
     completedLessons: 0,
     cover: "400 500 900",
-    interest: "Backend Development",
-    track: "Backend with JavaScript",
+    interest: "Web Development",
+    track: "Backend Development",
     access: "paid",
     rating: 4.76,
     learners: 710,
@@ -891,7 +899,7 @@ export const courses: Course[] = [
     totalLessons: 24,
     completedLessons: 4,
     cover: "400 500",
-    interest: "Graphics and Design",
+    interest: "Design & Graphics",
     track: "UI/UX Design",
     access: "paid",
     availableOn: "Thursday",
@@ -961,8 +969,8 @@ export const courses: Course[] = [
     totalLessons: 23,
     completedLessons: 2,
     cover: "400 ",
-    interest: "AI and Data",
-    track: "AI Automation",
+    interest: "Artificial Intelligence & Machine Learning",
+    track: "Machine Learning",
     access: "free",
     availableOn: "Wednesday",
     rating: 4.72,
@@ -1090,8 +1098,8 @@ export const courses: Course[] = [
     totalLessons: 22,
     completedLessons: 0,
     cover: "500 400",
-    interest: "Cloud and DevOps",
-    track: "DevOps Engineering",
+    interest: "DevOps",
+    track: "CI/CD Engineering",
     access: "paid",
     rating: 4.8,
     learners: 530,

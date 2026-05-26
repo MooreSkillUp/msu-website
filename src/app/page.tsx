@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Star, ArrowRight, Plus } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/Button";
 import { academyPrograms, courses, faqItems } from "@/lib/mock-data";
 
@@ -100,8 +101,8 @@ export default function HomePage() {
               className="grid gap-6"
             >
               <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white dark:bg-card shadow-lg">
-                <img
-                  src={heroImages[0]}
+                <Image width={100} height={100}
+                  src="/images/people-with-laptop.jpg"
                   alt="Student working on laptop"
                   className="h-[520px] w-full object-cover"
                 />
