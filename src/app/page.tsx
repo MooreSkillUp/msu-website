@@ -17,12 +17,6 @@ const companyLogos = [
   "bludiamond",
 ];
 
-const heroHighlights = [
-  { label: "Courses", value: "320+" },
-  { label: "Students", value: "100k+" },
-  { label: "Instructors", value: "40+" },
-];
-
 const heroImages = [
   "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
   "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
@@ -33,25 +27,25 @@ const testimonials = [
     id: 1,
     quote:
       "MooreSkillUp has truly transformed my career. The courses are clear, focused, and easy to follow. I finished faster than expected.",
-    author: "Kathryn Murphy",
-    role: "UX Designer",
-    avatar: "KM",
+    author: "MaryJane Eduputa",
+    role: "Python Programmer",
+    avatar: "ME",
   },
   {
     id: 2,
     quote:
       "The content is rich and practical. I learned new skills that I could apply immediately in real work projects.",
-    author: "Bessie Cooper",
+    author: "Donatus",
     role: "Product Designer",
-    avatar: "BC",
+    avatar: "D",
   },
   {
     id: 3,
     quote:
       "I joined MooreSkillUp for the flexible schedule and the expert instructors. The experience exceeded my expectations.",
-    author: "Eleanor Pena",
-    role: "Frontend Developer",
-    avatar: "EP",
+    author: "Emeka Victor",
+    role: "Fullstack Developer",
+    avatar: "EV",
   },
 ];
 
@@ -118,7 +112,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Explore Course Categories</p> */}
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Explore Course Categories</h2>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Course Categories</h2>
             </div>
             <Link href="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#de7300]">
               View All Categories <ArrowRight className="h-4 w-4" />
@@ -134,7 +128,7 @@ export default function HomePage() {
                 <Link
                   href="/courses"
                   key={program.id}
-                  className="group overflow-hidden rounded-[2rem] border border-border bg-white dark:bg-card p-8 transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group overflow-hidden rounded-[2rem] border border-border dark:border-none bg-white dark:bg-card p-8 transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className={`inline-flex h-14 w-14 items-center justify-center rounded-3xl ${bgColors[index % bgColors.length]} ${darkBgColors[index % darkBgColors.length]} ${textColors[index % textColors.length]} text-xl font-semibold`}>
                     {program.iconLabel}</div>
@@ -155,7 +149,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Most Popular Courses</p> */}
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Popular Courses</h2>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Courses Available</h2>
             </div>
             <Link href="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#de7300]">
               View All Courses <ArrowRight className="h-4 w-4" />
@@ -177,7 +171,7 @@ export default function HomePage() {
                 <Link
                   href="/courses"
                   key={course.id}
-                  className="group overflow-hidden rounded-[2rem] border border-border bg-white dark:bg-card transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group overflow-hidden rounded-[2rem] bg-white dark:bg-card transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div
                     className="aspect-[4/3] bg-cover bg-center"
@@ -185,14 +179,14 @@ export default function HomePage() {
                   />
                   <div className="p-6">
                     <div className="mb-4 flex items-center justify-between text-sm text-muted-foreground">
-                      <span className="rounded-full bg-muted px-3 py-1">{course.level}</span>
-                      <span className="font-semibold text-foreground">{course.rating.toFixed(1)} ★</span>
+                      {/* <span className="rounded-full bg-muted px-3 py-1">{course.level}</span>
+                      <span className="font-semibold text-foreground">{course.rating.toFixed(1)} ★</span> */}
                     </div>
                     <h3 className="text-2xl font-semibold text-foreground">{course.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">{course.description}</p>
                     <div className="mt-6 flex items-center justify-between text-sm text-muted-foreground">
-                      <span>{course.learners}+ learners</span>
-                      <span className="font-semibold text-foreground">{coursePrice}</span>
+                      {/* <span>{course.learners}+ learners</span>
+                      <span className="font-semibold text-foreground">{coursePrice}</span> */}
                     </div>
                   </div>
                 </Link>
@@ -210,7 +204,7 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="rounded-[2rem] border border-border bg-white dark:bg-card p-8">
+              <div key={testimonial.id} className="rounded-[2rem] border border-border dark:border-none bg-white dark:bg-card p-8">
                 <p className="text-lg leading-8 text-muted-foreground">"{testimonial.quote}"</p>
                 <div className="mt-8 flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">{testimonial.avatar}</div>

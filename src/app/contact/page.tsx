@@ -31,7 +31,7 @@ export default function ContactPage() {
           {" "}
           <div className="space-y-6">
             {" "}
-            <div className="rounded-[2rem] border border-border bg-card p-6 ">
+            <div className="rounded-[2rem] border border-border dark:border-none bg-card p-6 ">
               {" "}
               <div className="flex items-center gap-4">
                 {" "}
@@ -48,7 +48,7 @@ export default function ContactPage() {
                 </div>{" "}
               </div>{" "}
             </div>{" "}
-            <div className="rounded-[2rem] border border-border bg-card p-6 ">
+            <div className="rounded-[2rem] border border-border dark:border-none bg-card p-6 ">
               {" "}
               <div className="flex items-center gap-4">
                 {" "}
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 </div>{" "}
               </div>{" "}
             </div>{" "}
-            <div className="rounded-[2rem] border border-border bg-card p-6 ">
+            <div className="rounded-[2rem] border border-border dark:border-none bg-card p-6 ">
               {" "}
               <div className="flex items-center gap-4">
                 {" "}
@@ -78,13 +78,13 @@ export default function ContactPage() {
                 </div>{" "}
                 <div>
                   {" "}
-                  <h3 className="font-display font-bold">Office</h3>{" "}
-                  <p className="text-sm text-muted-foreground">123 Learning Ave, Tech City</p>{" "}
+                  {/* <h3 className="font-display font-bold">Office</h3>{" "} */}
+                  <p className="text-sm text-muted-foreground">Nnamdi Azikiwe University, Awka, Anambara State, Nigeria</p>{" "}
                 </div>{" "}
               </div>{" "}
             </div>{" "}
           </div>{" "}
-          <div className="rounded-[2rem] border border-border bg-card p-8 ">
+          <div className="rounded-[2rem] border border-border dark:border-none bg-card p-8 ">
             {" "}
             <h2 className="font-display text-2xl font-bold mb-6">Send us a message</h2>{" "}
             <form className="space-y-4">

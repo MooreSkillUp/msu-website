@@ -8,7 +8,7 @@ export function ThemeToggle({ className }: { className?: string }) {
     <button
       onClick={toggle}
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-2 text-sm font-medium text-foreground backdrop-blur transition hover:border-primary/40 hover:bg-card",
+        "inline-flex items-center gap-2 rounded-full bg-card/80 px-3 py-2 text-sm font-medium text-foreground backdrop-blur transition hover:border-primary/40 hover:bg-card",
         className,
       )}
       aria-label="Toggle theme"

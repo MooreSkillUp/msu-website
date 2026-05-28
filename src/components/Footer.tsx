@@ -4,13 +4,13 @@ import { publicEnv } from "@/lib/public-env";
 const links = [
   { href: "/courses", label: "Courses" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/quiz-shop", label: "Quiz Shop" },
+  { href: "/k-y-p", label: "Know Your Path" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 export function Footer() {
   return (
-    <footer className="bg-card/40 mt-auto">
+    <footer className="bg-background mt-auto">
       {" "}
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         {" "}
