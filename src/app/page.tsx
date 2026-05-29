@@ -254,10 +254,10 @@ export default function HomePage() {
                   Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed.
                 </p>
               </div>
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex flex-col justify-end gap-4 sm:flex-row sm:items-center">
                 <Link
                   href="/auth/register"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-white dark:bg-slate-100/95 px-8 py-4 text-center font-semibold text-black shadow-lg shadow-white/20 transition hover:bg-slate-100 dark:hover:bg-slate-200/95 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-white dark:bg-slate-100/95 px-8 py-4 text-center font-semibold text-black transition hover:bg-slate-100 dark:hover:bg-slate-200/95 sm:w-auto"
                 >
                   Join Now
                 </Link>
