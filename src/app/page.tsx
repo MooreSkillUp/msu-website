@@ -52,26 +52,44 @@ const testimonials = [
 export default function HomePage() {
   return (
     <main className="bg-background text-foreground">
-      <section className="relative overflow-hidden py-20">
-        <div className="absolute inset-x-0 top-0 h-40" />
-        <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      
+      <section className="relative overflow-hidden py-24">
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/5 to-transparent" />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
+
+            {/* LEFT CONTENT */}
             <div className="space-y-8">
+
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.05 }}
+                transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
-                <h1 className="max-w-3xl text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">Learn and Grow with Top Online Courses</h1>
-                <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
-                  Discover top online courses designed to help you build skills, advance your career, and learn at your own pace.
+                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-muted-foreground">
+                  🚀 Build Skills. Follow Paths. Get Hired.
+                </div>
+
+                <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+                  Learn Smarter.
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#024293] to-[#de7300]">
+                    Follow Your Path.
+                  </span>
+                </h1>
+
+                <p className="max-w-xl text-lg leading-8 text-muted-foreground">
+                  MooreSkillUp is not just a course platform — it’s a guided learning system that helps you
+                  discover your path in tech, design, cloud, AI, and more.
                 </p>
               </motion.div>
+
+              {/* CTA BUTTONS */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                transition={{ duration: 0.7 }}
                 className="flex flex-wrap items-center gap-4"
               >
                 <Link href="/courses">
@@ -79,30 +97,54 @@ export default function HomePage() {
                     Explore Courses
                   </Button>
                 </Link>
+
                 <Link href="/contact">
-                  <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-base">
-                    Contact Us
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="rounded-full px-8 h-14 text-base border-[#de7300] text-[#de7300] hover:bg-[#de7300] hover:text-white"
+                  >
+                    Contant Us
                   </Button>
                 </Link>
               </motion.div>
 
+              {/* MINI VALUE POINTS */}
+              <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground pt-4">
+                <div>✔ Structured learning paths</div>
+                <div>✔ Beginner → Advanced roadmap</div>
+                <div>✔ Real-world projects</div>
+                <div>✔ Career-focused skills</div>
+              </div>
             </div>
 
+            {/* RIGHT VISUAL */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="grid gap-6"
+              className="relative"
             >
-              <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white dark:bg-card shadow-lg">
-                <Image width={100} height={100}
+              <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-card shadow-2xl">
+
+                <Image
                   src="/images/people-with-laptop.jpg"
-                  alt="Student working on laptop"
+                  alt="Students learning on MooreSkillUp"
+                  width={1000}
+                  height={1000}
                   className="h-[520px] w-full object-cover"
                 />
 
+                {/* overlay glow */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#024293]/20 to-[#de7300]/10" />
+              </div>
+
+              {/* floating badge */}
+              <div className="absolute -bottom-6 left-6 rounded-2xl bg-card border border-border px-4 py-3 shadow-lg text-sm">
+                🎯 Start from your personalized path
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
@@ -181,6 +223,77 @@ export default function HomePage() {
             </div>
 
           </div>
+        </div>
+      </section>
+      
+      <section className="py-24 relative overflow-hidden">
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+          {/* HEADER */}
+          <div className="text-center space-y-4">
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+              A Smarter Way to Learn
+            </h2>
+
+            <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
+              Instead of random courses, MooreSkillUp guides you through structured learning paths designed for real career outcomes.
+            </p>
+          </div>
+
+          {/* CORE IDEA GRID */}
+          <div className="mt-16 grid gap-6 lg:grid-cols-3">
+
+            {/* CARD 1 */}
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm hover:shadow-lg transition">
+              <div className="text-3xl">🧭</div>
+              <h3 className="mt-4 text-xl font-semibold">Choose Your Path</h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Web Dev, AI, Cloud, Design, Cybersecurity and more — pick a direction based on your goals.
+              </p>
+            </div>
+
+            {/* CARD 2 */}
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm hover:shadow-lg transition">
+              <div className="text-3xl">📚</div>
+              <h3 className="mt-4 text-xl font-semibold">Follow Structured Learning</h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Every path is broken into beginner → intermediate → advanced steps so you never feel lost.
+              </p>
+            </div>
+
+            {/* CARD 3 */}
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm hover:shadow-lg transition">
+              <div className="text-3xl">🚀</div>
+              <h3 className="mt-4 text-xl font-semibold">Build Real Skills</h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Learn by building projects that prepare you for internships, jobs, and freelance work.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA STRIP */}
+          <div className="mt-16 rounded-[2.5rem] bg-gradient-to-r from-[#024293] to-[#de7300] p-10 text-white text-center shadow-xl">
+
+            <h3 className="text-3xl font-bold">
+              Not sure where to start?
+            </h3>
+
+            <p className="mt-3 text-white/80">
+              Let the system guide you step-by-step based on your interests.
+            </p>
+
+            <div className="mt-6">
+              <a
+                href="/k-y-p"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:scale-105 transition"
+              >
+                ✨ Discover Your Path
+              </a>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
