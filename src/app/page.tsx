@@ -107,6 +107,83 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="py-24 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            
+            <div>
+              <div className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                New Learner Guide
+              </div>
+
+              <h2 className="mt-6 text-4xl font-bold tracking-tight">
+                Not Sure Where to Start?
+              </h2>
+
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                MooreSkillUp offers multiple career paths including Web Development,
+                Artificial Intelligence, Cloud Computing, Cybersecurity, Data,
+                DevOps, Mobile Development, Design, Software Engineering, and more.
+              </p>
+
+              <p className="mt-4 text-lg leading-8 text-muted-foreground">
+                If you're unsure which path matches your interests and goals,
+                watch our Know Your Path guide. We'll show you how each learning
+                path works, the skills you'll learn, and how to choose the best
+                direction for your future.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href="/k-y-p">
+                  <Button size="lg">
+                    Watch Know Your Path
+                  </Button>
+                </Link>
+
+                <Link href="/courses">
+                  <Button variant="outline" size="lg">
+                    Explore Paths
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-border bg-card p-6 shadow-sm">
+              <div className="space-y-4">
+                <div className="rounded-xl border border-border p-4">
+                  <h3 className="font-semibold">1. Watch the Guide</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Learn how MooreSkillUp learning paths work.
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-border p-4">
+                  <h3 className="font-semibold">2. Choose a Career Path</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Select a category that matches your interests.
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-border p-4">
+                  <h3 className="font-semibold">3. Pick a Learning Branch</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Follow a structured roadmap from beginner to advanced.
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-border p-4">
+                  <h3 className="font-semibold">4. Build Real Skills</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Complete courses, projects, and milestones as you grow.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
