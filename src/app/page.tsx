@@ -334,20 +334,47 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      
+      <section className="relative overflow-hidden py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Header */}
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Most Popular Courses</p> */}
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Courses Available</h2>
+              <span className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-sm font-medium text-primary">
+                Courses
+              </span>
+
+              <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+                Learn Skills That Matter
+              </h2>
+
+              <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+                Explore practical, industry-focused courses designed to help you
+                build real-world skills and accelerate your career.
+              </p>
             </div>
-            <Link href="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#de7300]">
-              View All Courses <ArrowRight className="h-4 w-4" />
+
+            <Link
+              href="/courses"
+              className="
+                inline-flex items-center gap-2
+                rounded-full border
+                px-6 py-3
+                text-sm font-semibold
+                transition-all
+                hover:border-primary
+                hover:text-primary
+              "
+            >
+              View All Courses
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {/* Course Grid */}
+          <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {courses.slice(0, 6).map((course, index) => {
               const coverImages = [
                 "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80",
@@ -357,27 +384,71 @@ export default function HomePage() {
                 "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
                 "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
               ];
-              const coursePrice = course.access === "free" ? "Free" : "$29.99";
+
+              // const coursePrice =
+              //   course.access === "free" ? "Free" : "$29.99";
+
               return (
                 <Link
                   href="/courses"
                   key={course.id}
-                  className="group overflow-hidden rounded-[2rem] bg-white dark:bg-card transition hover:-translate-y-1 hover:shadow-lg"
+                  className="
+                    group
+                    overflow-hidden
+                    rounded-3xl
+                    border
+                    bg-card
+                    transition-all
+                    duration-300
+                    hover:-translate-y-2
+                    hover:shadow-2xl
+                  "
                 >
-                  <div
-                    className="aspect-[4/3] bg-cover bg-center"
-                    style={{ backgroundImage: `url(${coverImages[index % coverImages.length]})` }}
-                  />
-                  <div className="p-6">
-                    <div className="mb-4 flex items-center justify-between text-sm text-muted-foreground">
-                      {/* <span className="rounded-full bg-muted px-3 py-1">{course.level}</span>
-                      <span className="font-semibold text-foreground">{course.rating.toFixed(1)} ★</span> */}
+                  {/* Image */}
+                  <div className="relative overflow-hidden">
+                    <div
+                      className="
+                        aspect-[4/3]
+                        bg-cover
+                        bg-center
+                        transition-transform
+                        duration-500
+                        group-hover:scale-105
+                      "
+                      style={{
+                        backgroundImage: `url(${
+                          coverImages[index % coverImages.length]
+                        })`,
+                      }}
+                    />
+
+                    {/* Badge */}
+                    <div className="absolute left-4 top-4">
+                      <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-black backdrop-blur">
+                        {course.level || "Beginner"}
+                      </span>
                     </div>
-                    <h3 className="text-2xl font-semibold text-foreground">{course.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{course.description}</p>
-                    <div className="mt-6 flex items-center justify-between text-sm text-muted-foreground">
-                      {/* <span>{course.learners}+ learners</span>
-                      <span className="font-semibold text-foreground">{coursePrice}</span> */}
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="line-clamp-2 text-2xl font-semibold">
+                      {course.title}
+                    </h3>
+
+                    <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted-foreground">
+                      {course.description}
+                    </p>
+
+                    <div className="mt-6 flex items-center justify-between border-t pt-5">
+                      {/* <span className="font-semibold text-primary">
+                        {coursePrice}
+                      </span> */}
+
+                      <span className="inline-flex items-center gap-2 text-sm font-medium">
+                        View Course
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
                     </div>
                   </div>
                 </Link>
