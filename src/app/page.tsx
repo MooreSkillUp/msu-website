@@ -411,27 +411,58 @@ export default function HomePage() {
 
       <section className="py-24 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.65fr_0.35fr] lg:items-end">
-            <div>
-              {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Frequently Asked Questions</p> */}
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Frequently Asked Questions</h2>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-                Answers to the most common questions about the MooreSkillUp learning experience.
+          <div className="grid gap-16 lg:grid-cols-[0.45fr_0.55fr]">
+            {/* Left Content */}
+            <div className="sticky top-24 h-fit">
+              <span className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-sm font-medium text-primary">
+                FAQ
+              </span>
+
+              <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+                Questions?
+                <br />
+                We've got answers.
+              </h2>
+
+              <p className="mt-6 max-w-md text-lg leading-8 text-muted-foreground">
+                Everything you need to know about enrollment, certificates,
+                learning paths, course access, and your future with MooreSkillUp.
               </p>
+
+              <a
+                href="/faq"
+                className="mt-8 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+              >
+                View all FAQs
+              </a>
             </div>
+
+            {/* FAQ Cards */}
             <div className="space-y-4">
               {faqItems.slice(0, 5).map((faq, index) => (
-                <div key={index} className="flex items-center justify-between gap-4 rounded-[2rem] border border-border bg-muted p-6">
-                  <div>
-                    <p className="font-semibold text-foreground">{faq.question}</p>
-                  </div>
-                  <Plus className="h-5 w-5 text-primary" />
-                </div>
+                <details
+                  key={index}
+                  className="group rounded-3xl border bg-card p-6 transition-all duration-300 hover:border-primary/20 hover:shadow-lg"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {faq.question}
+                    </h3>
+
+                    <Plus className="h-5 w-5 shrink-0 transition-transform duration-300 group-open:rotate-45 text-primary" />
+                  </summary>
+
+                  <p className="mt-4 border-t pt-4 leading-7 text-muted-foreground">
+                    {faq.answer}
+                  </p>
+                </details>
               ))}
             </div>
           </div>
         </div>
       </section>
+
+      
 
       <section className="pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

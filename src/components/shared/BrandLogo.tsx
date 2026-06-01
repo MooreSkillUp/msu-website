@@ -20,7 +20,6 @@ export function BrandLogo({
   return (
     <Link href={href} className={cn("flex items-center gap-3", className)}>
       <div>
-        <Link href="/" className="flex items-center gap-2">
           <Image
             src="/msu-logo.svg"
             alt="Logo"
@@ -35,7 +34,6 @@ export function BrandLogo({
             height={50}
             className="hidden dark:block"
           />
-          </Link>
         <div className="text-xs text-muted-foreground">{subtitle}</div>
       </div>
     </Link>
