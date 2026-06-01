@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { Button } from "@/components/Button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { BrandLogo } from "@/components/shared/BrandLogo";
 
 const links = [
   { href: "/courses", label: "Courses" },
@@ -25,22 +26,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
         {/* LEFT: LOGO */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/msu-logo.svg"
-            alt="Logo"
-            width={150}
-            height={40}
-            className="block dark:hidden"
-          />
-          <Image
-            src="/msu-logo-white.svg"
-            alt="Logo"
-            width={150}
-            height={40}
-            className="hidden dark:block"
-          />
-        </Link>
+        <BrandLogo href="/" />
 
         {/* CENTER: NAV + CTA */}
         <nav className="hidden lg:flex items-center gap-1">
