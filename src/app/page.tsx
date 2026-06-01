@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Star, ArrowRight, Plus } from "lucide-react";
+import { Star, ArrowRight, Plus, Quote } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { academyPrograms, courses, faqItems } from "@/lib/mock-data";
+
 
 const companyLogos = [
   "blueenergy",
@@ -386,21 +387,66 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">What learners are saying</p> */}
-            <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">What Learners Saying About MooreSkillUp</h2>
+
+      <section className="relative overflow-hidden py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-sm font-medium text-primary">
+              Testimonials
+            </span>
+
+            <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              Trusted by ambitious learners
+            </h2>
+
+            <p className="mt-5 text-lg text-muted-foreground">
+              Discover how MooreSkillUp is helping learners gain practical skills,
+              earn certifications, and accelerate their careers.
+            </p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+
+          {/* Testimonials */}
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="rounded-[2rem] border border-border dark:border-none bg-white dark:bg-card p-8">
-                <p className="text-lg leading-8 text-muted-foreground">"{testimonial.quote}"</p>
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">{testimonial.avatar}</div>
+              <div
+                key={testimonial.id}
+                className="
+                  group
+                  rounded-3xl
+                  border
+                  bg-card
+                  p-8
+                  transition-all
+                  duration-300
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                "
+              >
+
+                {/* Quote Icon */}
+                <Quote className="mb-4 h-8 w-8 text-primary/30" />
+
+                {/* Testimonial */}
+                <p className="text-lg leading-8 text-muted-foreground">
+                  "{testimonial.quote}"
+                </p>
+
+                {/* Author */}
+                <div className="mt-8 flex items-center gap-4 border-t pt-6">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
+                    {testimonial.avatar}
+                  </div>
+
                   <div>
-                    <p className="font-semibold text-foreground">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <p className="font-semibold">
+                      {testimonial.author}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
               </div>
