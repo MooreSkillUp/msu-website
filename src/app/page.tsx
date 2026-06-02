@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Star, ArrowRight, Plus, Quote, CheckCircle } from "lucide-react";
+import { Star, ArrowRight, Plus, Quote, CheckCircle, Code2, Server, Database, PenTool, Cpu, Cube } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { academyPrograms, courses, faqItems } from "@/lib/mock-data";
@@ -49,6 +49,39 @@ const testimonials = [
     avatar: "EV",
   },
 ];
+
+const courseCoverMap: Record<string, { gradient: string; icon: any; label: string }> = {
+  "frontend-react-studio": {
+    gradient: "from-sky-500 via-cyan-500 to-indigo-600",
+    icon: Code2,
+    label: "Frontend React",
+  },
+  "backend-python-api-builder": {
+    gradient: "from-emerald-500 via-teal-500 to-cyan-700",
+    icon: Server,
+    label: "Python Backend",
+  },
+  "backend-javascript-service-lab": {
+    gradient: "from-amber-500 via-orange-500 to-rose-600",
+    icon: Database,
+    label: "JavaScript Backend",
+  },
+  "uiux-figma-product-track": {
+    gradient: "from-fuchsia-500 via-pink-600 to-rose-700",
+    icon: PenTool,
+    label: "UI/UX Design",
+  },
+  "ai-data-automation-lab": {
+    gradient: "from-violet-500 via-indigo-500 to-slate-800",
+    icon: Cpu,
+    label: "AI & Data",
+  },
+  "engineering-3d-systems": {
+    gradient: "from-slate-600 via-slate-800 to-zinc-950",
+    icon: Cube,
+    label: "3D Systems",
+  },
+};
 
 export default function HomePage() {
   return (
@@ -373,18 +406,13 @@ export default function HomePage() {
           {/* Course Grid */}
           <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {courses.slice(0, 6).map((course, index) => {
-              const coverImages = [
-                "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80",
-                "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80",
-                "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
-                "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
-                "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
-                "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
-              ];
-              const coverImage =
-                course.cover?.trim().length > 0
-                  ? course.cover
-                  : coverImages[index % coverImages.length];
+              const coverData =
+                courseCoverMap[course.id] ?? {
+                  gradient: "from-slate-700 via-slate-900 to-slate-950",
+                  icon: Code2,
+                  label: course.track,
+                };
+              const CoverIcon = coverData.icon;
 
               // const coursePrice =
               //   course.access === "free" ? "Free" : "$29.99";
@@ -406,28 +434,36 @@ export default function HomePage() {
                   "
                 >
                   {/* Image */}
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden rounded-t-3xl">
                     <div
                       role="img"
                       aria-label={`Cover image for ${course.title}`}
-                      className="
+                      className={`
                         aspect-[4/3]
-                        bg-cover
-                        bg-center
+                        bg-gradient-to-br
+                        ${coverData.gradient}
                         transition-transform
                         duration-500
                         group-hover:scale-105
-                      "
-                      style={{
-                        backgroundImage: `url(${coverImage})`,
-                      }}
+                      `}
                     />
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_25%)]" />
 
                     {/* Badge */}
                     <div className="absolute left-4 top-4">
                       <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-black backdrop-blur">
                         {course.level || "Beginner"}
                       </span>
+                    </div>
+
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex flex-wrap items-center gap-3 rounded-3xl bg-black/20 px-4 py-3 text-white shadow-lg shadow-black/20 backdrop-blur">
+                        <CoverIcon className="h-6 w-6 text-white" />
+                        <div>
+                          <div className="text-sm font-semibold">{coverData.label}</div>
+                          <p className="text-xs text-white/80">{course.track}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
