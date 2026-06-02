@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Star, ArrowRight, Plus, Quote, CheckCircle, Code2, Server, Database, PenTool, Cpu, Cube } from "lucide-react";
+import { Star, ArrowRight, Plus, Quote, CheckCircle, Code2, Server, Database, PenTool, Cpu,  } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { academyPrograms, courses, faqItems } from "@/lib/mock-data";
@@ -78,7 +78,7 @@ const courseCoverMap: Record<string, { gradient: string; icon: any; label: strin
   },
   "engineering-3d-systems": {
     gradient: "from-slate-600 via-slate-800 to-zinc-950",
-    icon: Cube,
+    icon: Star,
     label: "3D Systems",
   },
 };
