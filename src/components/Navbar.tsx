@@ -52,14 +52,12 @@ export function Navbar() {
           {/* 🔥 Know Your Path CTA (NO DUPLICATION, NO ABSOLUTE) */}
           <Link
             href="/k-y-p"
-            className="group relative ml-2 flex items-center gap-2 rounded-full bg-gradient-to-r from-[#024293] to-[#de7300] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-xl"
+            className="group relative flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition hover:shadow-md"
           >
             <span className="absolute -right-1 -top-1 flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75"></span>
               <span className="relative inline-flex h-3 w-3 rounded-full bg-orange-500"></span>
-            </span>
-
-            ✨ Know Your Path
+            </span>Know Your Path
           </Link>
         </nav>
         
@@ -68,13 +66,13 @@ export function Navbar() {
           <ThemeToggle />
 
           <Link href="http://localhost:3000/auth/login">
-            <Button variant="ghost" size="sm">
+            <Button className="rounded-full" variant="ghost" size="sm">
               Login
             </Button>
           </Link>
 
           <Link href="http://localhost:3000">
-            <Button className="bg-[#de7300]" variant="accent" size="sm">
+            <Button className="bg-[#de7300] rounded-full" variant="accent" size="sm">
               Get started
             </Button>
           </Link>

@@ -53,7 +53,7 @@ export default function KnowYourPathPage() {
         </div>
 
         {/* Featured Video */}
-        <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-card p-4 shadow-sm sm:p-6">
+        <div className="mx-auto w-full rounded-3xl border border-border bg-card p-4 shadow-sm sm:p-6">
           <div className="mb-6">
             <h2 className="font-display text-2xl font-bold">
               Watch: Know Your Path

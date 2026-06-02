@@ -34,7 +34,7 @@ export function BrandLogo({
             height={50}
             className="hidden dark:block"
           />
-        <div className="text-xs text-muted-foreground">{subtitle}</div>
+        {/* <div className="text-xs text-muted-foreground">{subtitle}</div> */}
       </div>
     </Link>
   );

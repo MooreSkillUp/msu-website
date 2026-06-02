@@ -53,7 +53,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t bg-background">
+    <footer className="mt-auto bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
           {/* Brand Section */}
@@ -128,7 +128,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 border-t pt-6">
+        <div className="mt-10 pt-6">
           <p className="text-center text-xs text-muted-foreground">
             © {new Date().getFullYear()} MooreSkillUp. All rights reserved.
           </p>

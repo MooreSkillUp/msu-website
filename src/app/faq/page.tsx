@@ -11,13 +11,13 @@ export default function FAQPage() {
   return (
     <main className="flex-1">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b">
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          <span className="inline-flex rounded-full border px-4 py-1 text-sm font-medium text-primary">
+          {/* <span className="inline-flex rounded-full border px-4 py-1 text-sm font-medium text-primary">
             Help Center
-          </span>
+          </span> */}
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl">
             Frequently Asked Questions
@@ -36,7 +36,7 @@ export default function FAQPage() {
           {faqItems.map((item, index) => (
             <details
               key={index}
-              className="group rounded-3xl border bg-card p-6 transition-all duration-300 hover:shadow-md"
+              className="group rounded-3xl  bg-card p-6 transition-all duration-300 hover:shadow-md"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                 <h3 className="font-display text-lg font-semibold">

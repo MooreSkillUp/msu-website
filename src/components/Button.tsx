@@ -8,7 +8,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 const variants: Record<Variant, string> = {
   primary:
-    "bg-primary text-primary-foreground hover:bg-[#de7300] hover:text-white hover:border-[#de7300]",
+    "bg-primary text-primary-foreground hover:bg-[#de7300]  hover:text-white hover:border-[#de7300]",
   accent:
     "bg-accent text-accent-foreground hover:bg-[#de7300] hover:text-white hover:border-[#de7300]",
   outline:
@@ -26,7 +26,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
     <button
       ref={ref}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         variants[variant],
         sizes[size],
         className,
