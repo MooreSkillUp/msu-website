@@ -678,7 +678,8 @@ export const courses: Course[] = [
     instructor: "Ada Morgan",
     totalLessons: 24,
     completedLessons: 9,
-    cover: " ",
+    cover:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
     interest: "Web Development",
     track: "Frontend Development",
     access: "free",
@@ -754,7 +755,8 @@ export const courses: Course[] = [
     instructor: "Lena Park",
     totalLessons: 25,
     completedLessons: 7,
-    cover: "500 900",
+    cover:
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=900&q=80",
     interest: "Web Development",
     track: "Backend Development",
     access: "paid",
@@ -824,7 +826,8 @@ export const courses: Course[] = [
     instructor: "Jordan Cole",
     totalLessons: 22,
     completedLessons: 0,
-    cover: "400 500 900",
+    cover:
+      "https://images.unsplash.com/photo-1517430816045-df4b7de07001?auto=format&fit=crop&w=900&q=80",
     interest: "Web Development",
     track: "Backend Development",
     access: "paid",
@@ -898,7 +901,8 @@ export const courses: Course[] = [
     instructor: "Mina Duarte",
     totalLessons: 24,
     completedLessons: 4,
-    cover: "400 500",
+    cover:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
     interest: "Design & Graphics",
     track: "UI/UX Design",
     access: "paid",
@@ -968,7 +972,8 @@ export const courses: Course[] = [
     instructor: "Marcus Vega",
     totalLessons: 23,
     completedLessons: 2,
-    cover: "400 ",
+    cover:
+      "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?auto=format&fit=crop&w=900&q=80",
     interest: "Artificial Intelligence & Machine Learning",
     track: "Machine Learning",
     access: "free",
@@ -1033,7 +1038,8 @@ export const courses: Course[] = [
     instructor: "Tomi Bello",
     totalLessons: 21,
     completedLessons: 1,
-    cover: "700 400",
+    cover:
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80",
     interest: "Engineering",
     track: "3D Modeling",
     access: "paid",

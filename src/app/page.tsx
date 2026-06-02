@@ -381,6 +381,10 @@ export default function HomePage() {
                 "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
                 "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
               ];
+              const coverImage =
+                course.cover?.trim().length > 0
+                  ? course.cover
+                  : coverImages[index % coverImages.length];
 
               // const coursePrice =
               //   course.access === "free" ? "Free" : "$29.99";
@@ -404,6 +408,8 @@ export default function HomePage() {
                   {/* Image */}
                   <div className="relative overflow-hidden">
                     <div
+                      role="img"
+                      aria-label={`Cover image for ${course.title}`}
                       className="
                         aspect-[4/3]
                         bg-cover
@@ -413,9 +419,7 @@ export default function HomePage() {
                         group-hover:scale-105
                       "
                       style={{
-                        backgroundImage: `url(${
-                          coverImages[index % coverImages.length]
-                        })`,
+                        backgroundImage: `url(${coverImage})`,
                       }}
                     />
 
