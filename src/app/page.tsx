@@ -328,43 +328,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Explore Course Categories</p> */}
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground">Course Categories</h2>
-            </div>
-            <Link href="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#de7300]">
-              View All Categories <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {academyPrograms.slice(0, 4).map((program, index) => {
-              const bgColors = ["bg-sky-50", "bg-emerald-50", "bg-amber-50", "bg-violet-50"];
-              const darkBgColors = ["dark:bg-sky-900", "dark:bg-emerald-900", "dark:bg-amber-900", "dark:bg-violet-900"];
-              const textColors = ["text-sky-700", "text-emerald-700", "text-amber-700", "text-violet-700"];
-              return (
-                <Link
-                  href="/courses"
-                  key={program.id}
-                  className="group overflow-hidden rounded-[2rem] border border-border dark:border-none bg-white dark:bg-card p-8 transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <div className={`inline-flex h-14 w-14 items-center justify-center rounded-3xl ${bgColors[index % bgColors.length]} ${darkBgColors[index % darkBgColors.length]} ${textColors[index % textColors.length]} text-xl font-semibold`}>
-                    {program.iconLabel}</div>
-                  <h3 className="mt-8 text-2xl font-semibold text-foreground">{program.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{program.description}</p>
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                    Explore tracks <ArrowRight className="h-4 w-4" />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-      
       <section className="relative overflow-hidden py-24">
         <div className="absolute inset-0" />
 
