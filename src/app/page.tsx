@@ -567,7 +567,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-[0.45fr_0.55fr]">
             {/* Left Content */}
-            <div className="sticky top-24 h-fit">
+            <div className="h-fit lg:sticky lg:top-24">
               {/* <span className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-sm font-medium text-primary">
                 FAQ
               </span> */}
