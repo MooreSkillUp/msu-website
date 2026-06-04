@@ -70,7 +70,7 @@ export default function KnowYourPathPage() {
             <div className="aspect-video">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/kEaC6nBXwco"
+                src="https://www.youtube.com/embed/7AF1cWP-qMs"
                 title="Know Your Path"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

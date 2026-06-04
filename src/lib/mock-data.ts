@@ -686,7 +686,7 @@ export const courses: Course[] = [
     availableOn: "Monday",
     rating: 4.9,
     learners: 1240,
-    level: "Intermediate",
+    level: "Beginner",
     featured: true,
     tags: ["HTML", "CSS", "JavaScript", "React"],
     modules: buildModules("front-react", [
@@ -833,7 +833,7 @@ export const courses: Course[] = [
     access: "paid",
     rating: 4.76,
     learners: 710,
-    level: "Intermediate",
+    level: "Beginner",
     tags: ["JavaScript", "Node.js", "Express", "MongoDB"],
     modules: buildModules("back-js", [
       {
@@ -909,7 +909,7 @@ export const courses: Course[] = [
     availableOn: "Thursday",
     rating: 4.95,
     learners: 760,
-    level: "Advanced",
+    level: "Beginner",
     tags: ["UI/UX", "Figma", "Research", "Systems"],
     modules: buildModules("design-uiux", [
       {
@@ -980,7 +980,7 @@ export const courses: Course[] = [
     availableOn: "Wednesday",
     rating: 4.72,
     learners: 680,
-    level: "Beginner",
+    level: "Advanced",
     tags: ["Python", "Data", "AI", "Automation"],
     modules: buildModules("ai-data", [
       {
@@ -1045,7 +1045,7 @@ export const courses: Course[] = [
     access: "paid",
     rating: 4.83,
     learners: 410,
-    level: "Intermediate",
+    level: "Beginner",
     tags: ["3D Modeling", "SolidWorks", "Engineering"],
     modules: buildModules("eng-3d", [
       {

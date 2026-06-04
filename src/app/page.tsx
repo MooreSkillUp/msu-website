@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Star, ArrowRight, Plus, Quote, CheckCircle, Code2, Server, Database, PenTool, Cpu,  } from "lucide-react";
+import { Star, ArrowRight, Plus, Quote, CheckCircle, Code2, Server, Database, PenTool, Cpu, Award,  } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { academyPrograms, courses, faqItems } from "@/lib/mock-data";
@@ -150,7 +150,7 @@ export default function HomePage() {
             </div>
 
             {/* RIGHT VISUAL */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -166,15 +166,151 @@ export default function HomePage() {
                   className="h-[520px] w-full object-cover"
                 />
 
-                {/* overlay glow */}
+                overlay glow
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#024293]/20 to-[#de7300]/10" />
               </div>
 
-              {/* floating badge */}
+              floating badge
               <div className="absolute -bottom-6 left-6 rounded-2xl bg-card px-4 py-3 shadow-lg text-sm">
                 Start from your personalized path
               </div>
-            </motion.div>
+            </motion.div> */}
+
+            {/* RIGHT VISUAL */}
+              <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+
+              >
+
+              {/* Background Glow */}
+
+                <div className="absolute -inset-8 bg-gradient-to-r from-[#024293]/20 via-[#FC6202]/20 to-[#024293]/20 blur-3xl" />
+
+              {/* Main Dashboard Card */}
+
+                <div className="relative overflow-hidden rounded-[2rem] border bg-card shadow-2xl">
+
+              {/* Header */}
+              <div className="border-b p-5">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-semibold">
+                    Your Learning Journey
+                  </h3>
+
+                  <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
+                    Active
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 space-y-6">
+
+                {/* Career Path */}
+                <div className="rounded-2xl bg-primary/5 p-5">
+                  <p className="text-sm text-muted-foreground">
+                    Current Path
+                  </p>
+
+                  <h4 className="mt-2 text-xl font-semibold">
+                    Backend Development
+                  </h4>
+
+                  <div className="mt-4 h-3 overflow-hidden rounded-full bg-muted">
+                    <div className="h-full w-[68%] rounded-full bg-primary" />
+                  </div>
+
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    68% completed
+                  </p>
+                </div>
+
+                {/* Roadmap */}
+                <div className="space-y-4">
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
+                      ✓
+                    </div>
+
+                    <div>
+                      <p className="font-medium">
+                        Python Fundamentals
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Completed
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
+                      ✓
+                    </div>
+
+                    <div>
+                      <p className="font-medium">
+                        APIs & Databases
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Completed
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white">
+                      3
+                    </div>
+
+                    <div>
+                      <p className="font-medium">
+                        Django Projects
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        In Progress
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+                </div>
+
+              {/* Floating Stats Card */}
+
+                <div className="absolute -left-8 top-12 rounded-2xl border bg-background p-4 shadow-xl">
+                  <p className="text-xs text-muted-foreground">
+                    Courses Completed
+                  </p>
+
+              <p className="text-3xl font-bold">
+                12
+              </p>
+
+                </div>
+
+              {/* Floating Certificate Card */}
+
+                <div className="absolute -bottom-6 right-6 rounded-2xl border bg-background p-4 shadow-xl">
+                  <p className="text-xs text-muted-foreground">
+                    Achievement
+                  </p>
+
+              <p className="font-semibold">
+                Certificate Ready
+              </p>
+
+
+                </div>
+
+              </motion.div>
+
 
           </div>
         </div>
@@ -303,28 +439,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* CTA STRIP */}
-          {/* <div className="mt-16 rounded-[2.5rem] bg-gradient-to-r from-[#024293] to-[#de7300] p-10 text-white text-center shadow-xl">
-
-            <h3 className="text-3xl font-bold">
-              Not sure where to start?
-            </h3>
-
-            <p className="mt-3 text-white/80">
-              Let the system guide you step-by-step based on your interests.
-            </p>
-
-            <div className="mt-6">
-              <a
-                href="/k-y-p"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:scale-105 transition"
-              >
-                ✨ Discover Your Path
-              </a>
-            </div>
-
-          </div> */}
-
         </div>
       </section>
 
@@ -377,9 +491,6 @@ export default function HomePage() {
                   label: course.track,
                 };
               const CoverIcon = coverData.icon;
-
-              // const coursePrice =
-              //   course.access === "free" ? "Free" : "$29.99";
 
               return (
                 <Link
@@ -459,6 +570,166 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+        {/* LEFT CONTENT */}
+        <div>
+
+          {/* <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+            <Award className="h-4 w-4" />
+            Certification Included
+          </span> */}
+
+          <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+            Complete Courses.
+            <br />
+            Earn Recognition.
+          </h2>
+
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            Every learner who successfully completes a MooreSkillUp course
+            receives an official Certificate of Completion that validates
+            their learning journey and acquired skills.
+          </p>
+
+          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+            Showcase your achievements on your portfolio, résumé, LinkedIn
+            profile, and professional platforms while demonstrating your
+            commitment to continuous growth and career development.
+          </p>
+
+          <div className="mt-8 space-y-4">
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <span>Official MooreSkillUp Certificate</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <span>Downloadable digital certificate</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <span>Share on LinkedIn and professional profiles</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <span>Recognized proof of course completion</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <span>Showcase your skills and achievements</span>
+            </div>
+
+          </div>
+
+          <div className="mt-10">
+            <Link href="/courses">
+              <Button
+                size="lg"
+                className="rounded-full px-8 h-14"
+              >
+                Start Learning Today
+              </Button>
+            </Link>
+          </div>
+
+        </div>
+
+        {/* RIGHT VISUAL */}
+        <div className="relative group">
+
+          {/* Background Glow */}
+          <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-r from-[#024293]/20 via-[#FC6202]/20 to-[#024293]/20 blur-3xl opacity-70 transition duration-500 group-hover:opacity-100" />
+
+          {/* Certificate Card */}
+          <div
+            className="
+              relative
+              overflow-hidden
+              rounded-[2rem]
+              border
+              bg-card
+              p-4
+              shadow-2xl
+              transition-all
+              duration-500
+              group-hover:-translate-y-2
+            "
+          >
+
+            <Image
+              src="/images/preview-certificate.jpg"
+              alt="MooreSkillUp Certificate Preview"
+              width={1200}
+              height={850}
+              className="w-full rounded-xl object-cover"
+            />
+
+            {/* Top Badge */}
+            <div className="absolute left-6 top-6">
+              <span className="rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-black shadow-lg backdrop-blur">
+                Official Certificate
+              </span>
+            </div>
+
+            {/* Certificate Overlay */}
+            <div className="absolute bottom-6 left-6 rounded-xl bg-black/70 px-4 py-3 backdrop-blur">
+              <p className="text-sm font-semibold text-white">
+                Verified Completion
+              </p>
+              <p className="text-xs text-white/70">
+                Unique Certificate ID Included
+              </p>
+            </div>
+
+          </div>
+
+          {/* Floating Verification Card */}
+          <div
+            className="
+              absolute
+              -bottom-6
+              -right-4
+              rounded-2xl
+              border
+              bg-background
+              px-5
+              py-4
+              shadow-xl
+              backdrop-blur
+            "
+          >
+            <div className="flex items-center gap-3">
+
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
+                <CheckCircle className="h-5 w-5 text-green-600" />
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold">
+                  Certificate Included
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Earn upon completion
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+        </div>
+      </section>
 
       <section className="relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
