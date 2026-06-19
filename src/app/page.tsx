@@ -665,7 +665,7 @@ export default function HomePage() {
           >
 
             <Image
-              src="/images/preview-certificate.jpg"
+              src="/images/preview-certificate.jpeg"
               alt="MooreSkillUp Certificate Preview"
               width={1200}
               height={850}
@@ -673,21 +673,21 @@ export default function HomePage() {
             />
 
             {/* Top Badge */}
-            <div className="absolute left-6 top-6">
+            {/* <div className="absolute left-6 top-6">
               <span className="rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-black shadow-lg backdrop-blur">
                 Official Certificate
               </span>
-            </div>
+            </div> */}
 
             {/* Certificate Overlay */}
-            <div className="absolute bottom-6 left-6 rounded-xl bg-black/70 px-4 py-3 backdrop-blur">
+            {/* <div className="absolute bottom-6 left-6 rounded-xl bg-black/70 px-4 py-3 backdrop-blur">
               <p className="text-sm font-semibold text-white">
                 Verified Completion
               </p>
               <p className="text-xs text-white/70">
                 Unique Certificate ID Included
               </p>
-            </div>
+            </div> */}
 
           </div>
 
@@ -714,7 +714,7 @@ export default function HomePage() {
 
               <div>
                 <p className="text-sm font-semibold">
-                  Certificate Included
+                  Verified Certificate
                 </p>
                 <p className="text-xs text-muted-foreground">
                   Earn upon completion

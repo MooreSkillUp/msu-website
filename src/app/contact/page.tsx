@@ -148,7 +148,7 @@ return ( <main className="flex-1">
                 </p>
 
                 <a
-                  href="YOUR_WHATSAPP_LINK"
+                  href="https://wa.link/zuahjs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
@@ -312,7 +312,7 @@ return ( <main className="flex-1">
           </div>
 
           <a
-            href="YOUR_WHATSAPP_LINK"
+            href="https://wa.link/zuahjs"
             target="_blank"
             rel="noopener noreferrer"
             className="
