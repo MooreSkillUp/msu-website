@@ -123,7 +123,7 @@ export default function CoursesExplorer() {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search categories, tracks, or courses (e.g. React, Docker, Python)..."
+          placeholder="Search paths, tracks, or skills like React, Docker, Python..."
           className="w-full bg-white text-foreground rounded-2xl py-4 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400 font-sans"
         />
         {searchQuery && (

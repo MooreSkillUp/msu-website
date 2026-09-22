@@ -7,11 +7,13 @@ import {
   PiStackDuotone as Stack,
 } from "react-icons/pi";
 import { CtaBanner } from "@/components/shared/CtaBanner";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "FAQ | MooreSkillUp",
   description: "Frequently asked questions about our learning platform.",
-};
+  path: "/faq",
+});
 
 export default function FAQPage() {
   return (
@@ -28,8 +30,8 @@ export default function FAQPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
-            Everything you need to know about courses, certificates,
-            enrollment, payments, and learning on MooreSkillUp.
+            Straight answers about courses, certificates, enrollment, and how
+            MooreSkillUp actually works.
           </p>
         </div>
       </section>
@@ -63,7 +65,7 @@ export default function FAQPage() {
         <div className="mt-16">
           <CtaBanner
             heading="Still have questions?"
-            description="Our team is here to help you get the most out of MooreSkillUp."
+            description="We're students too. We know what it's like to get stuck, so reach out."
             linkHref="/contact"
             linkLabel="Contact Support"
             items={[

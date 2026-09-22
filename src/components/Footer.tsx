@@ -68,8 +68,8 @@ export function Footer() {
             </Link>
 
             <p className="mt-5 text-sm leading-6 text-muted-foreground">
-              Premium learning experiences for builders, designers, and modern
-              product teams.
+              Built by computer engineering students to turn campus theory
+              into real tech skills.
             </p>
 
             <p className="mt-3 text-sm text-muted-foreground">

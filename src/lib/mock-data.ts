@@ -284,7 +284,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "web-development",
     title: "Web Development",
-    description: "A complete path for learners who want to build websites, user interfaces, and real-world web apps.",
+    description: "Build real websites, interfaces, and apps. Frontend, backend, or both.",
     cover: " ",
     iconLabel: "WD",
     branches: [
@@ -311,7 +311,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "programming-languages",
     title: "Programming Languages",
-    description: "Deep language-first tracks for learners who want strong fundamentals before choosing a specialization.",
+    description: "Master a language before you specialize. Strong fundamentals, zero shortcuts.",
     cover: " ",
     iconLabel: "PL",
     branches: [
@@ -338,7 +338,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "ai-ml",
     title: "Artificial Intelligence & Machine Learning",
-    description: "Data, machine learning, deep neural networks, generative AI models, and automation workflows.",
+    description: "Machine learning, neural networks, and generative AI. Build the models everyone's talking about.",
     cover: " ",
     iconLabel: "AI",
     branches: [
@@ -365,7 +365,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "data",
     title: "Data",
-    description: "Unlock insights, design scalable data pipelines, and visualize business datasets.",
+    description: "Turn raw data into insights, pipelines, and dashboards businesses actually use.",
     cover: " ",
     iconLabel: "DA",
     branches: [
@@ -398,7 +398,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "cloud-computing",
     title: "Cloud Computing",
-    description: "Master cloud services, platform design, serverless patterns, and multi-cloud environments.",
+    description: "AWS, Azure, GCP. Learn to design and run infrastructure that scales.",
     cover: " ",
     iconLabel: "CC",
     branches: [
@@ -431,7 +431,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "devops",
     title: "DevOps",
-    description: "Automate build infrastructure, run container clusters, and manage site reliability.",
+    description: "Automate deployments, manage containers, and keep systems running when it matters.",
     cover: " ",
     iconLabel: "DO",
     branches: [
@@ -464,7 +464,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "mobile-development",
     title: "Mobile Development",
-    description: "Build native and cross-platform mobile apps for iOS and Android devices.",
+    description: "Build apps people actually download. iOS, Android, or both.",
     cover: " ",
     iconLabel: "MD",
     branches: [
@@ -485,7 +485,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "design-graphics",
     title: "Design & Graphics",
-    description: "Create interface mockups, graphics assets, product prototypes, and animations.",
+    description: "Design interfaces, brands, and prototypes people actually want to use.",
     cover: " ",
     iconLabel: "DG",
     branches: [
@@ -518,7 +518,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "cybersecurity",
     title: "Cybersecurity",
-    description: "Defend systems, test for vulnerabilities, configure secure networks, and analyze threats.",
+    description: "Think like an attacker, defend like a pro. Networks, systems, and threats.",
     cover: " ",
     iconLabel: "CS",
     branches: [
@@ -551,7 +551,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "software-engineering",
     title: "Software Engineering",
-    description: "Design systems architecture, automate test coverage, and engineer high-performance APIs.",
+    description: "Architect systems, automate testing, and build APIs that don't break under pressure.",
     cover: " ",
     iconLabel: "SE",
     branches: [
@@ -584,7 +584,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "core-tech",
     title: "Core Computing / Core Tech",
-    description: "Build base knowledge in operating systems, networks, Git collaboration, and SQL databases.",
+    description: "The fundamentals every developer needs: Linux, Git, networking, and databases.",
     cover: " ",
     iconLabel: "CT",
     branches: [
@@ -629,7 +629,7 @@ export const academyPrograms: AcademyProgram[] = [
   {
     id: "engineering",
     title: "Engineering",
-    description: "Technical design paths for learners interested in 3D systems, product modeling, and engineering workflows.",
+    description: "3D modeling, CAD, and technical design workflows for engineering-minded builders.",
     cover: " ",
     iconLabel: "EG",
     branches: [
@@ -1185,7 +1185,7 @@ export const pricingPlans: PricingPlan[] = [
     price: "$0",
     tagline: "Explore before you commit",
     description:
-      "Ideal for new learners who want to explore beginner sections, preview roadmaps, and understand each course before paying.",
+      "Perfect if you want to test the waters first. Preview roadmaps, try beginner sections, and see if a course is worth it before you pay.",
     cta: "Start free",
     audience: "Best for new learners comparing paths",
     accessSummary: "Access roadmap previews, beginner sections, and a limited part of each course.",
@@ -1206,7 +1206,7 @@ export const pricingPlans: PricingPlan[] = [
     price: "Per course",
     tagline: "Unlock full course access",
     description:
-      "Built for active learners who want the full course experience: every section, every lesson, every task, and certificate eligibility for the purchased course.",
+      "For learners ready to commit. Every section, every lesson, every task, plus a certificate when you finish.",
     cta: "Unlock a course",
     highlight: true,
     audience: "Best for learners ready to pay for a course and finish it properly",
@@ -1229,7 +1229,7 @@ export const pricingPlans: PricingPlan[] = [
     price: "Custom",
     tagline: "Premium support layer",
     description:
-      "Designed for learners or cohorts that want mentor-style reviews, premium support, and stronger accountability on top of paid course access.",
+      "For learners who want more than a course: mentor reviews, real accountability, and support that pushes you to finish.",
     cta: "Talk to us",
     audience: "Best for professionals building portfolio-ready outcomes",
     accessSummary:
@@ -1276,22 +1276,22 @@ export const faqItems = [
   {
     question: "How does course access work on the free plan?",
     answer:
-      "Free learners can explore the public academy catalog and access selected courses on specific release days. Paid plans unlock everything full-time.",
+      "On the free plan, you can browse the full catalog and access select courses on scheduled release days. Upgrade to unlock everything, anytime.",
   },
   {
     question: "How is the dashboard personalized?",
     answer:
-      "Learners choose a main academy path and a track during registration. The dashboard then prioritizes content, recommendations, and progress around that selection.",
+      "You pick a path and track when you sign up. From there, your dashboard prioritizes the content, recommendations, and progress that actually matter to you.",
   },
   {
     question: "What is the Quiz Shop?",
     answer:
-      "The Quiz Shop is a gamified rewards area where quiz points can be redeemed for perks like retry tokens, challenge packs, and premium-style review rewards.",
+      "Earn points from quizzes, then spend them on perks like retry tokens, challenge packs, and premium review sessions.",
   },
   {
     question: "How are courses structured?",
     answer:
-      "Courses are organized week by week. Each week includes lessons plus an assessment, and the final week ends with a capstone-style project before certification.",
+      "Every course runs week by week: lessons, then an assessment. You wrap up with a capstone project before you get certified.",
   },
 ];
 export const notifications: NotificationItem[] = [

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Navbar } from "@/components/Navbar";
 import "@/styles.css";
 import { Footer } from "@/components/Footer";
+import { buildMetadata, siteUrl } from "@/lib/seo";
 
 const productSans = localFont({
   src: [
@@ -21,8 +22,13 @@ const productSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MooreSkillUp",
-  description: "MooreSkillUp is a learning platform that helps you learn new skills and advance your career.",
+  metadataBase: new URL(siteUrl),
+  ...buildMetadata({
+    title: "MooreSkillUp",
+    description:
+      "MooreSkillUp helps university students turn academic theory into real tech skills, from web development to AI, and build a career to match.",
+    path: "/",
+  }),
 };
 
 export default function RootLayout({

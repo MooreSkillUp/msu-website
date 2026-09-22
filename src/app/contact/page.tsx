@@ -85,11 +85,13 @@ import {
 
 import { ContactForm } from "./contact-form";
 import { CtaBanner } from "@/components/shared/CtaBanner";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-title: "Contact Us | MooreSkillUp",
-description: "Get in touch with the MooreSkillUp team.",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Contact Us | MooreSkillUp",
+  description: "Get in touch with the MooreSkillUp team.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
 return ( <main className="flex-1">
@@ -102,12 +104,12 @@ return ( <main className="flex-1">
       <div className="mx-auto max-w-3xl text-center">
 
         <h1 className="mt-6 text-5xl font-bold tracking-tight">
-          Get the Help You Need
+          Need Help? We Got You.
         </h1>
 
         <p className="mt-6 text-lg text-muted-foreground">
-          Whether you're exploring courses, choosing a learning path,
-          or need support, our team is here to help.
+          Whether you're picking a path or stuck mid-course, we're a
+          message away.
         </p>
 
       </div>
@@ -139,9 +141,8 @@ return ( <main className="flex-1">
                 </h3>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Need a quick answer? Chat directly with our team
-                  about courses, learning paths, enrollment,
-                  certificates, and support.
+                  The fastest way to reach us. Ask about courses, paths,
+                  enrollment, or anything else on your mind.
                 </p>
 
                 <a
@@ -186,7 +187,7 @@ return ( <main className="flex-1">
                 </h3>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Prefer email? Reach out and we'll get back to you.
+                  Prefer writing it out? Send us an email and we'll reply soon.
                 </p>
 
                 <a
@@ -226,8 +227,8 @@ return ( <main className="flex-1">
                 </div>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Get instant answers about courses, certificates,
-                  learning paths, and enrollment.
+                  Instant answers on courses, certificates, and enrollment.
+                  Coming soon.
                 </p>
 
               </div>
@@ -252,7 +253,7 @@ return ( <main className="flex-1">
                 </h3>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Nnamdi Azikiwe University, Awka, Anambara State, Nigeria.
+                  Nnamdi Azikiwe University, Awka, Anambra State, Nigeria.
                 </p>
 
               </div>
@@ -273,7 +274,7 @@ return ( <main className="flex-1">
             </h2>
 
             <p className="mt-2 text-muted-foreground">
-              Fill out the form below and our team will respond as soon as possible.
+              Drop your message below. We reply fast, promise.
             </p>
 
           </div>
@@ -293,8 +294,8 @@ return ( <main className="flex-1">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
       <CtaBanner
-        heading="Need Immediate Help?"
-        description="Chat directly with our team on WhatsApp for the fastest response, or reach us by email or in person."
+        heading="Need an Answer Right Now?"
+        description="WhatsApp gets you the fastest reply. Email and campus visits work too."
         linkHref="https://wa.link/zuahjs"
         linkLabel="Chat on WhatsApp"
         linkExternal

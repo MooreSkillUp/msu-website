@@ -2,10 +2,12 @@ import { Metadata } from "next";
 import { PiCheckCircleDuotone as CheckCircle2 } from "react-icons/pi";
 import { pricingPlans } from "@/lib/mock-data";
 import { Button } from "@/components/Button";
-export const metadata: Metadata = {
+import { buildMetadata } from "@/lib/seo";
+export const metadata: Metadata = buildMetadata({
   title: "Pricing | MooreSkillUp",
   description: "Simple, transparent pricing for everyone.",
-};
+  path: "/pricing",
+});
 export default function PricingPage() {
   return (
     <main className="flex-1">
@@ -20,12 +22,12 @@ export default function PricingPage() {
           </div>{" "} */}
           <h1 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
             {" "}
-            Start free, then unlock full power{" "}
+            Start free. Pay when you're ready.{" "}
           </h1>{" "}
           <p className="mt-4 mx-auto max-w-2xl text-lg text-muted-foreground">
             {" "}
-            Choose the plan that fits your learning journey. Upgrade anytime when you are ready to
-            go deeper.{" "}
+            Pick what fits your budget right now. Upgrade the moment you're
+            ready to go deeper.{" "}
           </p>{" "}
         </div>{" "}
         <div className="grid gap-8 lg:grid-cols-3 max-w-5xl mx-auto">

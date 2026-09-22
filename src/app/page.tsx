@@ -88,19 +88,21 @@ export default function HomePage() {
               className="flex max-w-xl flex-col justify-center lg:py-24 lg:pr-12"
             >
               <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
-                Skills that start tech careers.
+                Your degree got you here. We get you hired.
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-white/70">
-                Introducing Career Paths: structured, project-based tracks in web
-                development, cloud, data, and design built to get you noticed.
+                MooreSkillUp turns campus theory into real tech skills. Built by
+                computer engineering students, our structured career paths in web
+                development, cloud, AI, and design get you ready for the industry,
+                not just the exam.
               </p>
 
               {/* CTA BUTTON */}
               <div className="mt-8">
                 <Link href="/courses">
                   <Button size="lg" className="h-14 rounded-full bg-[#FC6203] px-8 text-base hover:bg-[#FC6203]/90">
-                    Explore All Courses
+                    Explore Career Paths
                   </Button>
                 </Link>
               </div>
@@ -168,20 +170,20 @@ export default function HomePage() {
               </div> */}
 
               <h2 className="mt-6 text-4xl font-bold tracking-tight">
-                Not Sure Where to Start?
+                Don't Know Where to Begin?
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                MooreSkillUp offers multiple career paths including Web Development,
-                Artificial Intelligence, Cloud Computing, Cybersecurity, Data,
-                DevOps, Mobile Development, Design, Software Engineering, and more.
+                We map out real career paths in Web Development, Artificial
+                Intelligence, Cloud Computing, Cybersecurity, Data, DevOps, Mobile
+                Development, Design, Software Engineering, and more. No guesswork,
+                just direction.
               </p>
 
               <p className="mt-4 text-lg leading-8 text-muted-foreground">
-                If you're unsure which path matches your interests and goals,
-                watch our Know Your Path guide. We'll show you how each learning
-                path works, the skills you'll learn, and how to choose the best
-                direction for your future.
+                Still unsure what fits? Watch our Know Your Path guide. We break
+                down how each path works, the skills you'll walk away with, and how
+                to pick the one that actually matches your goals.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -202,10 +204,10 @@ export default function HomePage() {
             <div className="rounded-2xl border border-border bg-card p-6">
               <div className="space-y-1">
                 {[
-                  { title: "Watch the Guide", desc: "Learn how MooreSkillUp learning paths work." },
-                  { title: "Choose a Career Path", desc: "Select a category that matches your interests." },
-                  { title: "Pick a Learning Branch", desc: "Follow a structured roadmap from beginner to advanced." },
-                  { title: "Build Real Skills", desc: "Complete courses, projects, and milestones as you grow." },
+                  { title: "Watch the Guide", desc: "See how our paths work before you commit." },
+                  { title: "Choose a Career Path", desc: "Pick the track that fits where you want to go." },
+                  { title: "Pick a Learning Branch", desc: "Follow a clear roadmap, beginner to advanced." },
+                  { title: "Build Real Skills", desc: "Ship real projects, not just certificates." },
                 ].map((step, i) => (
                   <div key={step.title} className="flex gap-4 rounded-xl p-4">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
@@ -231,11 +233,11 @@ export default function HomePage() {
           {/* HEADER */}
           <div className="text-center space-y-4">
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-              A Smarter Way to Learn
+              Learning That Actually Sticks
             </h2>
 
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
-              Instead of random courses, MooreSkillUp guides you through structured learning paths designed for real career outcomes.
+              No random tutorials. No scattered courses. Just structured paths built for real career outcomes.
             </p>
           </div>
 
@@ -247,7 +249,7 @@ export default function HomePage() {
               <div className="p-8 pb-0">
                 <h3 className="text-xl font-semibold">Choose Your Path</h3>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Web Dev, AI, Cloud, Design, Cybersecurity and more. Pick a direction based on your goals.
+                  Web Dev, AI, Cloud, Design, Cybersecurity, and more. Pick a lane and commit to it.
                 </p>
               </div>
               <Image
@@ -264,7 +266,7 @@ export default function HomePage() {
               <div className="p-8 pb-0">
                 <h3 className="text-xl font-semibold">Follow Structured Learning</h3>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Every path is broken into beginner to intermediate to advanced steps so you never feel lost.
+                  Every path moves from beginner to advanced, step by step. No skipped fundamentals.
                 </p>
               </div>
               <Image
@@ -281,7 +283,7 @@ export default function HomePage() {
               <div className="p-8 pb-0">
                 <h3 className="text-xl font-semibold">Build Real Skills</h3>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Learn by building projects that prepare you for internships, jobs, and freelance work.
+                  Build real projects that prepare you for internships, jobs, and freelance work.
                 </p>
               </div>
               <Image
@@ -310,12 +312,12 @@ export default function HomePage() {
               </span> */}
 
               <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
-                Learn Skills That Matter
+                Courses Built for the Real World
               </h2>
 
               <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-                Explore practical, industry-focused courses designed to help you
-                build real-world skills and accelerate your career.
+                Practical, industry-built courses designed to move you from student
+                to professional.
               </p>
             </div>
 
@@ -391,21 +393,19 @@ export default function HomePage() {
         <div>
 
           <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
-            Complete Courses.
+            Finish Strong.
             <br />
-            Earn Recognition.
+            Get Recognized.
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Every learner who successfully completes a MooreSkillUp course
-            receives an official Certificate of Completion that validates
-            their learning journey and acquired skills.
+            Finish a course, earn an official MooreSkillUp certificate that
+            proves you did the work and built the skills.
           </p>
 
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Showcase your achievements on your portfolio, résumé, LinkedIn
-            profile, and professional platforms while demonstrating your
-            commitment to continuous growth and career development.
+            Add it to your résumé, LinkedIn, and portfolio. Show recruiters
+            you're not just studying tech, you're building it.
           </p>
 
           <div className="mt-8 space-y-4">
@@ -422,17 +422,17 @@ export default function HomePage() {
 
             <div className="flex items-center gap-3">
               <CheckCircle className="h-5 w-5 text-primary" />
-              <span>Share on LinkedIn and professional profiles</span>
+              <span>Share it straight to LinkedIn</span>
             </div>
 
             <div className="flex items-center gap-3">
               <CheckCircle className="h-5 w-5 text-primary" />
-              <span>Recognized proof of course completion</span>
+              <span>Real proof you finished what you started</span>
             </div>
 
             <div className="flex items-center gap-3">
               <CheckCircle className="h-5 w-5 text-primary" />
-              <span>Showcase your skills and achievements</span>
+              <span>A portfolio piece employers actually trust</span>
             </div>
 
           </div>
@@ -554,8 +554,8 @@ export default function HomePage() {
               </h2>
 
               <p className="mt-6 max-w-md text-lg leading-8 text-muted-foreground">
-                Everything you need to know about enrollment, certificates,
-                learning paths, course access, and your future with MooreSkillUp.
+                Straight answers about enrollment, certificates, learning paths,
+                and what comes next.
               </p>
 
               <a
@@ -596,10 +596,10 @@ export default function HomePage() {
       <section className="pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CtaBanner
-            heading="Take the first step, start learning today!"
-            description="Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed."
+            heading="Your career starts with one course."
+            description="Structured paths, real instructors, and a community of students building careers together."
             linkHref="/courses"
-            linkLabel="Explore all courses"
+            linkLabel="Explore career paths"
             items={[
               { icon: Code2, label: "Web Development", sublabel: "Frontend, Backend, Fullstack", bg: "bg-[#24437f]" },
               { icon: CloudIcon, label: "Cloud Computing", sublabel: "AWS, Azure, Google Cloud", bg: "bg-[#3a5eaa]" },

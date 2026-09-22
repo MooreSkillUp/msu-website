@@ -1,11 +1,13 @@
 import { Metadata } from "next";
 import { PiPlayDuotone as PlayIcon } from "react-icons/pi";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Know Your Path | MooreSkillUp",
   description:
-    "Discover your ideal learning journey and explore the skills needed to achieve your career goals.",
-};
+    "Find your ideal learning path and the skills you need to land a real tech career.",
+  path: "/k-y-p",
+});
 
 export default function KnowYourPathPage() {
   return (
@@ -19,9 +21,9 @@ export default function KnowYourPathPage() {
             </h1>
 
             <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
-              Discover the right learning path for your goals. Explore career
-              opportunities, understand the skills required, and start building
-              a future you can be proud of with MooreSkillUp.
+              Not sure which path fits you? This guide breaks down the career
+              options, the skills each one actually needs, and how to start
+              building toward it today.
             </p>
           </div>
 
@@ -60,9 +62,8 @@ export default function KnowYourPathPage() {
             </h2>
 
             <p className="mt-2 text-muted-foreground">
-              This short video will help you understand how MooreSkillUp works,
-              identify your interests, and choose a learning path that matches your
-              goals.
+              A quick watch that shows you how MooreSkillUp works and helps
+              you pick the path that actually fits.
             </p>
           </div>
           
@@ -86,10 +87,9 @@ export default function KnowYourPathPage() {
           </h3>
 
           <p className="mt-3 text-muted-foreground">
-            Many learners struggle because they don't have a clear direction.
-            Understanding your career path helps you focus on the right skills,
-            avoid unnecessary distractions, and make steady progress toward your
-            goals.
+            Most students stall out because they don't have a clear direction.
+            Once you know your path, you know exactly which skills to focus
+            on and stop wasting time on the wrong ones.
           </p>
         </div>
       </section>
