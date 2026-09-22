@@ -124,7 +124,7 @@ export default function CoursesExplorer() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search categories, tracks, or courses (e.g. React, Docker, Python)..."
-          className="w-full bg-slate-50 text-foreground border border-slate-200 focus:border-primary rounded-2xl py-4 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400 font-sans"
+          className="w-full bg-white text-foreground rounded-2xl py-4 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400 font-sans"
         />
         {searchQuery && (
           <button
@@ -145,8 +145,8 @@ export default function CoursesExplorer() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer active:scale-95 ${isActive
-                ? "bg-[#FC6203] text-white shadow-md shadow-orange-500/20 border-transparent"
-                : "bg-slate-100 hover:bg-slate-200 text-muted-foreground hover:text-foreground border border-border"
+                ? "bg-[#FC6203] text-white"
+                : "bg-white hover:bg-slate-50 text-muted-foreground hover:text-foreground"
                 }`}
             >
               {tab.label}
@@ -157,7 +157,7 @@ export default function CoursesExplorer() {
 
       {/* Grid List Section */}
       {filteredPrograms.length === 0 ? (
-        <div className="text-center py-20 bg-slate-50 rounded-3xl border border-border max-w-lg mx-auto">
+        <div className="text-center py-20 bg-white rounded-3xl max-w-lg mx-auto">
           <p className="text-lg font-semibold text-muted-foreground">No matches found</p>
           <p className="text-sm text-slate-400 mt-2">Try adjusting your keywords or tab filters.</p>
           <button
@@ -189,7 +189,7 @@ export default function CoursesExplorer() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
-                  className="rounded-[2rem] bg-card text-foreground flex flex-col justify-between h-full border border-border/85 hover:border-slate-300 overflow-hidden group transition-all duration-300"
+                  className="rounded-[2rem] bg-card text-foreground flex flex-col justify-between h-full overflow-hidden group transition-all duration-300 hover:-translate-y-1"
                 >
                   <div>
                     {/* Gradient Header */}
@@ -200,12 +200,12 @@ export default function CoursesExplorer() {
                       {/* Top Badges Row */}
                       <div className="relative flex items-center justify-between z-10">
                         {/* Acronym Badge */}
-                        <span className="inline-flex items-center justify-center bg-white/20 backdrop-blur-md text-white px-4 py-1 text-xs font-extrabold tracking-wider rounded-full border border-white/10 shadow-sm">
+                        <span className="inline-flex items-center justify-center bg-white/20 backdrop-blur-md text-white px-4 py-1 text-xs font-extrabold tracking-wider rounded-full">
                           {program.iconLabel}
                         </span>
 
                         {/* Icon Badge */}
-                        <div className="p-2 rounded-xl bg-white/15 backdrop-blur-md text-white border border-white/10 shadow-sm">
+                        <div className="p-2 rounded-xl bg-white/15 backdrop-blur-md text-white">
                           <IconComponent className="h-5 w-5" />
                         </div>
                       </div>
@@ -226,7 +226,7 @@ export default function CoursesExplorer() {
                       {program.branches.map((branch, index) => (
                         <div
                           key={index}
-                          className="bg-slate-50/70 rounded-2xl p-4.5 border border-slate-200/60 transition hover:bg-slate-100/60 hover:border-slate-300"
+                          className="bg-slate-100 rounded-2xl p-4.5 transition hover:bg-slate-200/70"
                         >
                           {/* Track Title */}
                           <h3 className="font-bold text-foreground text-[15px] tracking-tight">
@@ -234,7 +234,7 @@ export default function CoursesExplorer() {
                           </h3>
 
                           {/* Track Summary */}
-                          <p className="text-muted-foreground text-[11.5px] mt-1 leading-normal font-medium">
+                          <p className="text-muted-foreground text-xs mt-1 leading-normal font-medium">
                             {branch.summary}
                           </p>
 
@@ -243,7 +243,7 @@ export default function CoursesExplorer() {
                             {branch.tools.map((course, toolIndex) => (
                               <span
                                 key={toolIndex}
-                                className="bg-slate-200/50 text-slate-700 text-[9.5px] font-semibold px-2.5 py-0.5 rounded-full border border-slate-200/80 transition hover:bg-slate-200 cursor-default"
+                                className="bg-white text-slate-700 text-[10.5px] font-semibold px-2.5 py-0.5 rounded-full transition hover:bg-slate-50 cursor-default"
                               >
                                 {course}
                               </span>
@@ -255,13 +255,13 @@ export default function CoursesExplorer() {
                   </div>
 
                   {/* Footer */}
-                  <div className="flex items-center justify-between pt-4 pb-6 px-6 border-t border-border/80 bg-slate-50/30 rounded-b-[2rem]">
+                  <div className="flex items-center justify-between pt-4 pb-6 px-6 bg-slate-100 rounded-b-[2rem]">
                     <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
                       {trackCount} learning {trackCount === 1 ? "branch" : "branches"}
                     </span>
                     <Link
                       href={`/courses?path=${program.id}`}
-                      className="inline-flex items-center gap-1.5 bg-transparent border border-slate-300 hover:border-slate-400 hover:bg-slate-100/50 text-slate-750 rounded-full px-4.5 py-1.5 text-xs font-bold transition active:scale-95 cursor-pointer shadow-sm"
+                      className="inline-flex items-center gap-1.5 bg-white hover:bg-slate-50 text-slate-750 rounded-full px-4.5 py-1.5 text-xs font-bold transition active:scale-95 cursor-pointer"
                     >
                       Start this path <ArrowRight className="h-3.5 w-3.5" />
                     </Link>

@@ -17,6 +17,7 @@ import {
 } from "react-icons/pi";
 import Image from "next/image";
 import { Button } from "@/components/Button";
+import { CtaBanner } from "@/components/shared/CtaBanner";
 import { academyPrograms, courses, faqItems } from "@/lib/mock-data";
 
 
@@ -592,30 +593,19 @@ export default function HomePage() {
 
       
 
-      <section className="bg-[#0c1945] text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-[0.6fr_0.4fr] lg:items-center">
-            <div>
-              <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Take the first step, start learning today!</h2>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-white/70">
-                Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed.
-              </p>
-            </div>
-            <div className="flex flex-col justify-end gap-4 sm:flex-row sm:items-center">
-              <Link
-                href="/auth/register"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[#FC6203] px-8 py-4 text-center font-semibold text-white transition hover:bg-[#FC6203]/90 sm:w-auto"
-              >
-                Join Now
-              </Link>
-              <Link
-                href="/courses"
-                className="inline-flex w-full items-center justify-center rounded-full border border-white/30 px-8 py-4 text-center font-semibold text-white transition hover:bg-white/10 sm:w-auto"
-              >
-                Explore Courses
-              </Link>
-            </div>
-          </div>
+      <section className="pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <CtaBanner
+            heading="Take the first step, start learning today!"
+            description="Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed."
+            linkHref="/courses"
+            linkLabel="Explore all courses"
+            items={[
+              { icon: Code2, label: "Web Development", sublabel: "Frontend, Backend, Fullstack", bg: "bg-[#24437f]" },
+              { icon: CloudIcon, label: "Cloud Computing", sublabel: "AWS, Azure, Google Cloud", bg: "bg-[#3a5eaa]" },
+              { icon: Cpu, label: "AI & Machine Learning", sublabel: "ML, Deep Learning, GenAI", bg: "bg-[#FC6203]" },
+            ]}
+          />
         </div>
       </section>
     </main>

@@ -84,6 +84,7 @@ import {
 } from "react-icons/pi";
 
 import { ContactForm } from "./contact-form";
+import { CtaBanner } from "@/components/shared/CtaBanner";
 
 export const metadata: Metadata = {
 title: "Contact Us | MooreSkillUp",
@@ -123,7 +124,7 @@ return ( <main className="flex-1">
         <div className="space-y-6">
 
           {/* WhatsApp */}
-          <div className="rounded-[2rem] border bg-card p-6 shadow-sm">
+          <div className="rounded-[2rem] bg-card p-6">
 
             <div className="flex items-start gap-4">
 
@@ -170,7 +171,7 @@ return ( <main className="flex-1">
           </div>
 
           {/* Email */}
-          <div className="rounded-[2rem] border bg-card p-6 shadow-sm">
+          <div className="rounded-[2rem] bg-card p-6 ">
 
             <div className="flex items-start gap-4">
 
@@ -202,7 +203,7 @@ return ( <main className="flex-1">
           </div>
 
           {/* AI Assistant */}
-          <div className="rounded-[2rem] border bg-card p-6 shadow-sm">
+          <div className="rounded-[2rem] bg-card p-6 ">
 
             <div className="flex items-start gap-4">
 
@@ -236,7 +237,7 @@ return ( <main className="flex-1">
           </div>
 
           {/* Location */}
-          <div className="rounded-[2rem] border bg-card p-6 shadow-sm">
+          <div className="rounded-[2rem] bg-card p-6">
 
             <div className="flex items-start gap-4">
 
@@ -263,7 +264,7 @@ return ( <main className="flex-1">
         </div>
 
         {/* CONTACT FORM */}
-        <div className="rounded-[2rem] border bg-card p-8 shadow-sm">
+        <div className="rounded-[2rem]  bg-card p-8">
 
           <div className="mb-8">
 
@@ -291,41 +292,18 @@ return ( <main className="flex-1">
 
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-      <div className="rounded-2xl bg-[#024293] p-10 text-white">
-
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-
-          <div>
-
-            <h2 className="text-3xl font-bold">
-              Need Immediate Help?
-            </h2>
-
-            <p className="mt-2 text-white/80">
-              Chat directly with our team on WhatsApp for the fastest response.
-            </p>
-
-          </div>
-
-          <a
-            href="https://wa.link/zuahjs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              inline-flex items-center gap-2
-              rounded-full
-              bg-white
-              px-6 py-3
-              font-semibold
-              text-black
-            "
-          >
-            Chat on WhatsApp
-          </a>
-
-        </div>
-
-      </div>
+      <CtaBanner
+        heading="Need Immediate Help?"
+        description="Chat directly with our team on WhatsApp for the fastest response, or reach us by email or in person."
+        linkHref="https://wa.link/zuahjs"
+        linkLabel="Chat on WhatsApp"
+        linkExternal
+        items={[
+          { icon: MessageCircleMore, label: "WhatsApp", sublabel: "Fast, direct replies", bg: "bg-green-600" },
+          { icon: Mail, label: "Email", sublabel: "mooreskillup@gmail.com", bg: "bg-[#3a5eaa]" },
+          { icon: MapPin, label: "Our Team", sublabel: "Awka, Nigeria", bg: "bg-[#FC6203]" },
+        ]}
+      />
 
     </div>
 

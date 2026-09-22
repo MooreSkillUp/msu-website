@@ -1,6 +1,12 @@
 import { Metadata } from "next";
 import { faqItems } from "@/lib/mock-data";
-import { PiCaretDownDuotone as ChevronDown } from "react-icons/pi";
+import {
+  PiCaretDownDuotone as ChevronDown,
+  PiGraduationCapDuotone as GraduationCap,
+  PiStorefrontDuotone as Storefront,
+  PiStackDuotone as Stack,
+} from "react-icons/pi";
+import { CtaBanner } from "@/components/shared/CtaBanner";
 
 export const metadata: Metadata = {
   title: "FAQ | MooreSkillUp",
@@ -34,7 +40,7 @@ export default function FAQPage() {
           {faqItems.map((item, index) => (
             <details
               key={index}
-              className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-md"
+              className="group rounded-2xl bg-card p-6 transition-all duration-300 "
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                 <h3 className="font-display text-lg font-semibold">
@@ -54,21 +60,18 @@ export default function FAQPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 rounded-2xl border border-border bg-primary/5 p-10 text-center">
-          <h2 className="font-display text-2xl font-bold">
-            Still have questions?
-          </h2>
-
-          <p className="mt-3 text-muted-foreground">
-            Our team is here to help you get the most out of MooreSkillUp.
-          </p>
-
-          <a
-            href="/contact"
-            className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
-          >
-            Contact Support
-          </a>
+        <div className="mt-16">
+          <CtaBanner
+            heading="Still have questions?"
+            description="Our team is here to help you get the most out of MooreSkillUp."
+            linkHref="/contact"
+            linkLabel="Contact Support"
+            items={[
+              { icon: GraduationCap, label: "Course Access", sublabel: "Free plan & release days", bg: "bg-[#24437f]" },
+              { icon: Storefront, label: "Quiz Shop", sublabel: "Redeem points for perks", bg: "bg-[#3a5eaa]" },
+              { icon: Stack, label: "Course Structure", sublabel: "Weekly lessons & capstone", bg: "bg-[#FC6203]" },
+            ]}
+          />
         </div>
       </section>
     </main>
