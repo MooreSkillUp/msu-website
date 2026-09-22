@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { PlayIcon } from "lucide-react";
+import { PiPlayDuotone as PlayIcon } from "react-icons/pi";
 
 export const metadata: Metadata = {
   title: "Know Your Path | MooreSkillUp",

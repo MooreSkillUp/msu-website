@@ -8,13 +8,13 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 const variants: Record<Variant, string> = {
   primary:
-    "bg-primary text-primary-foreground hover:bg-[#de7300]  hover:text-white hover:border-[#de7300]",
+    "bg-primary text-primary-foreground hover:bg-[#FC6203]  hover:text-white hover:border-[#FC6203]",
   accent:
-    "bg-accent text-accent-foreground hover:bg-[#de7300] hover:text-white hover:border-[#de7300]",
+    "bg-accent text-accent-foreground hover:bg-[#FC6203] hover:text-white hover:border-[#FC6203]",
   outline:
-    "border border-border bg-transparent hover:bg-[#de7300] hover:text-white hover:border-[#de7300]",
-  ghost: "bg-transparent hover:bg-[#de7300] hover:text-white",
-  subtle: "bg-muted text-foreground hover:bg-[#de7300] hover:text-white",
+    "border border-border bg-transparent hover:bg-[#FC6203] hover:text-white hover:border-[#FC6203]",
+  ghost: "bg-transparent hover:bg-[#FC6203] hover:text-white",
+  subtle: "bg-muted text-foreground hover:bg-[#FC6203] hover:text-white",
 };
 const sizes: Record<Size, string> = {
   sm: "h-8 px-3 text-sm",

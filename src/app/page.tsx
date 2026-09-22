@@ -1,7 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Star, ArrowRight, Plus, Quote, CheckCircle, Code2, Server, Database, PenTool, Cpu, Award,  } from "lucide-react";
+import {
+  PiStarDuotone as Star,
+  PiArrowRightDuotone as ArrowRight,
+  PiPlusDuotone as Plus,
+  PiCheckCircleDuotone as CheckCircle,
+  PiCodeDuotone as Code2,
+  PiHardDrivesDuotone as Server,
+  PiDatabaseDuotone as Database,
+  PiPenNibDuotone as PenTool,
+  PiCpuDuotone as Cpu,
+  PiCloudDuotone as CloudIcon,
+  PiChartBarDuotone as ChartBarIcon,
+  PiDeviceMobileDuotone as SmartphoneIcon,
+} from "react-icons/pi";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { academyPrograms, courses, faqItems } from "@/lib/mock-data";
@@ -18,61 +31,41 @@ const companyLogos = [
   "bludiamond",
 ];
 
-const testimonials = [
-  {
-    id: 1,
-    quote:
-      "MooreSkillUp has truly transformed my career. The courses are clear, focused, and easy to follow. I finished faster than expected.",
-    author: "MaryJane Eduputa",
-    role: "Python Programmer",
-    avatar: "ME",
-  },
-  {
-    id: 2,
-    quote:
-      "The content is rich and practical. I learned new skills that I could apply immediately in real work projects.",
-    author: "Donatus",
-    role: "Product Designer",
-    avatar: "D",
-  },
-  {
-    id: 3,
-    quote:
-      "I joined MooreSkillUp for the flexible schedule and the expert instructors. The experience exceeded my expectations.",
-    author: "Emeka Victor",
-    role: "Fullstack Developer",
-    avatar: "EV",
-  },
+const heroTracks = [
+  { icon: Code2, label: "Web Dev", bg: "bg-[#24437f]" },
+  { icon: CloudIcon, label: "Cloud", bg: "bg-[#3a5eaa]" },
+  { icon: ChartBarIcon, label: "Data", bg: "bg-[#FC6202]" },
+  { icon: SmartphoneIcon, label: "Mobile", bg: "bg-[#0c1945]" },
 ];
 
-const courseCoverMap: Record<string, { gradient: string; icon: any; label: string }> = {
+const courseCoverMap: Record<string, { color: string; icon: any; label: string }> = {
   "frontend-react-studio": {
-    gradient: "from-sky-500 via-cyan-500 to-indigo-600",
+    color: "bg-sky-600",
     icon: Code2,
     label: "Frontend React",
   },
   "backend-python-api-builder": {
-    gradient: "from-emerald-500 via-teal-500 to-cyan-700",
+    color: "bg-emerald-600",
     icon: Server,
     label: "Python Backend",
   },
   "backend-javascript-service-lab": {
-    gradient: "from-amber-500 via-orange-500 to-rose-600",
+    color: "bg-amber-600",
     icon: Database,
     label: "JavaScript Backend",
   },
   "uiux-figma-product-track": {
-    gradient: "from-fuchsia-500 via-pink-600 to-rose-700",
+    color: "bg-fuchsia-600",
     icon: PenTool,
     label: "UI/UX Design",
   },
   "ai-data-automation-lab": {
-    gradient: "from-violet-500 via-indigo-500 to-slate-800",
+    color: "bg-violet-600",
     icon: Cpu,
     label: "AI & Data",
   },
   "engineering-3d-systems": {
-    gradient: "from-slate-600 via-slate-800 to-zinc-950",
+    color: "bg-slate-800",
     icon: Star,
     label: "3D Systems",
   },
@@ -82,37 +75,31 @@ export default function HomePage() {
   return (
     <main className="bg-background text-foreground">
       
-      <section className="relative overflow-hidden bg-primary/5">
+      <section className="relative overflow-hidden bg-[#0c1945]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
+          <div className="grid items-stretch gap-10 py-14 lg:grid-cols-2 lg:gap-0 lg:py-0">
 
             {/* LEFT CONTENT */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-xl"
+              className="flex max-w-xl flex-col justify-center lg:py-24 lg:pr-12"
             >
-              <h1 className="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-                Learn Smarter, Follow Your Path.
+              <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+                Skills that start tech careers.
               </h1>
 
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                MooreSkillUp is not just a course platform: it’s a guided learning system that helps you
-                discover your path in tech, design, cloud, AI, and more.
+              <p className="mt-6 text-lg leading-8 text-white/70">
+                Introducing Career Paths: structured, project-based tracks in web
+                development, cloud, data, and design built to get you noticed.
               </p>
 
-              {/* CTA BUTTONS */}
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              {/* CTA BUTTON */}
+              <div className="mt-8">
                 <Link href="/courses">
-                  <Button size="lg" className="h-14 px-8 text-base">
-                    Explore Courses
-                  </Button>
-                </Link>
-
-                <Link href="/contact">
-                  <Button variant="outline" size="lg" className="h-14 px-8 text-base">
-                    Contact Us
+                  <Button size="lg" className="h-14 rounded-full bg-[#FC6203] px-8 text-base hover:bg-[#FC6203]/90">
+                    Explore All Courses
                   </Button>
                 </Link>
               </div>
@@ -123,36 +110,49 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-xl lg:aspect-[5/4]"
+              className="relative flex h-64 overflow-hidden sm:h-80 lg:h-auto"
             >
-              <Image
-                src="/images/people-with-laptop.jpg"
-                alt="Learners working through a MooreSkillUp course together"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+              {/* Category stripe gutter */}
+              <div className="hidden shrink-0 lg:flex">
+                {heroTracks.map((track) => (
+                  <div
+                    key={track.label}
+                    className={`flex w-14 flex-col items-center gap-2 pt-8 ${track.bg}`}
+                  >
+                    <track.icon className="h-6 w-6 text-white" />
+                  </div>
+                ))}
+              </div>
+
+              <div className="relative flex-1">
+                <Image
+                  src="/images/people-with-laptop.jpg"
+                  alt="MooreSkillUp learners collaborating on a project"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </motion.div>
 
           </div>
         </div>
+      </section>
 
-        {/* TRUST STRIP */}
-        <div className="border-t border-border/60">
-          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-4 px-4 py-6 text-sm text-muted-foreground sm:px-6 lg:grid-cols-4 lg:px-8">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 shrink-0 text-primary" /> Structured learning paths
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 shrink-0 text-primary" /> Beginner to Advanced roadmap
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 shrink-0 text-primary" /> Real-world projects
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 shrink-0 text-primary" /> Career-focused skills
-            </div>
+      {/* CATEGORY CHIPS */}
+      <section className="border-b border-border/60 bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
+          <div className="flex gap-2.5 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {academyPrograms.map((program) => (
+              <Link
+                key={program.id}
+                href={`/courses?path=${program.id}`}
+                className="shrink-0 whitespace-nowrap rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground transition hover:border-primary hover:text-primary"
+              >
+                {program.title}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -198,35 +198,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] shadow-sm bg-card p-6">
-              <div className="space-y-4">
-                <div className="rounded-xl  p-4">
-                  <h3 className="font-semibold">1. Watch the Guide</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Learn how MooreSkillUp learning paths work.
-                  </p>
-                </div>
-
-                <div className="rounded-xl p-4">
-                  <h3 className="font-semibold">2. Choose a Career Path</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Select a category that matches your interests.
-                  </p>
-                </div>
-
-                <div className="rounded-xl p-4">
-                  <h3 className="font-semibold">3. Pick a Learning Branch</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Follow a structured roadmap from beginner to advanced.
-                  </p>
-                </div>
-
-                <div className="rounded-xl p-4">
-                  <h3 className="font-semibold">4. Build Real Skills</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Complete courses, projects, and milestones as you grow.
-                  </p>
-                </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <div className="space-y-1">
+                {[
+                  { title: "Watch the Guide", desc: "Learn how MooreSkillUp learning paths work." },
+                  { title: "Choose a Career Path", desc: "Select a category that matches your interests." },
+                  { title: "Pick a Learning Branch", desc: "Follow a structured roadmap from beginner to advanced." },
+                  { title: "Build Real Skills", desc: "Complete courses, projects, and milestones as you grow." },
+                ].map((step, i) => (
+                  <div key={step.title} className="flex gap-4 rounded-xl p-4">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                      {i + 1}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">{step.title}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -253,30 +242,54 @@ export default function HomePage() {
           <div className="mt-16 grid gap-6 lg:grid-cols-3">
 
             {/* CARD 1 */}
-            <div className="rounded-3xl bg-card p-8 shadow-sm hover:shadow-lg transition">
-              {/* <div className="text-3xl">🧭</div> */}
-              <h3 className="mt-4 text-xl font-semibold">Choose Your Path</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Web Dev, AI, Cloud, Design, Cybersecurity and more. pick a direction based on your goals.
-              </p>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card transition hover:shadow-md">
+              <div className="p-8 pb-0">
+                <h3 className="text-xl font-semibold">Choose Your Path</h3>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Web Dev, AI, Cloud, Design, Cybersecurity and more. Pick a direction based on your goals.
+                </p>
+              </div>
+              <Image
+                src="/feature-image/choose-your-path.png"
+                alt="Choose Your Path"
+                width={1569}
+                height={1635}
+                className="mt-4 h-auto px-10 w-full"
+              />
             </div>
 
             {/* CARD 2 */}
-            <div className="rounded-3xl bg-card p-8 shadow-sm hover:shadow-lg transition">
-              {/* <div className="text-3xl">📚</div> */}
-              <h3 className="mt-4 text-xl font-semibold">Follow Structured Learning</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Every path is broken into beginner to intermediate to advanced steps so you never feel lost.
-              </p>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card transition hover:shadow-md">
+              <div className="p-8 pb-0">
+                <h3 className="text-xl font-semibold">Follow Structured Learning</h3>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Every path is broken into beginner to intermediate to advanced steps so you never feel lost.
+                </p>
+              </div>
+              <Image
+                src="/feature-image/structured-learn.png"
+                alt="Follow Structured Learning"
+                width={1738}
+                height={1558}
+                className="mt-4 px-10 h-auto w-full"
+              />
             </div>
 
             {/* CARD 3 */}
-            <div className="rounded-3xl bg-card p-8 shadow-sm hover:shadow-lg transition">
-              {/* <div className="text-3xl">🚀</div> */}
-              <h3 className="mt-4 text-xl font-semibold">Build Real Skills</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Learn by building projects that prepare you for internships, jobs, and freelance work.
-              </p>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card transition hover:shadow-md">
+              <div className="p-8 pb-0">
+                <h3 className="text-xl font-semibold">Build Real Skills</h3>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Learn by building projects that prepare you for internships, jobs, and freelance work.
+                </p>
+              </div>
+              <Image
+                src="/feature-image/real-skill.png"
+                alt="Build Real Skills"
+                width={1838}
+                height={1624}
+                className="mt-4 px-10 h-auto w-full"
+              />
             </div>
           </div>
 
@@ -327,7 +340,7 @@ export default function HomePage() {
             {courses.slice(0, 6).map((course, index) => {
               const coverData =
                 courseCoverMap[course.id] ?? {
-                  gradient: "from-slate-700 via-slate-900 to-slate-950",
+                  color: "bg-slate-900",
                   icon: Code2,
                   label: course.track,
                 };
@@ -337,70 +350,28 @@ export default function HomePage() {
                 <Link
                   href="/courses"
                   key={course.id}
-                  className="
-                    group
-                    overflow-hidden
-                    rounded-3xl
-                   
-                    bg-card
-                    transition-all
-                    duration-300
-                    hover:-translate-y-2
-                    hover:shadow-2xl
-                  "
+                  className="group flex flex-col overflow-hidden rounded-2xl  bg-card transition-all duration-300"
                 >
-                  {/* Image */}
-                  <div className="relative overflow-hidden rounded-t-3xl">
+                  {/* Thumbnail */}
+                  <div className="relative aspect-video overflow-hidden">
                     <div
                       role="img"
                       aria-label={`Cover image for ${course.title}`}
-                      className={`
-                        aspect-[4/3]
-                        bg-gradient-to-br
-                        ${coverData.gradient}
-                        transition-transform
-                        duration-500
-                        group-hover:scale-105
-                      `}
+                      className={`absolute inset-0 ${coverData.color} transition-transform duration-500 group-hover:scale-105`}
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_25%)]" />
-
-                    {/* Badge */}
-                    <div className="absolute left-4 top-4">
-                      <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-black backdrop-blur">
-                        {course.level || "Beginner"}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="flex flex-wrap items-center gap-3 rounded-3xl bg-black/20 px-4 py-3 text-white shadow-lg shadow-black/20 backdrop-blur">
-                        <CoverIcon className="h-6 w-6 text-white" />
-                        <div>
-                          <div className="text-sm font-semibold">{coverData.label}</div>
-                          <p className="text-xs text-white/80">{course.track}</p>
-                        </div>
-                      </div>
-                    </div>
+                    <CoverIcon className="absolute bottom-3 right-3 h-10 w-10 text-white/30" />
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="line-clamp-2 text-2xl font-semibold">
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="line-clamp-2 text-base font-bold leading-snug text-foreground">
                       {course.title}
                     </h3>
 
-                    <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted-foreground">
-                      {course.description}
-                    </p>
-
-                    <div className="mt-6 flex items-center justify-between pt-5">
-                      {/* <span className="font-semibold text-primary">
-                        {coursePrice}
-                      </span> */}
-
-                      <span className="inline-flex items-center gap-2 text-sm font-medium">
+                    <div className="mt-auto flex items-center pt-5">
+                      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground group-hover:text-primary">
                         View Course
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                       </span>
                     </div>
                   </div>
@@ -417,11 +388,6 @@ export default function HomePage() {
 
         {/* LEFT CONTENT */}
         <div>
-
-          {/* <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-            <Award className="h-4 w-4" />
-            Certification Included
-          </span> */}
 
           <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
             Complete Courses.
@@ -486,22 +452,20 @@ export default function HomePage() {
         {/* RIGHT VISUAL */}
         <div className="relative group">
 
-          {/* Background Glow */}
-          <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-r from-[#024293]/20 via-[#FC6202]/20 to-[#024293]/20 blur-3xl opacity-70 transition duration-500 group-hover:opacity-100" />
-
           {/* Certificate Card */}
           <div
             className="
               relative
               overflow-hidden
-              rounded-[2rem]
+              rounded-2xl
               border
+              border-border
               bg-card
               p-4
-              shadow-2xl
+              shadow-lg
               transition-all
-              duration-500
-              group-hover:-translate-y-2
+              duration-300
+              group-hover:shadow-xl
             "
           >
 
@@ -540,10 +504,11 @@ export default function HomePage() {
               -right-4
               rounded-2xl
               border
+              border-border
               bg-background
               px-5
               py-4
-              shadow-xl
+              shadow-lg
               backdrop-blur
             "
           >
@@ -569,73 +534,6 @@ export default function HomePage() {
         </div>
 
       </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="mx-auto max-w-3xl text-center">
-            {/* <span className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-sm font-medium text-primary">
-              Testimonials
-            </span> */}
-
-            <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
-              Trusted by ambitious learners
-            </h2>
-
-            <p className="mt-5 text-lg text-muted-foreground">
-              Discover how MooreSkillUp is helping learners gain practical skills,
-              earn certifications, and accelerate their careers.
-            </p>
-          </div>
-
-          {/* Testimonials */}
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="
-                  group
-                  rounded-3xl
-                  
-                  bg-card
-                  p-8
-                  transition-all
-                  duration-300
-                  hover:-translate-y-2
-                  hover:shadow-xl
-                "
-              >
-
-                {/* Quote Icon */}
-                <Quote className="mb-4 h-8 w-8 text-primary/30" />
-
-                {/* Testimonial */}
-                <p className="text-lg leading-8 text-muted-foreground">
-                  "{testimonial.quote}"
-                </p>
-
-                {/* Author */}
-                <div className="mt-8 flex items-center gap-4 pt-6">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
-                    {testimonial.avatar}
-                  </div>
-
-                  <div>
-                    <p className="font-semibold">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -672,7 +570,7 @@ export default function HomePage() {
               {faqItems.slice(0, 5).map((faq, index) => (
                 <details
                   key={index}
-                  className="group rounded-3xl bg-card p-6 transition-all duration-300 hover:border-primary/20 hover:shadow-lg"
+                  className="group rounded-2xl bg-card p-6 transition-all duration-300 "
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                     <h3 className="text-lg font-semibold text-foreground">
@@ -694,31 +592,28 @@ export default function HomePage() {
 
       
 
-      <section className="pb-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[3rem] bg-gradient-to-br from-[#024293] to-[#FC6202] text-white p-12 shadow-2xl lg:p-16">
-            <div className="grid gap-10 lg:grid-cols-[0.6fr_0.4fr] lg:items-center">
-              <div>
-                {/* <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Ready to get started?</p> */}
-                <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Take the first step, start learning today!</h2>
-                <p className="mt-6 max-w-2xl text-base leading-7 text-white/80">
-                  Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed.
-                </p>
-              </div>
-              <div className="flex flex-col justify-end gap-4 sm:flex-row sm:items-center">
-                <Link
-                  href="/auth/register"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-white dark:bg-slate-100/95 px-8 py-4 text-center font-semibold text-black transition hover:bg-slate-100 dark:hover:bg-slate-200/95 sm:w-auto"
-                >
-                  Join Now
-                </Link>
-                <Link
-                  href="/courses"
-                  className="inline-flex w-full items-center justify-center rounded-full border border-white/40 bg-white/10 px-8 py-4 text-center font-semibold text-white transition hover:bg-white/20 sm:w-auto"
-                >
-                  Explore Courses
-                </Link>
-              </div>
+      <section className="bg-[#0c1945] text-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.6fr_0.4fr] lg:items-center">
+            <div>
+              <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Take the first step, start learning today!</h2>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-white/70">
+                Access premium courses, expert instructors, and career-aligned learning paths designed to help you succeed.
+              </p>
+            </div>
+            <div className="flex flex-col justify-end gap-4 sm:flex-row sm:items-center">
+              <Link
+                href="/auth/register"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#FC6203] px-8 py-4 text-center font-semibold text-white transition hover:bg-[#FC6203]/90 sm:w-auto"
+              >
+                Join Now
+              </Link>
+              <Link
+                href="/courses"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/30 px-8 py-4 text-center font-semibold text-white transition hover:bg-white/10 sm:w-auto"
+              >
+                Explore Courses
+              </Link>
             </div>
           </div>
         </div>

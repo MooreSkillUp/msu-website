@@ -1,5 +1,4 @@
 // import { Metadata } from "next";
-// import { MessageCircleMore, Mail, MapPin } from "lucide-react";
 // import { ContactForm } from "./contact-form";
 
 // export const metadata: Metadata = {
@@ -77,13 +76,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import {
-  MessageCircleMore,
-  Mail,
-  MapPin,
-  Bot,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+  PiChatCircleDotsDuotone as MessageCircleMore,
+  PiEnvelopeSimpleDuotone as Mail,
+  PiMapPinDuotone as MapPin,
+  PiRobotDuotone as Bot,
+  PiArrowRightDuotone as ArrowRight,
+} from "react-icons/pi";
 
 import { ContactForm } from "./contact-form";
 
@@ -97,8 +95,6 @@ return ( <main className="flex-1">
 
   {/* HERO */}
   <section className="relative overflow-hidden py-20">
-
-    <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/10 to-transparent" />
 
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -295,7 +291,7 @@ return ( <main className="flex-1">
 
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-      <div className="rounded-[2rem] bg-gradient-to-r from-[#024293] to-[#FC6202] p-10 text-white">
+      <div className="rounded-2xl bg-[#024293] p-10 text-white">
 
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
 

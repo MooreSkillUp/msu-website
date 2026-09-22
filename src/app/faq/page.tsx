@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { faqItems } from "@/lib/mock-data";
-import { ChevronDown } from "lucide-react";
+import { PiCaretDownDuotone as ChevronDown } from "react-icons/pi";
 
 export const metadata: Metadata = {
   title: "FAQ | MooreSkillUp",
@@ -12,8 +12,6 @@ export default function FAQPage() {
     <main className="flex-1">
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
           {/* <span className="inline-flex rounded-full border px-4 py-1 text-sm font-medium text-primary">
             Help Center
@@ -36,7 +34,7 @@ export default function FAQPage() {
           {faqItems.map((item, index) => (
             <details
               key={index}
-              className="group rounded-3xl  bg-card p-6 transition-all duration-300 hover:shadow-md"
+              className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-md"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                 <h3 className="font-display text-lg font-semibold">
@@ -56,7 +54,7 @@ export default function FAQPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 rounded-3xl border bg-gradient-to-br from-primary/5 via-background to-background p-10 text-center">
+        <div className="mt-16 rounded-2xl border border-border bg-primary/5 p-10 text-center">
           <h2 className="font-display text-2xl font-bold">
             Still have questions?
           </h2>

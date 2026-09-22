@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import { Navbar } from "@/components/Navbar";
 import "@/styles.css";
 import { Footer } from "@/components/Footer";
-import { ThemeProvider } from "@/lib/theme";
 
 const productSans = localFont({
   src: [
@@ -31,12 +30,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${productSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
-        <ThemeProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

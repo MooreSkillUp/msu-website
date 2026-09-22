@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { CheckCircle2 } from "lucide-react";
+import { PiCheckCircleDuotone as CheckCircle2 } from "react-icons/pi";
 import { pricingPlans } from "@/lib/mock-data";
 import { Button } from "@/components/Button";
 export const metadata: Metadata = {

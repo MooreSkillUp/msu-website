@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, ChevronDown, Search, Sparkles } from "lucide-react";
+import { PiListDuotone, PiXDuotone, PiCaretDownDuotone, PiMagnifyingGlassDuotone, PiSparkleDuotone } from "react-icons/pi";
 import { useEffect, useRef, useState } from "react";
-import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { Button } from "@/components/Button";
 import { cn } from "@/lib/utils";
 import { BrandLogo } from "@/components/shared/BrandLogo";
@@ -44,7 +43,7 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/75 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 bg-background">
       <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:gap-6 lg:px-8">
 
         {/* MOBILE MENU BUTTON */}
@@ -53,7 +52,7 @@ export function Navbar() {
           aria-label="Toggle menu"
           className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-foreground hover:bg-muted lg:hidden"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <PiXDuotone className="h-5 w-5" /> : <PiListDuotone className="h-5 w-5" />}
         </button>
 
         {/* LOGO */}
@@ -70,7 +69,7 @@ export function Navbar() {
               )}
             >
               Explore
-              <ChevronDown className={cn("h-4 w-4 transition-transform", exploreOpen && "rotate-180")} />
+              <PiCaretDownDuotone className={cn("h-4 w-4 transition-transform", exploreOpen && "rotate-180")} />
             </button>
 
             {exploreOpen && (
@@ -130,7 +129,7 @@ export function Navbar() {
             aria-label="Search"
             className="absolute right-1.5 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground transition hover:bg-primary/90"
           >
-            <Search className="h-4 w-4" />
+            <PiMagnifyingGlassDuotone className="h-4 w-4" />
           </button>
         </form>
 
@@ -141,7 +140,7 @@ export function Navbar() {
             title="Know Your Path"
             className="relative hidden h-9 w-9 items-center justify-center rounded-full text-primary transition hover:bg-primary/10 sm:inline-flex"
           >
-            <Sparkles className="h-[18px] w-[18px]" />
+            <PiSparkleDuotone className="h-[18px] w-[18px]" />
             <span className="absolute right-1.5 top-1.5 flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
@@ -153,10 +152,8 @@ export function Navbar() {
             aria-label="Search"
             className="inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground hover:bg-muted md:hidden"
           >
-            <Search className="h-[18px] w-[18px]" />
+            <PiMagnifyingGlassDuotone className="h-[18px] w-[18px]" />
           </button>
-
-          <ThemeToggle iconOnly className="hidden lg:inline-flex" />
 
           <Link href="/auth/login" className="hidden lg:inline-flex">
             <Button variant="ghost" size="sm">
@@ -170,7 +167,7 @@ export function Navbar() {
               size="sm"
               className="rounded-full whitespace-nowrap border-primary/50 text-primary hover:text-white"
             >
-              Join for Free
+              Get Started
             </Button>
           </Link>
         </div>
@@ -192,7 +189,7 @@ export function Navbar() {
               aria-label="Search"
               className="absolute right-1.5 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground"
             >
-              <Search className="h-4 w-4" />
+              <PiMagnifyingGlassDuotone className="h-4 w-4" />
             </button>
           </form>
 
@@ -230,8 +227,6 @@ export function Navbar() {
             ))}
 
             <div className="mt-2 flex items-center gap-2">
-              <ThemeToggle className="flex-1 justify-center" />
-
               <Link href="/auth/login" className="flex-1" onClick={() => setOpen(false)}>
                 <Button variant="ghost" className="w-full">
                   Login
