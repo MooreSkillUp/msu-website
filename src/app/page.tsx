@@ -254,7 +254,7 @@ export default function HomePage() {
                 alt="Choose Your Path"
                 width={1569}
                 height={1635}
-                className="mt-4 h-auto px-10 w-full"
+                className="mt-4 h-auto px-10 py-10 w-full"
               />
             </div>
 
@@ -271,7 +271,7 @@ export default function HomePage() {
                 alt="Follow Structured Learning"
                 width={1738}
                 height={1558}
-                className="mt-4 px-10 h-auto w-full"
+                className="mt-4 px-10 py-10 h-auto w-full"
               />
             </div>
 
@@ -288,7 +288,7 @@ export default function HomePage() {
                 alt="Build Real Skills"
                 width={1838}
                 height={1624}
-                className="mt-4 px-10 h-auto w-full"
+                className="mt-4 px-10 py-10 h-auto w-full"
               />
             </div>
           </div>
