@@ -18,11 +18,6 @@ const companyLogos = [
   "bludiamond",
 ];
 
-const heroImages = [
-  "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
-];
-
 const testimonials = [
   {
     id: 1,
@@ -87,231 +82,77 @@ export default function HomePage() {
   return (
     <main className="bg-background text-foreground">
       
-      <section className="relative overflow-hidden py-24">
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/5 to-transparent" />
-
+      <section className="relative overflow-hidden bg-primary/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
+          <div className="grid items-center gap-12 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
 
             {/* LEFT CONTENT */}
-            <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-xl"
+            >
+              <h1 className="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.5rem]">
+                Learn Smarter, Follow Your Path.
+              </h1>
 
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="space-y-6"
-              >
-                {/* <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-muted-foreground">
-                  🚀 Build Skills. Follow Paths. Get Hired.
-                </div> */}
-
-                <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-                  Learn Smarter, Follow Your Path.
-                </h1>
-
-                <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-                  MooreSkillUp is not just a course platform: it’s a guided learning system that helps you
-                  discover your path in tech, design, cloud, AI, and more.
-                </p>
-              </motion.div>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                MooreSkillUp is not just a course platform: it’s a guided learning system that helps you
+                discover your path in tech, design, cloud, AI, and more.
+              </p>
 
               {/* CTA BUTTONS */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                className="flex flex-wrap items-center gap-4"
-              >
+              <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link href="/courses">
-                  <Button size="lg" className="rounded-full px-8 h-14 text-base">
+                  <Button size="lg" className="h-14 px-8 text-base">
                     Explore Courses
                   </Button>
                 </Link>
 
                 <Link href="/contact">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="rounded-full px-8 h-14 text-base  hover:bg-[#de7300] "
-                  >
-                    Contant Us
+                  <Button variant="outline" size="lg" className="h-14 px-8 text-base">
+                    Contact Us
                   </Button>
                 </Link>
-              </motion.div>
-
-              {/* MINI VALUE POINTS */}
-              <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground pt-4">
-                <div className="display flex gap-2 item-center"> <CheckCircle size={20}/> Structured learning paths</div>
-                <div className="display flex gap-2 item-center"> <CheckCircle size={20}/> Beginner to Advanced roadmap</div>
-                <div className="display flex gap-2 item-center"> <CheckCircle size={20}/> Real-world projects</div>
-                <div className="display flex gap-2 item-center"> <CheckCircle size={20}/> Career-focused skills</div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* RIGHT VISUAL */}
-            {/* <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="relative"
+            {/* RIGHT IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-xl lg:aspect-[5/4]"
             >
-              <div className="relative overflow-hidden rounded-[2.5rem] bg-card">
+              <Image
+                src="/images/people-with-laptop.jpg"
+                alt="Learners working through a MooreSkillUp course together"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </motion.div>
 
-                <Image
-                  src="/images/people-with-laptop.jpg"
-                  alt="Students learning on MooreSkillUp"
-                  width={1000}
-                  height={1000}
-                  className="h-[520px] w-full object-cover"
-                />
+          </div>
+        </div>
 
-                overlay glow
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#024293]/20 to-[#de7300]/10" />
-              </div>
-
-              floating badge
-              <div className="absolute -bottom-6 left-6 rounded-2xl bg-card px-4 py-3 shadow-lg text-sm">
-                Start from your personalized path
-              </div>
-            </motion.div> */}
-
-            {/* RIGHT VISUAL */}
-              <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-
-              >
-
-              {/* Background Glow */}
-
-                <div className="absolute -inset-8 bg-gradient-to-r from-[#024293]/20 via-[#FC6202]/20 to-[#024293]/20 blur-3xl" />
-
-              {/* Main Dashboard Card */}
-
-                <div className="relative overflow-hidden rounded-[2rem] border bg-card shadow-2xl">
-
-              {/* Header */}
-              <div className="border-b p-5">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-semibold">
-                    Your Learning Journey
-                  </h3>
-
-                  <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
-                    Active
-                  </span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6 space-y-6">
-
-                {/* Career Path */}
-                <div className="rounded-2xl bg-primary/5 p-5">
-                  <p className="text-sm text-muted-foreground">
-                    Current Path
-                  </p>
-
-                  <h4 className="mt-2 text-xl font-semibold">
-                    Backend Development
-                  </h4>
-
-                  <div className="mt-4 h-3 overflow-hidden rounded-full bg-muted">
-                    <div className="h-full w-[68%] rounded-full bg-primary" />
-                  </div>
-
-                  <p className="mt-2 text-xs text-muted-foreground">
-                    68% completed
-                  </p>
-                </div>
-
-                {/* Roadmap */}
-                <div className="space-y-4">
-
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
-                      ✓
-                    </div>
-
-                    <div>
-                      <p className="font-medium">
-                        Python Fundamentals
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Completed
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
-                      ✓
-                    </div>
-
-                    <div>
-                      <p className="font-medium">
-                        APIs & Databases
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Completed
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white">
-                      3
-                    </div>
-
-                    <div>
-                      <p className="font-medium">
-                        Django Projects
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        In Progress
-                      </p>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-                </div>
-
-              {/* Floating Stats Card */}
-
-                <div className="absolute -left-8 top-12 rounded-2xl border bg-background p-4 shadow-xl">
-                  <p className="text-xs text-muted-foreground">
-                    Courses Completed
-                  </p>
-
-              <p className="text-3xl font-bold">
-                12
-              </p>
-
-                </div>
-
-              {/* Floating Certificate Card */}
-
-                <div className="absolute -bottom-6 right-6 rounded-2xl border bg-background p-4 shadow-xl">
-                  <p className="text-xs text-muted-foreground">
-                    Achievement
-                  </p>
-
-              <p className="font-semibold">
-                Certificate Ready
-              </p>
-
-
-                </div>
-
-              </motion.div>
-
-
+        {/* TRUST STRIP */}
+        <div className="border-t border-border/60">
+          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-4 px-4 py-6 text-sm text-muted-foreground sm:px-6 lg:grid-cols-4 lg:px-8">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 shrink-0 text-primary" /> Structured learning paths
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 shrink-0 text-primary" /> Beginner to Advanced roadmap
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 shrink-0 text-primary" /> Real-world projects
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 shrink-0 text-primary" /> Career-focused skills
+            </div>
           </div>
         </div>
       </section>
