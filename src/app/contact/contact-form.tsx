@@ -15,20 +15,25 @@ export function ContactForm() {
     setStatus("pending");
     setErrorMessage(null);
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (response.ok) {
-      setStatus("success");
-      form.reset();
-      return;
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+        return;
+      }
+
+      const data = await response.json().catch(() => null);
+      setStatus("error");
+      setErrorMessage(data?.error ?? "Could not send your message. Please try again.");
+    } catch {
+      setStatus("error");
+      setErrorMessage("Could not send your message. Please check your connection and try again.");
     }
-
-    const data = await response.json().catch(() => null);
-    setStatus("error");
-    setErrorMessage(data?.error ?? "Could not send your message. Please try again.");
   }
 
   return (

@@ -42,10 +42,10 @@
 //                 <div>
 //                   <h3 className="font-display font-bold">Email</h3>
 //                   <a
-//                     href="mailto:mooreskillup@gmail.com"
+//                     href="mailto:contact@mooreskillup.com"
 //                     className="text-sm text-muted-foreground hover:text-primary"
 //                   >
-//                     mooreskillup@gmail.com
+//                     contact@mooreskillup.com
 //                   </a>
 //                 </div>
 //               </div>
@@ -191,10 +191,10 @@ return ( <main className="flex-1">
                 </p>
 
                 <a
-                  href="mailto:mooreskillup@gmail.com"
+                  href="mailto:contact@mooreskillup.com"
                   className="mt-2 block text-primary hover:underline"
                 >
-                  mooreskillup@gmail.com
+                  contact@mooreskillup.com
                 </a>
 
               </div>
@@ -301,7 +301,7 @@ return ( <main className="flex-1">
         linkExternal
         items={[
           { icon: MessageCircleMore, label: "WhatsApp", sublabel: "Fast, direct replies", bg: "bg-green-600" },
-          { icon: Mail, label: "Email", sublabel: "mooreskillup@gmail.com", bg: "bg-[#3a5eaa]" },
+          { icon: Mail, label: "Email", sublabel: "contact@mooreskillup.com", bg: "bg-[#3a5eaa]" },
           { icon: MapPin, label: "Our Team", sublabel: "Awka, Nigeria", bg: "bg-[#FC6203]" },
         ]}
       />
