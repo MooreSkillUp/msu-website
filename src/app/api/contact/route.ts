@@ -4,11 +4,11 @@ import { Resend } from "resend";
 const resendApiKey = process.env.RESEND_API_KEY;
 const supportEmail = process.env.SUPPORT_EMAIL ?? "mooreskillup@gmail.com";
 
-if (!resendApiKey) {
-  throw new Error("Missing RESEND_API_KEY environment variable.");
-}
+let resend: Resend | null = null;
 
-const resend = new Resend(resendApiKey);
+if (resendApiKey) {
+  resend = new Resend(resendApiKey);
+}
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -21,6 +21,13 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: "Name, email, and message are required." },
       { status: 400 },
+    );
+  }
+
+  if (!resend) {
+    return NextResponse.json(
+      { error: "Email service not configured. Please try again later." },
+      { status: 503 },
     );
   }
 
